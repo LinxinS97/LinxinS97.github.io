@@ -22,7 +22,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ## Internship
 - University of Tokyo - Research Intern
-<br> 2023.03-
+<br> 2023.02-Present
 <br> Supervised by Prof. [Irene Li](https://ireneli.eu/)
 - University of Maryland, College Park - Research Assistant
 <br> 2022.07-Present
