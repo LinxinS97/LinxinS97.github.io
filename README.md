@@ -1,8 +1,8 @@
-I'm a second-year M.Eng. student in the Graduated School of Creative Science and Engineering @[Waseda University](https://www.waseda.jp/top/en/), Tokyo, advised by Prof. [Masayuki Goto](http://www.it.mgmt.waseda.ac.jp/) (Japanese only). I also spend my time as a research assistant @[UMD](https://www.umd.edu/) supervised by [Tianyi Zhou](https://tianyizhou.github.io/), and doing research intern @[University of Tokyo](https://www.u-tokyo.ac.jp/en/) supervised by [Irene Li](https://ireneli.eu/).
+I'm a second-year M.Eng. student in the Graduated School of Creative Science and Engineering @[Waseda University](https://www.waseda.jp/top/en/), Tokyo, advised by Prof. [Masayuki Goto](http://www.it.mgmt.waseda.ac.jp/) (Japanese only). I also spend my time as a research assistant @[UMD](https://www.umd.edu/) supervised by [Tianyi Zhou](https://tianyizhou.github.io/), and doing research intern @[University of Tokyo](https://www.u-tokyo.ac.jp/en/) supervised by [Irene Li](https://ireneli.eu/). I also work closely with [Jieyu Zhang](https://jieyuz2.github.io/) who focuses on interactive and data-centric AI/ML.
 
-**Research Interests**: My current research intrests is **Label efficient learning**, which can be expended into multiple fields (e.g. Weak Supervision, Active Learning, Few-shot Learning). Currently, I work closely with [Jieyu Zhang](https://jieyuz2.github.io/) who focuses on data-centric ML/AI.
+**Research Interests**: My current research intrests is **data-centric and eXplainable AI (XAI)**. I also interested in Large Language Model and Multimodal Vision-Language Model. My past works is related to the application and theory of programmatic weak supervision and active learning.
 
-## Selected Publications
+## Publications
 (\* denotes equal contribution)
 
 
@@ -35,7 +35,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 
 ## Professional Service
-- Reviewer: EMNLP 2022, WACV 2023
+- Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023
 
 ## Contact
 Email: songlx.imse.gt\[at\]ruri.waseda.jp
