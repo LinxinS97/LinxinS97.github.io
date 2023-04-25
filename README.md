@@ -7,11 +7,11 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 
 ### Inproceedings
-- [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://arxiv.org/abs/2210.02724)
+- [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
 <br>Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner.
 <br>*AISTATS 2023*.
 - [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification
-](https://arxiv.org/abs/2210.03092)
+](https://aclanthology.org/2022.findings-emnlp.119/)
 <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
 <br>*EMNLP 2022 (Findings)*.
 
