@@ -7,6 +7,9 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 
 ### Inproceedings
+- [Anonymous Submission to EMNLP 2023]
+<br>**Linxin Song**, Yan Cui, Ao Luo, Zihui Li, Freddy Lecue
+<br>*Submitted to EMNLP 2023*.
 - [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
 <br>Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner.
 <br>*AISTATS 2023*.
