@@ -4,12 +4,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ## Publications
 (\* denotes equal contribution)
-
-
-### Inproceedings
-- [Anonymous Submission to EMNLP 2023]
-<br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li, 
-<br>*Submitted to EMNLP 2023*.
+### In proceedings
 - [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
 <br>Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner.
 <br>*AISTATS 2023*.
@@ -18,21 +13,29 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
 <br>*EMNLP 2022 (Findings)*.
 
+### Under Review
+- [Anonymous Submission to EMNLP 2023]
+<br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li, 
+<br>*Submitted to EMNLP 2023*.
+
 
 ## Education
 - Waseda University - M.Eng. in Graduated School of Creative Science and Engineering. (2021 - 2023)
 - Tianjin University of Technology - B.S. in Software Engineering.
 
 ## Internship
-- University of Tokyo - Research Intern
+- Zhejiang Lab - Research Intern
+<br> 2023.06-Present
+<br> co-adverse by [Irene Li](https://ireneli.eu/)
+- University of Tokyo - Research Assistant
 <br> 2023.02-Present
-<br> Supervised by Prof. [Irene Li](https://ireneli.eu/)
+<br> Supervised by [Irene Li](https://ireneli.eu/)
 - University of Maryland, College Park - Research Assistant
 <br> 2022.07-Present
-<br> Supervised by Prof. [Tianyi Zhou](https://tianyizhou.github.io/)
+<br> Supervised by [Tianyi Zhou](https://tianyizhou.github.io/)
 - University of Washington - Research Intern
 <br> 2022.03-2022.11
-<br> Supervised by Prof. [Alex Ratner](https://ajratner.github.io/)
+<br> Supervised by [Alex Ratner](https://ajratner.github.io/)
 - Baidu Research - Research Intern
 <br> 2022.03-2022.06
 
