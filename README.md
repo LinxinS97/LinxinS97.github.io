@@ -4,7 +4,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ## Publications
 (\* denotes equal contribution)
-### In proceedings
+### Peer-reviewed
 - [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
 <br>Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner.
 <br>*AISTATS 2023*.
