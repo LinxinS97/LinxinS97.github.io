@@ -2,7 +2,9 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 **Research Interests**: My current research intrests is **data-centric and eXplainable AI (XAI)**. I also interested in Large Language Model and Multimodal Vision-Language Model. My past works is related to the application and theory of programmatic weak supervision and active learning.
 
-## Publications
+> 📢 <span style="color:red">I'm looking for a PhD position (2024 Fall).</span> If you would like to discuss potential oppotunities or learn more about my qualifications, please feel free to [contect me](mailto:songlx.imse.gt@ruri.waseda.jp).
+
+## 📝 Publications
 (\* denotes equal contribution)
 ### Peer-reviewed
 - [Taming Small-sample Bias in Low-budget Active Learning]()
@@ -22,11 +24,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 <br>*Submitted to EMNLP 2023*.
 
 
-## Education
-- Waseda University - M.Eng. in Graduated School of Creative Science and Engineering. (2021 - 2023)
-- Tianjin University of Technology - B.S. in Software Engineering.
-
-## Internship
+## 👨‍💻 Internship
 - Zhejiang Lab - Research Intern
 <br> 2023.06-Present
 - University of Tokyo - Research Assistant
@@ -42,9 +40,5 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 <br> 2022.03-2022.06
 
 
-## Professional Service
+## 🏅 Professional Service
 - Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023, DMLR 2023, EMNLP 2023
-
-## Contact
-Email: songlx.imse.gt\[at\]ruri.waseda.jp
-<br>[Github](https://github.com/LinxinS97), [Google Scholar](https://scholar.google.com/citations?user=IjqXzSwAAAAJ)
