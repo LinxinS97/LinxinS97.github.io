@@ -44,7 +44,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 
 ## Professional Service
-- Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023, DMLR 2023
+- Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023, DMLR 2023, EMNLP 2023
 
 ## Contact
 Email: songlx.imse.gt\[at\]ruri.waseda.jp
