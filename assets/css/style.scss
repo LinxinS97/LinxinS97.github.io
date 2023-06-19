@@ -60,7 +60,8 @@ a:hover small {
 }
 
 .wrapper {
-  width:75%;
+  width:45%;
+  min-width: 1104px;
   margin:0 auto;
 }
 
@@ -123,7 +124,8 @@ kbd {
 }
 
 header {
-  width:10%;
+  width:9%;
+  min-width: 230px;
   float:left;
   position:fixed;
   -webkit-font-smoothing:subpixel-antialiased;
@@ -190,7 +192,7 @@ strong {
 }
 
 section {
-  width:80%;
+  width:75%;
   float:right;
   padding-bottom:50px;
 }
@@ -219,6 +221,7 @@ footer {
 
   div.wrapper {
     width:auto;
+    min-width: auto;
     margin:0;
   }
 
@@ -230,6 +233,10 @@ footer {
 
   header {
     padding-right:320px;
+  }
+
+  header img {
+    max-width: 120px;
   }
 
   section {
