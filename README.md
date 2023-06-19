@@ -29,7 +29,6 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 ## Internship
 - Zhejiang Lab - Research Intern
 <br> 2023.06-Present
-<br> co-adverse by [Irene Li](https://ireneli.eu/)
 - University of Tokyo - Research Assistant
 <br> 2023.02-Present
 <br> Supervised by [Irene Li](https://ireneli.eu/)
