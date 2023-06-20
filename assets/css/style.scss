@@ -53,6 +53,7 @@ a {
 a:hover, a:focus {
   color:#069;
   // font-weight: bold;
+  font-weight: normal;
 }
 
 a small {
@@ -64,6 +65,7 @@ a small {
 
 a:hover small {
   color:#777;
+  font-weight: normal;
 }
 
 .wrapper {
@@ -175,7 +177,7 @@ ul.downloads {
 
 .downloads a:hover, .downloads a:focus {
   color:#675C5C;
-  // font-weight:bold;
+  font-weight: normal;
 }
 
 .downloads ul a:active {
