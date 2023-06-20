@@ -2,7 +2,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 **Research Interests**: My current research interests lie in the realms of **Data-centric AI** and **eXplainable AI (XAI)**. I also have a keen interest in Large Language Models and Multimodal Vision-Language Models. My past work has been focused on both the application and theoretical aspects of programmatic weak supervision and active learning.
 
-> 📢 <span style="color:red">I'm looking for a PhD position (2024 Fall).</span> If you would like to discuss potential oppotunities or learn more about my qualifications, please feel free to [contect me](mailto:songlx.imse.gt@ruri.waseda.jp).
+> 📢 <span style="color:red">I'm looking for a PhD position (2024 Fall).</span> If you would like to discuss potential oppotunities or learn more about my qualifications, please feel free to [contact me](mailto:songlx.imse.gt@ruri.waseda.jp).
 
 ## 📝 Publications
 (\* denotes equal contribution)
