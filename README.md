@@ -22,7 +22,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 <br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
 
 ### Under Review
-- [Anonymous Submission to EMNLP 2023]
+- [Anonymous Submitted to EMNLP 2023]
 <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
 <br>*Submitted to EMNLP 2023*.
 
