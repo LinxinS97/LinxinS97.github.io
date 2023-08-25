@@ -13,10 +13,13 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 - [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
 <br>Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner
 <br>*AISTATS 2023*.
-- [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification
-](https://aclanthology.org/2022.findings-emnlp.119/)
+- [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification](https://aclanthology.org/2022.findings-emnlp.119/)
 <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
 <br>*EMNLP 2022 (Findings)*.
+
+### Preprint
+- [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
+<br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
 
 ### Under Review
 - [Anonymous Submission to EMNLP 2023]
