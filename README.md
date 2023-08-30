@@ -6,6 +6,12 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ## 📝 Publications
 (\* denotes equal contribution)
+
+### Preprint
+- [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
+<br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
+<br>Arxiv 2023
+
 ### Peer-reviewed
 - [Taming Small-sample Bias in Low-budget Active Learning](https://arxiv.org/abs/2306.11056)
 <br>**Linxin Song**, Jieyu Zhang, Xiaotian Lu, Tianyi Zhou
@@ -16,10 +22,6 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 - [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification](https://aclanthology.org/2022.findings-emnlp.119/)
 <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
 <br>*EMNLP 2022 (Findings)*.
-
-### Preprint
-- [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
-<br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
 
 ### Under Review
 - [Anonymous Submitted to EMNLP 2023]
