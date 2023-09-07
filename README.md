@@ -11,42 +11,42 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 ### Preprint
 
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
-  `<br>`Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
-  `<br>`Arxiv 2023
+  <br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
+  <br>Arxiv 2023
 
 ### Peer-reviewed
 
 - [Taming Small-sample Bias in Low-budget Active Learning](https://arxiv.org/abs/2306.11056)
-  `<br>`**Linxin Song**, Jieyu Zhang, Xiaotian Lu, Tianyi Zhou
-  `<br>`*DMLR @ ICML 2023*.
+  <br>**Linxin Song**, Jieyu Zhang, Xiaotian Lu, Tianyi Zhou
+  <br>*DMLR @ ICML 2023*.
 - [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
-  `<br>`Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner
-  `<br>`*AISTATS 2023*.
+  <br>Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner
+  <br>*AISTATS 2023*.
 - [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification](https://aclanthology.org/2022.findings-emnlp.119/)
-  `<br>`**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
-  `<br>`*EMNLP 2022 (Findings)*.
+  <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
+  <br>*EMNLP 2022 (Findings)*.
 
 ### Under Review
 
 - [Anonymous Submitted to EMNLP 2023]
-  `<br>`**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
-  `<br>`*Submitted to EMNLP 2023*.
+  <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
+  <br>*Submitted to EMNLP 2023*.
 
 ## 👨‍💻 Internship
 
 - Zhejiang Lab - Research Intern
-  `<br>` 2023.06-Present
+  <br>2023.06-Present
 - University of Tokyo - Research Assistant
-  `<br>` 2023.02-Present
-  `<br>` Supervised by [Irene Li](https://ireneli.eu/)
+  <br>2023.02-Present
+  <br>Supervised by [Irene Li](https://ireneli.eu/)
 - University of Maryland, College Park - Research Assistant
-  `<br>` 2022.07-Present
-  `<br>` Supervised by [Tianyi Zhou](https://tianyizhou.github.io/)
+  <br>2022.07-Present
+  <br>Supervised by [Tianyi Zhou](https://tianyizhou.github.io/)
 - University of Washington - Research Intern
-  `<br>` 2022.03-2022.11
-  `<br>` Supervised by [Alex Ratner](https://ajratner.github.io/)
+  <br>2022.03-2022.11
+  <br>Supervised by [Alex Ratner](https://ajratner.github.io/)
 - Baidu Research - Research Intern
-  `<br>` 2022.03-2022.06
+  <br>2022.03-2022.06
 
 ## 🏅 Professional Service
 
