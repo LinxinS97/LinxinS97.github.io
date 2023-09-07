@@ -50,4 +50,4 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ## 🏅 Professional Service
 
-- Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023, DMLR 2023, ICLR 2024
+- Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023, DMLR 2023, ICLR 2024, AISTATS 2024
