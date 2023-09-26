@@ -10,6 +10,9 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ### Preprint
 
+- [NLPBench: Evaluating Large Language Models on Solving NLP Problems]()
+  <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene LI
+  <br>Arxiv 2023
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
   <br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
   <br>Arxiv 2023
