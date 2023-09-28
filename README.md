@@ -2,7 +2,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 **Research Interests**: My current research interests lie in the realms of **Data-centric AI** and **eXplainable AI (XAI)**. I also have a keen interest in Large Language Models and Multimodal Vision-Language Models. My past work has been focused on both the application and theoretical aspects of programmatic weak supervision and active learning.
 
-> 📢 <span style="color:red">I'm looking for a PhD position (2024 Fall)</span>. If you would like to discuss potential oppotunities or learn more about my qualifications, please feel free to [contact me](mailto:songlx.imse.gt@ruri.waseda.jp).
+> 📢 <span style="color:red">I'm looking for a PhD position (2024 Fall). If you would like to discuss potential oppotunities or learn more about my qualifications, please feel free to [contact me](mailto:songlx.imse.gt@ruri.waseda.jp).
 
 ## 📝 Publications
 
@@ -10,7 +10,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ### Preprint
 
-- [NLPBench: Evaluating Large Language Models on Solving NLP Problems]()
+- [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
   <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene LI
   <br>Arxiv 2023
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
