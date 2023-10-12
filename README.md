@@ -11,7 +11,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 ### Preprint
 
 - [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
-  <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene LI
+  <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
   <br>Arxiv 2023
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
   <br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
@@ -32,7 +32,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 ### Under Review
 
 - [Anonymous submitted to ARR]
-  <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene LI
+  <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
 
 ## 👨‍💻 Internship
 
