@@ -29,6 +29,11 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
   <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
   <br>*EMNLP 2022 (Findings)*.
 
+### Under Review
+
+- [Anonymous submitted to ARR]
+  <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene LI
+
 ## 👨‍💻 Internship
 
 - Zhejiang Lab - Research Intern
