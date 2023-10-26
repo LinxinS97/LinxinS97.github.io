@@ -53,7 +53,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 - [Anonymous submitted to ARR]
   <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
 
-# 👨‍💻 Internship
+# 👨‍💻 Internships
 
 - Zhejiang Lab - Research Intern
   <br>2023.06-Present
