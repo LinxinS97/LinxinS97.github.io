@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Linxin Song (宋林鑫)"
+title                    : "Linxin Song"
 description              : "Linxin's Personal Homepage"
 repository               : "LinxinS97/LinxinS97.github.io"
 google_scholar_stats_use_cdn : true
@@ -21,7 +21,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Linxin Song (宋林鑫)"
+  name             : "Linxin Song"
   avatar           : "images/linxin.jpg"
   bio              : "CSE @ Waseda University"
   location         : "Tokyo, Japan"
