@@ -50,7 +50,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ### Under Review
 
-- [Anonymous submitted to ARR]
+- [Anonymous submitted to EACL 2024]
   <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
 
 # 👨‍💻 Internships
