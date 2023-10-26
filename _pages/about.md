@@ -61,7 +61,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
   <br>2023.02-Present
   <br>Supervised by [Irene Li](https://ireneli.eu/)
 - University of Maryland, College Park - Research Assistant
-  <br>2022.07-Present
+  <br>2022.07-2023.10
   <br>Supervised by [Tianyi Zhou](https://tianyizhou.github.io/)
 - University of Washington - Research Intern
   <br>2022.03-2022.11
