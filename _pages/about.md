@@ -29,15 +29,15 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ### Preprint
 
-- [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
-  <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
-  <br>Arxiv 2023
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
   <br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
   <br>Arxiv 2023
 
 ### Peer-reviewed
 
+- [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
+  <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
+  <br>Instruction @ NeurIPS 2023
 - [Taming Small-sample Bias in Low-budget Active Learning](https://arxiv.org/abs/2306.11056)
   <br>**Linxin Song**, Jieyu Zhang, Xiaotian Lu, Tianyi Zhou
   <br>*DMLR @ ICML 2023*.
