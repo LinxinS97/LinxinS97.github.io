@@ -37,7 +37,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 - [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
   <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
-  <br>*Instruction @ NeurIPS 2023*.
+  <br>*ITIF @ NeurIPS 2023*.
 - [Taming Small-sample Bias in Low-budget Active Learning](https://arxiv.org/abs/2306.11056)
   <br>**Linxin Song**, Jieyu Zhang, Xiaotian Lu, Tianyi Zhou
   <br>*DMLR @ ICML 2023*.
