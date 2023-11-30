@@ -27,7 +27,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
   <br>*AISTATS 2023*.
 - [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification](https://aclanthology.org/2022.findings-emnlp.119/)
   <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
-  <br>*EMNLP 2022 (Findings)*.
+  <br>*EMNLP 2022*.
 
 ### Under Review
 
