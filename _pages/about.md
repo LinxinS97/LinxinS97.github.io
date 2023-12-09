@@ -33,7 +33,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
   <br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
-  <br>*AAAI 2023.*.
+  <br>*AAAI 2023*.
 - [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
   <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
   <br>*ITIF @ NeurIPS 2023*.
