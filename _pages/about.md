@@ -32,25 +32,25 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 ### Peer-reviewed
 
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
-  <br>Ao Luo, **Linxin Song**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
+  <br>Ao Luo, **<u>Linxin Song</u>**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
   <br>*AAAI 2024*.
 - [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
-  <br>**Linxin Song**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
+  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
   <br>*ITIF @ NeurIPS 2023*.
 - [Taming Small-sample Bias in Low-budget Active Learning](https://arxiv.org/abs/2306.11056)
-  <br>**Linxin Song**, Jieyu Zhang, Xiaotian Lu, Tianyi Zhou
+  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Xiaotian Lu, Tianyi Zhou
   <br>*DMLR @ ICML 2023*.
 - [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
-  <br>Jieyu Zhang\*, **Linxin Song**\*, Alexander Ratner
+  <br>Jieyu Zhang\*, **<u>Linxin Song</u>**\*, Alexander Ratner
   <br>*AISTATS 2023*.
 - [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification](https://aclanthology.org/2022.findings-emnlp.119/)
-  <br>**Linxin Song**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
+  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
   <br>*EMNLP 2022*.
 
 ### Under Review
 
 - [Anonymous submitted to EACL 2024]
-  <br>**Linxin Song**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
+  <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
 
 # 👨‍💻 Internships
 
