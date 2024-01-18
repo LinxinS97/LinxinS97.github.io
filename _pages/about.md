@@ -31,6 +31,9 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ### Peer-reviewed
 
+- [Better Explain Transformers by Illuminating Important Information]()
+  <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
+  <br>*EACL 2024*.
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
   <br>Ao Luo, **<u>Linxin Song</u>**, Keisuke Nonaka, Kyohei Unno, Heming Sun, Masayuki Goto, Jiro Katto
   <br>*AAAI 2024*.
@@ -46,11 +49,6 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 - [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification](https://aclanthology.org/2022.findings-emnlp.119/)
   <br>**<u>Linxin Song</u>**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
   <br>*EMNLP 2022*.
-
-### Under Review
-
-- [Anonymous submitted to EACL 2024]
-  <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
 
 # 👨‍💻 Internships
 
