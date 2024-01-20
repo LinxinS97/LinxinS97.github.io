@@ -31,7 +31,7 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 
 ### Peer-reviewed
 
-- [Better Explain Transformers by Illuminating Important Information]()
+- [Better Explain Transformers by Illuminating Important Information](https://arxiv.org/abs/2401.09972)
   <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
   <br>*EACL 2024*.
 - [SCP: Spherical-Coordinate-based Learned Point Cloud Compression](https://arxiv.org/abs/2308.12535)
