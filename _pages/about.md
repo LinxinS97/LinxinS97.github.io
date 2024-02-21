@@ -57,9 +57,9 @@ I'm a second-year M.Eng. student in the Graduated School of Creative Science and
 # 👨‍💻 Internships
 
 - Zhejiang Lab - Research Intern
-  <br>2023.06-Present
+  <br>2023.06-2024.02
 - University of Tokyo - Research Assistant
-  <br>2023.02-Present
+  <br>2023.02-2024.02
   <br>Supervised by [Irene Li](https://ireneli.eu/)
 - University of Maryland, College Park - Research Assistant
   <br>2022.07-2023.10
