@@ -23,8 +23,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Linxin Song"
   avatar           : "images/linxin.jpg"
-  bio              : "CSE @ Waseda University"
-  location         : "Tokyo, Japan"
+  bio              : "CS @ USC"
+  location         : ""
   employer         :
   pubmed           : 
   googlescholar    : "https://scholar.google.com/citations?user=IjqXzSwAAAAJ"
