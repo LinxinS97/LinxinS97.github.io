@@ -17,13 +17,14 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I was a M.Eng student at Graduated School of Creative Science and Engineering @[Waseda University (早稲田大学)](https://www.waseda.jp/top/en/), Tokyo, supervised by Prof. [Masayuki Goto](http://www.it.mgmt.waseda.ac.jp/) (Japanese only). I also spend my time as a research assistant at @[UMD](https://www.umd.edu/), supervised by Prof.[Tianyi Zhou](https://tianyizhou.github.io/), and at @[University of Tokyo (東京大学)](https://www.u-tokyo.ac.jp/en/), supervised by [Irene Li](https://ireneli.eu/). I also work closely with [Jieyu Zhang](https://jieyuz2.github.io/) who focuses on interactive and data-centric AI/ML.
+I'm an incomming PhD student @USC CS, supervised by [Jieyu Zhao](https://jyzhao.net/index.html). Before that, I was a M.Eng student at Graduated School of Creative Science and Engineering @[Waseda University (早稲田大学)](https://www.waseda.jp/top/en/), Tokyo, supervised by Prof. [Masayuki Goto](http://www.it.mgmt.waseda.ac.jp/) (Japanese only). I also spend my time as a research assistant at @[UMD](https://www.umd.edu/), supervised by Prof.[Tianyi Zhou](https://tianyizhou.github.io/), and at @[University of Tokyo (東京大学)](https://www.u-tokyo.ac.jp/en/), supervised by [Irene Li](https://ireneli.eu/). I also work closely with [Jieyu Zhang](https://jieyuz2.github.io/) who focuses on interactive and data-centric AI/ML.
 
 <!-- **Research Interests**: My current research interests lie in the realms of **Natural Language Processing**, **Data-centric AI**, and **eXplainable AI (XAI)**. I also have a keen interest in Large Language Models and Multimodal Vision-Language Models. My past work has been focused on both the application and theoretical aspects of programmatic weak supervision and active learning. -->
 
+> 📢 <span style="color:red">I will attend CS@USC as a PhD student this fall!</span>
+
 > 📢 I completed my first feature contribution to [AutoGen](https://github.com/microsoft/autogen)! Check the [AutoBuild's blog](https://microsoft.github.io/autogen/blog/2023/11/26/Agent-AutoBuild/) for more details.
 
-<!-- > 📢 I'm looking for a PhD position (2024 Fall). If you would like to discuss potential oppotunities or learn more about my qualifications, please feel free to [contact me](mailto:rm.social.song1@gmail.com). -->
 
 # 📝 Publications
 
