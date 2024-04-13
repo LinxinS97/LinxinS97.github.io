@@ -21,7 +21,7 @@ I'm an incomming Ph.D. student @ USC CS, advised by Prof. [Jieyu Zhao](https://j
 
 <!-- **Research Interests**: My current research interests lie in the realms of **Natural Language Processing**, **Data-centric AI**, and **eXplainable AI (XAI)**. I also have a keen interest in Large Language Models and Multimodal Vision-Language Models. My past work has been focused on both the application and theoretical aspects of programmatic weak supervision and active learning. -->
 
-> 📢 <span style="color:red">I will attend CS@USC as a PhD student this fall!</span>
+> 📢 <span style="color:red">I will join CS@USC as a PhD student this fall!</span>
 
 > 📢 I completed my first feature contribution to [AutoGen](https://github.com/microsoft/autogen)! Check the [AutoBuild's blog](https://microsoft.github.io/autogen/blog/2023/11/26/Agent-AutoBuild/) for more details.
 
