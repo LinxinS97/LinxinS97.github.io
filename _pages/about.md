@@ -30,12 +30,10 @@ I'm an incomming Ph.D. student @ USC CS, advised by Prof. [Jieyu Zhao](https://j
 
 (\* denotes equal contribution)
 
-### Preprint
+### Peer-reviewed
 - [Training Language Model Agents without Modifying Language Models](https://arxiv.org/pdf/2402.11359.pdf)
   <br>Shaokun Zhang, Jieyu Zhang, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
-
-### Peer-reviewed
-
+  <br>*ICML 2024*
 - [Better Explain Transformers by Illuminating Important Information](https://arxiv.org/abs/2401.09972)
   <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
   <br>*EACL 2024*.
