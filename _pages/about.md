@@ -38,7 +38,7 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
   <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
 
 ### Peer-reviewed
-- [Training Language Model Agents without Modifying Language Models](https://arxiv.org/pdf/2402.11359.pdf)
+- [Offline Training of Language Model Agents with Functions as Learnable Weights](https://arxiv.org/pdf/2402.11359.pdf)
   <br>Shaokun Zhang\*, Jieyu Zhang\*, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
   <br>*ICML 2024*.
 - [Better Explain Transformers by Illuminating Important Information](https://arxiv.org/abs/2401.09972)
