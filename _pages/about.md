@@ -33,6 +33,10 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
 # 📝 Selected Publications
 (\* denotes equal contribution)
 
+### Preprint
+- [Training Language Model Agents without Modifying Language Models]()
+  <br>Linxin Song*, Jiale Liu*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
+
 ### Peer-reviewed
 - [Training Language Model Agents without Modifying Language Models](https://arxiv.org/pdf/2402.11359.pdf)
   <br>Shaokun Zhang*, Jieyu Zhang*, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
