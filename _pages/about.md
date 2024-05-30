@@ -35,12 +35,12 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
 
 ### Preprint
 - [Adaptive In-conversation Team Building for Language Model Agents]()
-  <br>**<u>Linxin Song*</u>**, Jiale Liu*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
+  <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
 
 ### Peer-reviewed
 - [Training Language Model Agents without Modifying Language Models](https://arxiv.org/pdf/2402.11359.pdf)
   <br>Shaokun Zhang*, Jieyu Zhang*, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
-  <br>*ICML 2024.*
+  <br>*ICML 2024*.
 - [Better Explain Transformers by Illuminating Important Information](https://arxiv.org/abs/2401.09972)
   <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
   <br>*EACL 2024 (findings)*.
