@@ -34,7 +34,7 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
 (\* denotes equal contribution)
 
 ### Preprint
-- [Training Language Model Agents without Modifying Language Models]()
+- [Adaptive In-conversation Team Building for Language Model Agents]()
   <br>Linxin Song*, Jiale Liu*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
 
 ### Peer-reviewed
