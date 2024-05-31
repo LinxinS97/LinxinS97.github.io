@@ -25,6 +25,8 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
 - How can we let LLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
 # 📢 News
+\[05/31/2024\] A new preprint released, check [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
+
 \[04/10/2024\] <span style="color:red">I will join CS@USC as a PhD student this fall!</span>
 
 \[11/26/2023\] I completed my first feature contribution to [AutoGen](https://github.com/microsoft/autogen)! Check the [AutoBuild's blog](https://microsoft.github.io/autogen/blog/2023/11/26/Agent-AutoBuild/) for more details.
