@@ -56,9 +56,12 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
   <br>**<u>Linxin Song</u>**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
   <br>*EMNLP 2022 (findings)*.
 
-<!-- # 👨‍💻 Internships
-- Zhejiang Lab - Research Intern
-  <br>2023.06-2024.02
+
+# 🧑‍🏫 Teaching
+- (TA) DSCI 550: Data Science at Scale
+
+
+# 👨‍💻 Internships
 - University of Tokyo - Research Assistant
   <br>2023.02-2024.02
   <br>Advised by [Irene Li](https://ireneli.eu/)
@@ -67,7 +70,7 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
   <br>Advised by [Tianyi Zhou](https://tianyizhou.github.io/)
 - University of Washington - Research Intern
   <br>2022.03-2022.11
-  <br>Advised by [Alex Ratner](https://ajratner.github.io/) -->
+  <br>Advised by [Alex Ratner](https://ajratner.github.io/)
 
 # 🏅 Professional Services
 - Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023, DMLR 2023, ICLR 2024, AISTATS 2024, ACL 2024, NeurIPS 2024
