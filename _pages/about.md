@@ -58,7 +58,7 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
 
 
 # 🧑‍🏫 Teaching
-- (TA) DSCI 550: Data Science at Scale, 2024 Fall
+- (TA) DSCI-250: Introduction to Data Science, 2024 Fall
 
 
 # 👨‍💻 Internships
