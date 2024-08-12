@@ -37,7 +37,7 @@ I'm an incoming CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. 
 
 ### Preprint
 - [Rethinking LLM-based Preference Evaluation](https://arxiv.org/abs/2407.01085#)
-  Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
+  <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
 - [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
   <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
 
