@@ -61,6 +61,7 @@ I'm a CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. [Jieyu Zha
 
 # 🧑‍🏫 Teaching
 - (TA) DSCI-250: Introduction to Data Science, 2024 Fall
+- (TA) [DSCI-566: Deep Learning and its Applications](/about.html), 2025 Spring
 
 
 # 👨‍💻 Internships
