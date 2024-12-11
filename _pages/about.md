@@ -19,10 +19,10 @@ redirect_from:
 
 I'm a CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. [Jieyu Zhao](https://jyzhao.net/index.html). Before that, I was a M.Eng student at Graduated School of Creative Science and Engineering @[Waseda University (早稲田大学)](https://www.waseda.jp/top/en/), Tokyo, supervised by Prof. [Masayuki Goto](http://www.it.mgmt.waseda.ac.jp/) (Japanese only). I also spent my time as a research assistant @[UMD](https://www.umd.edu/), advised by Prof.[Tianyi Zhou](https://tianyizhou.github.io/), and [University of Tokyo (東京大学)](https://www.u-tokyo.ac.jp/en/), advised by Prof.[Irene Li](https://ireneli.eu/). I also work closely with [Jieyu Zhang](https://jieyuz2.github.io/), who focuses on interactive and data-centric AI/ML.
 
-**Research Interests**: My research interest lies in the realm of Natural Language Processing. Specifically, I'm trying to answer the following questions:
-- How can we comprehensively evaluate an LLM in different domains?
-- How can we extend LLMs' ability with minimal costs?
-- How can we let LLMs collaborate safely, efficiently, and effectively to solve real-world problems?
+**Research Interests**: My research interest lies in the realm of natural language processing and synthetic data. Specifically, I'm trying to answer the following questions:
+- How can we comprehensively evaluate an LLM/VLM in different domains?
+- How can we extend ability of LLM/VLM with minimal costs?
+- How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
 # 📢 News
 \[05/31/2024\] A new preprint is released. Check [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425) for more details!
@@ -36,6 +36,10 @@ I'm a CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. [Jieyu Zha
 (\* denotes equal contribution)
 
 ### Preprint
+- [Template Matters: Understanding the Role of Instruction Templates in Multimodal Language Model Evaluation and Training]()
+  <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
+- [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012)
+  <br>Jieyu Zhang, Le Xue, **<u>Linxin Song</u>**, Jun Wang, Weikai Huang, Manli Shu, An Yan, Zixian Ma, Juan Carlos Niebles, silvio savarese, Caiming Xiong, Zeyuan Chen, Ranjay Krishna, Ran Xu.
 - [Rethinking LLM-based Preference Evaluation](https://arxiv.org/abs/2407.01085#)
   <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
 - [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
@@ -64,7 +68,7 @@ I'm a CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. [Jieyu Zha
 - (TA) [DSCI-566: Deep Learning and its Applications](/about.html), 2025 Spring
 
 
-# 👨‍💻 Internships
+# 👨‍💻 Internships (Before PhD)
 - University of Tokyo - Research Assistant
   <br>2023.02-2024.02
   <br>Advised by [Irene Li](https://ireneli.eu/)
