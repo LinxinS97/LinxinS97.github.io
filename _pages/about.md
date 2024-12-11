@@ -25,11 +25,11 @@ I'm a CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. [Jieyu Zha
 - How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
 # 📢 News
+\[12/10/2024\] Two new preprints are released! Check [Template Matters: Understanding the Role of Instruction Templates in Multimodal Language Model Evaluation and Training]() and [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012) for more details!
+
 \[05/31/2024\] A new preprint is released. Check [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425) for more details!
 
 \[04/10/2024\] <span style="color:red">I will join CS@USC as a PhD student this fall!</span>
-
-\[11/26/2023\] I completed my first feature contribution to [AutoGen](https://github.com/microsoft/autogen)! Check the [AutoBuild's blog](https://microsoft.github.io/autogen/blog/2023/11/26/Agent-AutoBuild/) for more details.
 
 
 # 📝 Selected Publications
@@ -81,4 +81,5 @@ I'm a CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. [Jieyu Zha
 
 
 # 🏅 Professional Services
+- Maintainer of [AG2](https://ag2.ai/).
 - Reviewer: WACV 2023, ECML-PKDD 2023, NeurIPS 2023, DMLR 2023, ICLR 2024, AISTATS 2024, ACL 2024 (ARR Feb), NeurIPS 2024, EMNLP 2024 (ARR June), ICLR 2025, KDD 2025
