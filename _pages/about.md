@@ -36,7 +36,7 @@ I'm a CS Ph.D. student @[USC](https://www.usc.edu/), advised by Prof. [Jieyu Zha
 (\* denotes equal contribution)
 
 ### Preprint
-- [Template Matters: Understanding the Role of Instruction Templates in Multimodal Language Model Evaluation and Training]()
+- [Template Matters: Understanding the Role of Instruction Templates in Multimodal Language Model Evaluation and Training](https://arxiv.org/abs/2412.08307)
   <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
 - [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012)
   <br>Jieyu Zhang, Le Xue, **<u>Linxin Song</u>**, Jun Wang, Weikai Huang, Manli Shu, An Yan, Zixian Ma, Juan Carlos Niebles, silvio savarese, Caiming Xiong, Zeyuan Chen, Ranjay Krishna, Ran Xu.
