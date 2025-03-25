@@ -27,8 +27,6 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 # 📢 News
 \[12/10/2024\] Two new preprints are released!
 
-\[05/31/2024\] A new preprint is released. Check [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425) for more details!
-
 \[04/10/2024\] <span style="color:red">I will join CS@USC as a PhD student this fall!</span>
 
 
