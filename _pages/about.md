@@ -25,7 +25,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 - How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
 # 📢 News
-\[12/10/2024\] Two new preprints are released!
+\[03/31/2025\] A new preprint is released. Check [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361) for more details!
 
 \[05/31/2024\] A new preprint is released. Check [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425) for more details!
 
@@ -36,6 +36,8 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 (\* denotes equal contribution)
 
 ### Preprint
+- [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
+  <br>Linxin Song, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
 - [Template Matters: Understanding the Role of Instruction Templates in Multimodal Language Model Evaluation and Training](https://arxiv.org/abs/2412.08307)
   <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
 - [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012)
