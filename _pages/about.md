@@ -35,7 +35,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 
 ### Preprint
 - [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
-  <br>Linxin Song, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
+  <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
   <br><audio controls><source src="assets/music/Stochastic Error Ascent.mp3" type="audio/mp3"></audio>
 - [Template Matters: Understanding the Role of Instruction Templates in Multimodal Language Model Evaluation and Training](https://arxiv.org/abs/2412.08307)
   <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
