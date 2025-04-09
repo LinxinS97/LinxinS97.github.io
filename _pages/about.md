@@ -25,6 +25,8 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 - How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
 # 📢 News
+\[04/08/2025\] A new preprint is released. Check [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520) for more details!
+
 \[03/31/2025\] A new preprint is released. Check [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361) for more details!
 
 \[04/10/2024\] <span style="color:red">I will join CS@USC as a PhD student this fall!</span>
@@ -34,6 +36,8 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 (\* denotes equal contribution)
 
 ### Preprint
+- [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
+  <br>Taiwei Shi, Yiyang Wu, <u>**Linxin Song**</u>, Tianyi Zhou, Jieyu Zhao
 - [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
   <br><u>**Linxin Song**</u>, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
 - [Template Matters: Understanding the Role of Instruction Templates in Multimodal Language Model Evaluation and Training](https://arxiv.org/abs/2412.08307)
