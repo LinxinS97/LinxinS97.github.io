@@ -51,7 +51,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
   <br>*ITIF @ NeurIPS 2023*.
 - [Investigating the Scaling Effect of Instruction Templates for Training Multimodal Language Model](https://arxiv.org/abs/2412.08307)
   <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
-- [Rethinking LLM-based Preference Evaluation](https://arxiv.org/abs/2407.01085#)
+- [Explaining Length Bias in LLM-Based Preference Evaluations](https://arxiv.org/abs/2407.01085#)
   <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
 
 ### Language Model Agent
