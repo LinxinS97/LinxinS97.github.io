@@ -47,8 +47,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 ### Language Model Evaluation
 - [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
   <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
-  <br><audio controls><source src="assets/music/Stochastic Error Ascent.mp3" type="audio/mp3"></audio>
-  <br>[Webpage](https://maksimstw.github.io/papers/sea)
+  <br>[Webpage](https://maksimstw.github.io/papers/sea) <audio controls style="height: 30px;"><source src="assets/music/Stochastic Error Ascent.mp3" type="audio/mp3"></audio>
 - [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
   <br>**<u>Linxin Song</u>**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
   <br>*ITIF @ NeurIPS 2023*.
