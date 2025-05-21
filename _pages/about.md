@@ -81,16 +81,9 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 - (TA) [DSCI-566: Deep Learning and its Applications](/about.html), 2025 Spring
 
 
-# 👨‍💻 Internships (Before PhD)
-- University of Tokyo - Research Assistant
-  <br>2023.02-2024.02
-  <br>Advised by [Irene Li](https://ireneli.eu/)
-- University of Maryland, College Park - Research Assistant
-  <br>2022.07-2023.10
-  <br>Advised by [Tianyi Zhou](https://tianyizhou.github.io/)
-- University of Washington - Research Intern
-  <br>2022.03-2022.11
-  <br>Advised by [Alex Ratner](https://ajratner.github.io/) and [Jieyu Zhang](https://jieyuz2.github.io/)
+# 👨‍💻 Internships
+- Salesforce Research - Research Intern
+  <br> 2025.05-now
 
 
 # 🏅 Professional Services
