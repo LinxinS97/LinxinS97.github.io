@@ -36,7 +36,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 (\* denotes equal contribution)
 
 ### Improving Language Models
-- [The Hallucination Tax in Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
+- [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
   <br>**<u>Linxin Song</u>**\*, Taiwei Shi\*, Jieyu Zhao
 - [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
   <br>Taiwei Shi, Yiyang Wu, **<u>Linxin Song</u>**, Tianyi Zhou, Jieyu Zhao
