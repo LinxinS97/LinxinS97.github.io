@@ -25,6 +25,8 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 - How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
 # 📢 News
+\[05/20/2025] A new preprint is released. Check [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988) for more details!
+
 \[04/08/2025\] A new preprint is released. Check [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520) for more details!
 
 \[03/31/2025\] A new preprint is released. Check [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361) for more details!
@@ -65,6 +67,9 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
   <br>*ICML 2024*.
 
 ### Before PhD
+- [Attributed Synthetic Data Generation for Zero-shot Image Classification](https://arxiv.org/abs/2504.04510)
+  <br>Shijian Wang, **<u>Linxin Song</u>**, Ryotaro Shimizu, Masayuki Goto, Hanqian Wu
+  <br>*ICME 2025 <span style="color:red">(Oral)</span>*
 - [Better Explain Transformers by Illuminating Important Information](https://arxiv.org/abs/2401.09972)
   <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
   <br>*EACL 2024 (findings)*.
