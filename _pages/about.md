@@ -85,7 +85,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 
 # 🧑‍🏫 Teaching
 - (TA) DSCI-250: Introduction to Data Science, 2024 Fall
-- (TA) [DSCI-566: Deep Learning and its Applications](/about.html), 2025 Spring
+- (TA) DSCI-566: Deep Learning and its Applications, 2025 Spring, 2025 Fall
 
 
 # 👨‍💻 Internships
