@@ -61,6 +61,8 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
   <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
 
 ### Language Model Agent
+- [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
+  <br>**<u>Linxin Song</u>**\*, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
 - [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
   <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
   <br>*AIA @COLM 2025*.
