@@ -73,6 +73,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 - [Offline Training of Language Model Agents with Functions as Learnable Weights](https://arxiv.org/pdf/2402.11359.pdf)
   <br>Shaokun Zhang\*, Jieyu Zhang\*, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
   <br>*ICML 2024*.
+  <br>Posted by: <span stype="color:red">[The Forbes Article](https://www.forbes.com/sites/joannechen/2024/05/24/the-promise-of-multi-agent-ai/)<span>
 
 ### Before PhD
 - [Attributed Synthetic Data Generation for Zero-shot Image Classification](https://arxiv.org/abs/2504.04510)
