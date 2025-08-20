@@ -43,7 +43,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 - [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
   <br>**<u>Linxin Song</u>**\*, Taiwei Shi\*, Jieyu Zhao
   <br>Posted by: [MarkTechPost](https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/)
-  <br>EMNLP 2025 (findings)
+  <br>*EMNLP 2025 (findings)*
 - [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
   <br>Taiwei Shi, Yiyang Wu, **<u>Linxin Song</u>**, Tianyi Zhou, Jieyu Zhao
 - [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012)
@@ -63,7 +63,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
   <br>*ITIF @ NeurIPS 2023*.
 - [Explaining Length Bias in LLM-Based Preference Evaluations](https://arxiv.org/abs/2407.01085#)
   <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
-  <br>EMNLP 2025 (findings)
+  <br>*EMNLP 2025 (findings)*
 
 ### Language Model Agent
 - [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
