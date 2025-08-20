@@ -42,8 +42,8 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 ### Improving Language Models
 - [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
   <br>**<u>Linxin Song</u>**\*, Taiwei Shi\*, Jieyu Zhao
-  <br>Posted by: [MarkTechPost](https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/)
   <br>*EMNLP 2025 (findings)*
+  <br>Posted by: [MarkTechPost](https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/)
 - [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
   <br>Taiwei Shi, Yiyang Wu, **<u>Linxin Song</u>**, Tianyi Zhou, Jieyu Zhao
 - [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012)
@@ -93,7 +93,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 
 # 🧑‍🏫 Teaching
 - (TA) DSCI-250: Introduction to Data Science, 2024 Fall
-- (TA) DSCI-566: Deep Learning and its Applications, 2025 Spring, 2025 Fall
+- (TA) DSCI-566: Deep Learning and its Applications, 2025 Spring
 
 
 # 👨‍💻 Internships
