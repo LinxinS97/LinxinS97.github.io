@@ -43,12 +43,12 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 - [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
   <br>**<u>Linxin Song</u>**\*, Taiwei Shi\*, Jieyu Zhao
   <br>*EMNLP 2025 (findings)*
-  <br>Posted by: [MarkTechPost](https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/)
+  <br>Covered by: [MarkTechPost](https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/)
 - [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
   <br>Taiwei Shi, Yiyang Wu, **<u>Linxin Song</u>**, Tianyi Zhou, Jieyu Zhao
 - [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012)
   <br>Jieyu Zhang, Le Xue, **<u>Linxin Song</u>**, Jun Wang, Weikai Huang, Manli Shu, An Yan, Zixian Ma, Juan Carlos Niebles, silvio savarese, Caiming Xiong, Zeyuan Chen, Ranjay Krishna, Ran Xu
-  <br>Posted by: <span style="color:red">[VentureBeat](https://venturebeat.com/data-infrastructure/breaking-the-data-bottleneck-salesforces-provision-speeds-multimodal-ai-training-with-image-scene-graphs/)</span> | <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/01/11/provision-a-scalable-programmatic-approach-to-vision-centric-instruction-data-for-multimodal-language-models/)</span>
+  <br>Covered by: <span style="color:red">[VentureBeat](https://venturebeat.com/data-infrastructure/breaking-the-data-bottleneck-salesforces-provision-speeds-multimodal-ai-training-with-image-scene-graphs/)</span> | <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/01/11/provision-a-scalable-programmatic-approach-to-vision-centric-instruction-data-for-multimodal-language-models/)</span>
 - [Investigating the Scaling Effect of Instruction Templates for Training Multimodal Language Model](https://arxiv.org/abs/2412.08307)
   <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
 
@@ -67,14 +67,14 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 ### Language Model Agent
 - [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
   <br>**<u>Linxin Song</u>**\*, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
-  <br>Posted by: <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/08/07/meet-coact-1-a-novel-multi-agent-system-that-synergistically-combines-gui-based-control-with-direct-programmatic-execution/)</span> | <span style="color:red">[VentureBeat](https://venturebeat.com/ai/salesforces-new-coact-1-agents-dont-just-point-and-click-they-write-code-to-accomplish-tasks-faster-and-with-greater-success-rates/)</span>
+  <br>Covered by: <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/08/07/meet-coact-1-a-novel-multi-agent-system-that-synergistically-combines-gui-based-control-with-direct-programmatic-execution/)</span> | <span style="color:red">[VentureBeat](https://venturebeat.com/ai/salesforces-new-coact-1-agents-dont-just-point-and-click-they-write-code-to-accomplish-tasks-faster-and-with-greater-success-rates/)</span>
 - [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
   <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
   <br>*AIA @COLM 2025*.
 - [Offline Training of Language Model Agents with Functions as Learnable Weights](https://arxiv.org/pdf/2402.11359.pdf)
   <br>Shaokun Zhang\*, Jieyu Zhang\*, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
   <br>*ICML 2024*.
-  <br>Posted by: <span stype="color:red">[The Forbes Article](https://www.forbes.com/sites/joannechen/2024/05/24/the-promise-of-multi-agent-ai/)<span>
+  <br>Covered by: <span stype="color:red">[The Forbes Article](https://www.forbes.com/sites/joannechen/2024/05/24/the-promise-of-multi-agent-ai/)<span>
 
 ### Before PhD
 - [Attributed Synthetic Data Generation for Zero-shot Image Classification](https://arxiv.org/abs/2504.04510)
