@@ -66,7 +66,7 @@ I'm a CS Ph.D. student @[University of Southern California](https://www.usc.edu/
 
 ### Language Model Agent
 - [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
-  <br>**<u>Linxin Song</u>**\*, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
+  <br>**<u>Linxin Song</u>**, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
   <br>Covered by: <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/08/07/meet-coact-1-a-novel-multi-agent-system-that-synergistically-combines-gui-based-control-with-direct-programmatic-execution/)</span> | <span style="color:red">[VentureBeat](https://venturebeat.com/ai/salesforces-new-coact-1-agents-dont-just-point-and-click-they-write-code-to-accomplish-tasks-faster-and-with-greater-success-rates/)</span>
 - [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
   <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
