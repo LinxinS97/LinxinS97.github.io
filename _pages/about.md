@@ -25,6 +25,8 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 - How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
 # 📢 News
+\[01/26/2026] [CoAct-1](https://openreview.net/forum?id=l1MQVgIKEU) is accepted to ICLR 2026!
+
 \[08/12/2025] A new preprint is released. Check [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923) for more details!
 
 \[05/20/2025] A new preprint is released. Check [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988) for more details!
@@ -67,6 +69,7 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 ### Language Model Agent
 - [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
   <br>**<u>Linxin Song</u>**, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
+  <br>*ICLR 2026*.
   <br>Covered by: <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/08/07/meet-coact-1-a-novel-multi-agent-system-that-synergistically-combines-gui-based-control-with-direct-programmatic-execution/)</span> | <span style="color:red">[VentureBeat](https://venturebeat.com/ai/salesforces-new-coact-1-agents-dont-just-point-and-click-they-write-code-to-accomplish-tasks-faster-and-with-greater-success-rates/)</span>
 - [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
   <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
