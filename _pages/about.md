@@ -101,7 +101,9 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 
 # 👨‍💻 Internships
 - Salesforce Research - Research Intern
-  <br> 2025.05-now
+  <br> 2025.05-2026.01
+- Google
+  <br> 2026.02-now
 
 
 # 🏅 Professional Services
