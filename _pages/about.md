@@ -54,18 +54,6 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 - [Investigating the Scaling Effect of Instruction Templates for Training Multimodal Language Model](https://arxiv.org/abs/2412.08307)
   <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
 
-### Language Model Evaluation
-- [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
-  <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
-  <br>*COLM 2025* | [Webpage](https://maksimstw.github.io/papers/sea)
-  <br><audio controls style="height: 30px;"><source src="assets/music/Stochastic Error Ascent.mp3" type="audio/mp3"></audio>
-- [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
-  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
-  <br>*ITIF @ NeurIPS 2023*.
-- [Explaining Length Bias in LLM-Based Preference Evaluations](https://arxiv.org/abs/2407.01085#)
-  <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
-  <br>*EMNLP 2025 (findings)*
-
 ### Language Model Agent
 - [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
   <br>**<u>Linxin Song</u>**, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
@@ -78,6 +66,18 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
   <br>Shaokun Zhang\*, Jieyu Zhang\*, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
   <br>*ICML 2024*.
   <br>Covered by: <span stype="color:red">[The Forbes Article](https://www.forbes.com/sites/joannechen/2024/05/24/the-promise-of-multi-agent-ai/)<span>
+
+### Language Model Evaluation
+- [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
+  <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
+  <br>*COLM 2025* | [Webpage](https://maksimstw.github.io/papers/sea)
+  <br><audio controls style="height: 30px;"><source src="assets/music/Stochastic Error Ascent.mp3" type="audio/mp3"></audio>
+- [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
+  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
+  <br>*ITIF @ NeurIPS 2023*.
+- [Explaining Length Bias in LLM-Based Preference Evaluations](https://arxiv.org/abs/2407.01085#)
+  <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
+  <br>*EMNLP 2025 (findings)*
 
 ### Before PhD
 - [Attributed Synthetic Data Generation for Zero-shot Image Classification](https://arxiv.org/abs/2504.04510)
