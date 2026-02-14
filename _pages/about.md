@@ -41,7 +41,7 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 # 📝 Selected Publications
 (\* denotes equal contribution)
 
-### Improving Language Models
+### Reinforcement Finetuning
 - [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
   <br>**<u>Linxin Song</u>**\*, Taiwei Shi\*, Jieyu Zhao
   <br>*EMNLP 2025 (findings)*
@@ -49,7 +49,7 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 - [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
   <br>Taiwei Shi, Yiyang Wu, **<u>Linxin Song</u>**, Tianyi Zhou, Jieyu Zhao
 
-### Language Model Agent
+### Agentic AI
 - [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
   <br>**<u>Linxin Song</u>**, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
   <br>*ICLR 2026*.
