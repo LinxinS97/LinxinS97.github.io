@@ -28,7 +28,7 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 # 📝 Selected Publications
 (\* denotes equal contribution)
 
-### Reinforcement Finetunin
+### Reinforcement Finetuning
 - [Experiential Reinforcement Learning](https://arxiv.org/abs/2602.13949)
   <br>Taiwei Shi, Sihao Chen, Bowen Jiang, **<u>Linxin Song</u>**, Longqi Yang, Jieyu Zhao
 - [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
