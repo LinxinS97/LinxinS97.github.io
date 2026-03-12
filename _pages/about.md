@@ -37,6 +37,7 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
   <br>Covered by: [MarkTechPost](https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/)
 - [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
   <br>Taiwei Shi, Yiyang Wu, **<u>Linxin Song</u>**, Tianyi Zhou, Jieyu Zhao
+  <br>Preprint
 
 ### Agentic AI
 - [CoAct-1: Computer-using Agents with Coding as Actions](https://arxiv.org/abs/2508.03923)
@@ -49,6 +50,9 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
 
 
 ### Language Model Evaluation
+- <span class="retro-blink">NEW!</span> [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
+  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Jian Kang, Jieyu Zhao
+  <br>Preprint
 - [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
   <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
   <br>*COLM 2025* | [Webpage](https://maksimstw.github.io/papers/sea)
