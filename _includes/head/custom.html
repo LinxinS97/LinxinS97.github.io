@@ -30,6 +30,234 @@
     font-weight: bold !important;
     animation: retro-blink 1s step-end infinite !important;
   }
+
+  /* ===== Wiki-style skin ===== */
+  body {
+    background: #f6f6f6 !important;
+    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif !important;
+  }
+  /* Hide top navigation bar (wiki look) */
+  .masthead { display: none !important; }
+
+  /* Kill the susy-grid left offset that leaves empty whitespace */
+  #main {
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
+    padding: 1em 1.75em 2em 1.75em;
+    margin: 1em auto !important;
+    max-width: 1100px !important;
+    width: auto !important;
+    float: none !important;
+  }
+  .page,
+  .page .page__inner-wrap,
+  .page .page__content,
+  .archive {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    float: none !important;
+  }
+  .initial-content { background: transparent; }
+  .page__content {
+    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: #202122;
+  }
+  .page__content p, .page__content li { font-size: 1em; }
+
+  /* Wiki headings */
+  .page__content h1,
+  .page__content h2 {
+    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
+    font-weight: normal;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.17em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    color: #000;
+  }
+  .page__content h1 { font-size: 1.8em; }
+  .page__content h2 { font-size: 1.5em; }
+  .page__content h3 {
+    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 1em;
+    color: #000;
+  }
+
+  /* Wiki links */
+  .page__content a {
+    color: #0645ad;
+    text-decoration: none;
+  }
+  .page__content a:visited { color: #0b0080; }
+  .page__content a:hover { text-decoration: underline; }
+  .page__content a[href^="http"]:not([href*="linxins97.github.io"])::after {
+    content: " \2197";
+    font-size: 0.75em;
+    color: #72777d;
+  }
+
+  /* "From Linxinpedia" subtitle */
+  .wiki-title {
+    font-family: "Linux Libertine", "Georgia", serif;
+    font-size: 2.1em;
+    border-bottom: 1px solid #a2a9b1;
+    padding-bottom: 0.17em;
+    margin: 0 0 0.2em 0;
+    color: #000;
+  }
+  .wiki-subtitle {
+    font-size: 0.85em;
+    color: #54595d;
+    font-style: italic;
+    margin-bottom: 1em;
+  }
+
+  /* Infobox */
+  .wiki-infobox {
+    float: right;
+    width: 270px;
+    margin: 0 0 1em 1.25em;
+    padding: 0.5em;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    font-size: 0.85em;
+    line-height: 1.45;
+    color: #202122;
+  }
+  .wiki-infobox .ib-title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.15em;
+    padding: 0.25em 0 0.5em;
+    border-bottom: 1px solid #a2a9b1;
+  }
+  .wiki-infobox img {
+    display: block;
+    margin: 0.5em auto;
+    max-width: 100%;
+    border: 1px solid #c8ccd1;
+  }
+  .wiki-infobox table { width: 100%; border-collapse: collapse; margin: 0; }
+  .wiki-infobox th, .wiki-infobox td {
+    text-align: left;
+    vertical-align: top;
+    padding: 3px 4px;
+    border-bottom: 1px solid #eaecf0;
+  }
+  .wiki-infobox th {
+    width: 35%;
+    background: #eaecf0;
+    font-weight: bold;
+  }
+  @media (max-width: 720px) {
+    .wiki-infobox { float: none; width: auto; margin: 0 0 1em 0; }
+  }
+
+  /* Table of Contents */
+  .wiki-toc {
+    display: table;
+    background: #f8f9fa;
+    border: 1px solid #a2a9b1;
+    padding: 0.5em 1em 0.7em 1em;
+    margin: 1em 0;
+    font-size: 0.9em;
+  }
+  .wiki-toc .toc-title {
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0.3em;
+  }
+  .wiki-toc ol { list-style: decimal; margin: 0 0 0 1.4em; padding: 0; }
+  .wiki-toc ol ol { list-style: decimal; }
+  .wiki-toc li { margin: 0.15em 0; }
+  .wiki-toc a { color: #0645ad; }
+
+  /* Hide the old sidebar author profile, wiki uses infobox */
+  .sidebar, .sidebar.sticky { display: none !important; }
+
+  /* Neutralize the aggressive #about-me negative-margin anchor from _page.scss */
+  .page__content #about-me { margin-top: 0 !important; }
+  .page__content #about-me:before { display: none !important; }
+  h1:before, .anchor:before { display: none !important; }
+
+  /* First heading should hug the top */
+  .page__content > .wiki-title:first-child,
+  .page__content > *:first-child { margin-top: 0 !important; }
+
+  /* Lists tightened */
+  .page__content ul, .page__content ol { margin-left: 1.6em; }
+  .page__content ul li { list-style: disc; }
+
+  /* First paragraph lead */
+  .wiki-lead { font-size: 1.02em; }
+
+  /* Edit-link hover simulation */
+  .page__content h1:hover::after,
+  .page__content h2:hover::after {
+    content: " [edit]";
+    font-size: 0.6em;
+    color: #72777d;
+    vertical-align: middle;
+  }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var content = document.querySelector('.page__content');
+    if (!content) return;
+    var headings = content.querySelectorAll('h1, h2, h3');
+    if (headings.length < 2) return;
+
+    // Assign ids
+    headings.forEach(function (h) {
+      if (!h.id) {
+        h.id = h.textContent.trim().toLowerCase()
+          .replace(/[^\w\u4e00-\u9fa5\s-]/g, '')
+          .replace(/\s+/g, '-');
+      }
+    });
+
+    // Build TOC
+    var toc = document.createElement('div');
+    toc.className = 'wiki-toc';
+    toc.innerHTML = '<div class="toc-title">Contents</div>';
+    var rootOl = document.createElement('ol');
+    var currentH1List = rootOl;
+    var currentH2List = null;
+    headings.forEach(function (h) {
+      var li = document.createElement('li');
+      var a = document.createElement('a');
+      a.href = '#' + h.id;
+      a.textContent = h.textContent.replace(/\s*\[edit\]\s*$/, '');
+      li.appendChild(a);
+      if (h.tagName === 'H1' || h.tagName === 'H2') {
+        rootOl.appendChild(li);
+        currentH2List = null;
+      } else if (h.tagName === 'H3') {
+        if (!currentH2List) {
+          var last = rootOl.lastElementChild;
+          if (!last) { rootOl.appendChild(li); return; }
+          currentH2List = document.createElement('ol');
+          last.appendChild(currentH2List);
+        }
+        currentH2List.appendChild(li);
+      }
+    });
+    toc.appendChild(rootOl);
+
+    var anchor = document.getElementById('wiki-toc-anchor');
+    if (anchor) { anchor.parentNode.insertBefore(toc, anchor); }
+    else { content.insertBefore(toc, headings[0]); }
+  });
+</script>
 
 <!-- end custom head snippets -->

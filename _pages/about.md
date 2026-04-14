@@ -17,15 +17,38 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I'm a second-year CS Ph.D. student @[University of Southern California](https://www.usc.edu/), advised by Prof. [Jieyu Zhao](https://jyzhao.net/index.html). Before that, I was a M.Eng student at Graduated School of Creative Science and Engineering @[Waseda University (早稲田大学)](https://www.waseda.jp/top/en/), Tokyo, supervised by Prof. [Masayuki Goto](http://www.it.mgmt.waseda.ac.jp/) (Japanese only). I also work closely with [Jieyu Zhang](https://jieyuz2.github.io/), who focuses on interactive and data-centric AI/ML.
+<h1 class="wiki-title">Linxin Song</h1>
+<div class="wiki-subtitle">From Linxinpedia, the free encyclopedia</div>
 
-**Research Interests**: My research interest lies in the realm of natural language processing and synthetic data. Specifically, I'm trying to answer the following questions:
+<aside class="wiki-infobox">
+  <div class="ib-title">Linxin Song</div>
+  <img src="images/linxin.jpg" alt="Linxin Song">
+  <table>
+    <tr><th>Born</th><td>—</td></tr>
+    <tr><th>Nationality</th><td>Chinese</td></tr>
+    <tr><th>Occupation</th><td>Ph.D. Student</td></tr>
+    <tr><th>Institution</th><td><a href="https://www.usc.edu/">University of Southern California</a></td></tr>
+    <tr><th>Advisor</th><td><a href="https://jyzhao.net/index.html">Jieyu Zhao</a></td></tr>
+    <tr><th>Fields</th><td>NLP, Synthetic Data, Agentic AI</td></tr>
+    <tr><th>Alma mater</th><td><a href="https://www.waseda.jp/top/en/">Waseda University</a> (M.Eng)</td></tr>
+    <tr><th>Known for</th><td>CoAct-1, SEA, AutoBuild</td></tr>
+    <tr><th>Website</th><td><a href="https://scholar.google.com/citations?user=IjqXzSwAAAAJ">Google Scholar</a></td></tr>
+    <tr><th>Contact</th><td>rm.social.song1<br>@gmail.com</td></tr>
+  </table>
+</aside>
+
+<p class="wiki-lead"><b>Linxin Song</b> is a second-year Computer Science Ph.D. student at the <a href="https://www.usc.edu/">University of Southern California</a>, advised by Prof. <a href="https://jyzhao.net/index.html">Jieyu Zhao</a>. Before that, he was a M.Eng student at the Graduate School of Creative Science and Engineering, <a href="https://www.waseda.jp/top/en/">Waseda University (早稲田大学)</a> in Tokyo, supervised by Prof. <a href="http://www.it.mgmt.waseda.ac.jp/">Masayuki Goto</a> (Japanese only). He also collaborates closely with <a href="https://jieyuz2.github.io/">Jieyu Zhang</a>, whose work centers on interactive and data-centric AI/ML.</p>
+
+<div id="wiki-toc-anchor"></div>
+
+# Research Interests
+
+My research interest lies in the realm of natural language processing and synthetic data. Specifically, I'm trying to answer the following questions:
 - How can we comprehensively evaluate an LLM/VLM in different domains?
 - How can we extend ability of LLM/VLM with minimal costs?
 - How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
 
-
-# 📝 Selected Publications
+# Selected Publications
 (\* denotes equal contribution)
 
 ### Reinforcement Finetuning
@@ -88,18 +111,18 @@ I'm a second-year CS Ph.D. student @[University of Southern California](https://
   <br>*EMNLP 2022 (findings)*.
 
 
-# 🧑‍🏫 Teaching
+# Teaching
 - (TA) DSCI-250: Introduction to Data Science, 2024 Fall
 - (TA) DSCI-566: Deep Learning and its Applications, 2025 Spring
 
 
-# 👨‍💻 Internships
+# Internships
 - Salesforce Research - Research Intern
   <br> 2025.05-2026.01
 - Google
   <br> 2026.02-now
 
 
-# 🏅 Professional Services
+# Professional Services
 - Maintainer of [AG2 (Autogen)](https://ag2.ai/).
 - Reviewer (for multiple years): WACV, KDD, NeurIPS, DMLR, ICLR, AISTATS, ACL, EMNLP, etc
