@@ -104,6 +104,8 @@
     font-size: 0.75em;
     color: #72777d;
   }
+  .page__content a.toc-link::after,
+  .page__content a[href^="#"]::after { content: none !important; }
 
   /* "From Linxinpedia" subtitle */
   .wiki-title {
@@ -236,8 +238,18 @@
     headings.forEach(function (h) {
       var li = document.createElement('li');
       var a = document.createElement('a');
-      a.href = '#' + h.id;
+      a.setAttribute('href', '#' + h.id);
+      a.setAttribute('target', '_self');
+      a.classList.add('toc-link');
       a.textContent = h.textContent.replace(/\s*\[edit\]\s*$/, '');
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        var el = document.getElementById(h.id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', '#' + h.id);
+        }
+      });
       li.appendChild(a);
       if (h.tagName === 'H1' || h.tagName === 'H2') {
         rootOl.appendChild(li);
