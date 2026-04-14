@@ -76,7 +76,7 @@ My research interest lies in the realm of natural language processing and synthe
 
 ### Language Model Evaluation
 - <span class="retro-new">NEW!</span> [The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents](https://arxiv.org/abs/2604.10577)
-  <br>Xuwei Ding*, Skylar Zhai*, **<u>Linxin Song*</u>**, Jiate Li, Taiwei Shi, Nicholas Meade, Siva Reddy, Jian Kang, Jieyu Zhao
+  <br>Xuwei Ding\*, Skylar Zhai\*, **<u>Linxin Song</u>**\*, Jiate Li, Taiwei Shi, Nicholas Meade, Siva Reddy, Jian Kang, Jieyu Zhao
   <br>Preprint
 - <span class="retro-new">NEW!</span> [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
   <br>**<u>Linxin Song</u>**, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Jian Kang, Jieyu Zhao
