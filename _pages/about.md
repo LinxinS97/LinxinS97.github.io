@@ -24,20 +24,22 @@ redirect_from:
   <div class="ib-title">Linxin Song</div>
   <img src="images/linxin.jpg" alt="Linxin Song">
   <table>
-    <tr><th>Born</th><td>—</td></tr>
     <tr><th>Nationality</th><td>Chinese</td></tr>
     <tr><th>Occupation</th><td>Ph.D. Student</td></tr>
     <tr><th>Institution</th><td><a href="https://www.usc.edu/">University of Southern California</a></td></tr>
     <tr><th>Advisor</th><td><a href="https://jyzhao.net/index.html">Jieyu Zhao</a></td></tr>
-    <tr><th>Fields</th><td>NLP, Synthetic Data, Agentic AI</td></tr>
-    <tr><th>Alma mater</th><td><a href="https://www.waseda.jp/top/en/">Waseda University</a> (M.Eng)</td></tr>
-    <tr><th>Known for</th><td>CoAct-1, SEA, AutoBuild</td></tr>
-    <tr><th>Website</th><td><a href="https://scholar.google.com/citations?user=IjqXzSwAAAAJ">Google Scholar</a></td></tr>
-    <tr><th>Contact</th><td>rm.social.song1<br>@gmail.com</td></tr>
+    <tr><th>Fields</th><td>NLP, Agentic AI, Synthetic Data, Post Training</td></tr>
+    <tr><th>Recent Pub.</th><td><a href="https://arxiv.org/abs/2603.10178">ExeVRM</a></td></tr>
+    <tr><th>Websites</th><td>
+      <a href="https://scholar.google.com/citations?user=IjqXzSwAAAAJ">Google Scholar</a><br>
+      <a href="https://x.com/linxins2">X</a>
+      <a href="https://github.com/LinxinS97">Github</a>
+    </td></tr>
+    <tr><th>Contact</th><td>rm[dot]social[dot]song1<br>[at]gmail[dot]com</td></tr>
   </table>
 </aside>
 
-<p class="wiki-lead"><b>Linxin Song</b> is a second-year Computer Science Ph.D. student at the <a href="https://www.usc.edu/">University of Southern California</a>, advised by Prof. <a href="https://jyzhao.net/index.html">Jieyu Zhao</a>. Before that, he was a M.Eng student at the Graduate School of Creative Science and Engineering, <a href="https://www.waseda.jp/top/en/">Waseda University (早稲田大学)</a> in Tokyo, supervised by Prof. <a href="http://www.it.mgmt.waseda.ac.jp/">Masayuki Goto</a> (Japanese only). He also collaborates closely with <a href="https://jieyuz2.github.io/">Jieyu Zhang</a>, whose work centers on interactive and data-centric AI/ML.</p>
+<p class="wiki-lead"><b>Linxin Song</b> is a second-year Computer Science Ph.D. student at the <a href="https://www.usc.edu/">University of Southern California</a>, advised by Prof. <a href="https://jyzhao.net/index.html">Jieyu Zhao</a>. Before that, he was a M.Eng student at the Graduate School of Creative Science and Engineering, <a href="https://www.waseda.jp/top/en/">Waseda University (早稲田大学)</a> in Tokyo, supervised by Prof. <a href="http://www.it.mgmt.waseda.ac.jp/">Masayuki Goto</a>. He also collaborates closely with <a href="https://jieyuz2.github.io/">Jieyu Zhang</a>, whose work centers on interactive and data-centric AI/ML.</p>
 
 <div id="wiki-toc-anchor"></div>
 
