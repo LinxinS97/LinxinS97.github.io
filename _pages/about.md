@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 <h1 class="wiki-title">Linxin Song</h1>
-<div class="wiki-subtitle">From Linxinpedia, the free encyclopedia</div>
+<div class="wiki-subtitle">問い続ける。</div>
 
 <aside class="wiki-infobox">
   <div class="ib-title">Linxin Song</div>
