@@ -119,10 +119,14 @@ My research interest lies in the realm of natural language processing and synthe
 
 
 # Internships
-- Salesforce Research - Research Intern
-  <br> 2025.05-2026.01
+- Microsoft Research
+  <br> Incoming
 - Google
   <br> 2026.02-now
+  <br> Mentor: Jiefeng Chen, Chi Wang
+- Salesforce Research - Research Intern
+  <br> 2025.05-2026.01
+  <br> Mentor: Ran Xu, Caiming Xiong
 
 
 # Professional Services
