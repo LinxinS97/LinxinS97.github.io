@@ -210,6 +210,41 @@
     color: #72777d;
     vertical-align: middle;
   }
+
+  /* Wiki-style video figure */
+  .wiki-video {
+    display: block;
+    max-width: 640px;
+    margin: 0.6em 0 0.4em 0;
+    padding: 4px;
+    border: 1px solid #a2a9b1;
+    background: #f8f9fa;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.08);
+    box-sizing: border-box;
+  }
+  .wiki-video video {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #000;
+    border: 1px solid #c8ccd1;
+    border-radius: 1px;
+  }
+  .wiki-video .wv-caption {
+    padding: 5px 6px 2px 6px;
+    font-size: 0.82em;
+    color: #54595d;
+    font-style: italic;
+    line-height: 1.35;
+    text-align: center;
+  }
+  .wiki-video .wv-caption a {
+    color: #0645ad;
+    font-style: normal;
+  }
+  @media (max-width: 720px) {
+    .wiki-video { max-width: 100%; }
+  }
 </style>
 
 <script>

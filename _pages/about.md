@@ -69,6 +69,13 @@ My research interest lies in the realm of natural language processing and synthe
   <br>**<u>Linxin Song</u>**, Yutong Dai, Viraj Prabhu, Jieyu Zhang, Taiwei Shi, Li Li, Junnan Li, Silvio Savarese, Zeyuan Chen, Jieyu Zhao, Ran Xu, Caiming Xiong
   <br>*ICLR 2026*.
   <br>Covered by: <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/08/07/meet-coact-1-a-novel-multi-agent-system-that-synergistically-combines-gui-based-control-with-direct-programmatic-execution/)</span> | <span style="color:red">[VentureBeat](https://venturebeat.com/ai/salesforces-new-coact-1-agents-dont-just-point-and-click-they-write-code-to-accomplish-tasks-faster-and-with-greater-success-rates/)</span>
+  <figure class="wiki-video">
+    <video controls preload="metadata" playsinline>
+      <source src="assets/videos/coact-1-showcase.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption class="wv-caption">CoAct-1 showcase &mdash; multi-agent computer use combining GUI control with programmatic execution.</figcaption>
+  </figure>
 - [Adaptive In-conversation Team Building for Language Model Agents](https://arxiv.org/abs/2405.19425)
   <br>**<u>Linxin Song</u>**\*, Jiale Liu\*, Jieyu Zhang, Shaokun Zhang, Ao Luo, Shijian Wang, Qingyun Wu, Chi Wang
   <br>*AIA @COLM 2025*.
@@ -81,6 +88,13 @@ My research interest lies in the realm of natural language processing and synthe
 - <span class="retro-new">NEW!</span> [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
   <br>**<u>Linxin Song</u>**, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Jian Kang, Jieyu Zhao
   <br>Preprint
+  <figure class="wiki-video">
+    <video controls preload="metadata" playsinline>
+      <source src="assets/videos/exevrm-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption class="wv-caption">ExeVRM demo &mdash; video-based reward modeling for computer-use agents.</figcaption>
+  </figure>
 - [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
   <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
   <br>*COLM 2025* | [Webpage](https://maksimstw.github.io/papers/sea)
