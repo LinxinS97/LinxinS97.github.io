@@ -45,10 +45,7 @@ redirect_from:
 
 # Research Interests
 
-My research interest lies in the realm of natural language processing and synthetic data. Specifically, I'm trying to answer the following questions:
-- How can we comprehensively evaluate an LLM/VLM in different domains?
-- How can we extend ability of LLM/VLM with minimal costs?
-- How can we let LLM/VLMs collaborate safely, efficiently, and effectively to solve real-world problems?
+I work on multimodal language models and the digital agentic systems they power, spanning data curation, post-training methods, and end-to-end agent design. My current focus is building robust, efficient computer-use and coding agents. I'm also deeply interested in embodied AI, and I'm looking for opportunities to bring paradigms from physical agents into the digital agent space, or vice versa.
 
 # Selected Publications
 (\* denotes equal contribution)
