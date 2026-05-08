@@ -45,7 +45,7 @@ redirect_from:
 
 # Research Interests
 
-I work on multimodal language models and the digital agentic systems they power, spanning data curation, post-training methods, and end-to-end agent design. My current focus is building robust, efficient computer-use and coding agents. I'm also deeply interested in embodied AI, and I'm looking for opportunities to bring paradigms from physical agents into the digital agent space, or vice versa.
+I work on multimodal language models and the digital agentic systems they power, spanning data curation, post-training methods, and end-to-end agent design. My current focus is building robust, efficient computer-use and coding agents. I’m also deeply interested in embodied AI, and I’m looking for opportunities to transfer paradigms between physical agents and digital agents.
 
 # Selected Publications
 (\* denotes equal contribution)
