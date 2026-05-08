@@ -140,7 +140,7 @@ I work on multimodal language models and the digital agentic systems they power,
   <br> Mentor: Jiefeng Chen, Jinsung Yoon
 - Salesforce Research - Research Intern
   <br> 2025.05-2026.01
-  <br> Mentor: Yutong Dai
+  <br> Mentor: Yutong Dai, Zeyuan Chen, Ran Xu
 
 
 # Professional Services
