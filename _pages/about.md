@@ -27,7 +27,7 @@ redirect_from:
     <tr><th>Nationality</th><td>Chinese</td></tr>
     <tr><th>Occupation</th><td>Ph.D. Student</td></tr>
     <tr><th>Institution</th><td><a href="https://www.usc.edu/">University of Southern California</a></td></tr>
-    <tr><th>Advisor</th><td><a href="https://jyzhao.net/index.html">Jieyu Zhao</a></td></tr>
+    <tr><th>(Co-)Advisor</th><td><a href="https://jyzhao.net/index.html">Jieyu Zhao</a> & <a href="https://yuewang.xyz/">Yue Wang</a></td></tr>
     <tr><th>Fields</th><td>NLP, Agentic AI, Synthetic Data, Post Training</td></tr>
     <tr><th>Recent Pub.</th><td><a href="https://arxiv.org/abs/2603.10178">ExeVRM</a></td></tr>
     <tr><th>Websites</th><td>
@@ -39,7 +39,7 @@ redirect_from:
   </table>
 </aside>
 
-<p class="wiki-lead"><b>Linxin Song</b> is a second-year Computer Science Ph.D. student at the <a href="https://www.usc.edu/">University of Southern California</a>, advised by Prof. <a href="https://jyzhao.net/index.html">Jieyu Zhao</a>. Before that, he was a M.Eng student at the Graduate School of Creative Science and Engineering, <a href="https://www.waseda.jp/top/en/">Waseda University (早稲田大学)</a> in Tokyo, supervised by Prof. <a href="http://www.it.mgmt.waseda.ac.jp/">Masayuki Goto</a>. He also collaborates closely with <a href="https://jieyuz2.github.io/">Jieyu Zhang</a>, whose work centers on interactive and data-centric AI/ML.</p>
+<p class="wiki-lead"><b>Linxin Song</b> is a second-year Computer Science Ph.D. student at the <a href="https://www.usc.edu/">University of Southern California</a>, co-advised by Prof. <a href="https://jyzhao.net/index.html">Jieyu Zhao</a> and Prof. <a href="https://yuewang.xyz/">Yue Wang</a>. Before that, he was a M.Eng student at the Graduate School of Creative Science and Engineering, <a href="https://www.waseda.jp/top/en/">Waseda University (早稲田大学)</a> in Tokyo, supervised by Prof. <a href="http://www.it.mgmt.waseda.ac.jp/">Masayuki Goto</a>. He also collaborates closely with <a href="https://jieyuz2.github.io/">Jieyu Zhang</a>, whose work centers on interactive and data-centric AI/ML.</p>
 
 <div id="wiki-toc-anchor"></div>
 
