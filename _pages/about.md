@@ -51,15 +51,26 @@ I work on multimodal language models and the digital agentic systems they power,
 (\* denotes equal contribution)
 
 ### Post Training
+- [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
+  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Jian Kang, Jieyu Zhao
+  <br>*ECCV 2026*
+  <figure class="wiki-video">
+    <video controls preload="metadata" playsinline>
+      <source src="assets/videos/exevrm-demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <figcaption class="wv-caption">ExeVRM demo &mdash; video-based reward modeling for computer-use agents.</figcaption>
+  </figure>
 - [Experiential Reinforcement Learning](https://arxiv.org/abs/2602.13949)
   <br>Taiwei Shi, Sihao Chen, Bowen Jiang, **<u>Linxin Song</u>**, Longqi Yang, Jieyu Zhao
+  <br>Preprint
 - [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
   <br>**<u>Linxin Song</u>**\*, Taiwei Shi\*, Jieyu Zhao
   <br>*EMNLP 2025 (findings)*
   <br>Covered by: [MarkTechPost](https://www.marktechpost.com/2025/06/05/usc-researchers-introduced-sum-synthetic-unanswerable-math-a-synthetic-dataset-to-reduce-hallucination-in-llms-via-reinforcement-fine-tuning/)
 - [Efficient Reinforcement Finetuning via Adaptive Curriculum Learning](https://arxiv.org/abs/2504.05520)
   <br>Taiwei Shi, Yiyang Wu, **<u>Linxin Song</u>**, Tianyi Zhou, Jieyu Zhao
-  <br>Preprint
+  <br>*TMLR*
 
 ### Agentic AI
 - [CoAct-1: Computer-using Multi-Agent System with Coding Actions](https://arxiv.org/abs/2508.03923)
@@ -85,16 +96,6 @@ I work on multimodal language models and the digital agentic systems they power,
 - <span class="retro-new">NEW!</span> [The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents](https://arxiv.org/abs/2604.10577)
   <br>Xuwei Ding\*, Skylar Zhai\*, **<u>Linxin Song</u>**\*, Jiate Li, Taiwei Shi, Nicholas Meade, Siva Reddy, Jian Kang, Jieyu Zhao
   <br>Preprint
-- [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
-  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Jian Kang, Jieyu Zhao
-  <br>*ECCV 2026*
-  <figure class="wiki-video">
-    <video controls preload="metadata" playsinline>
-      <source src="assets/videos/exevrm-demo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="wv-caption">ExeVRM demo &mdash; video-based reward modeling for computer-use agents.</figcaption>
-  </figure>
 - [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
   <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
   <br>*COLM 2025* | [Webpage](https://maksimstw.github.io/papers/sea)
