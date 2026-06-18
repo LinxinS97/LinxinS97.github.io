@@ -79,12 +79,15 @@ I work on multimodal language models and the digital agentic systems they power,
 
 
 ### Language Model Evaluation
+- <span class="retro-new">NEW!</span> [Converted, Not Equivalent: Benchmarking Codebase Conversion via Observational Equivalence](https://arxiv.org/abs/2605.29054)
+  <br>**<u>Linxin Song</u>**, Jiefeng Chen, Yue Huang, Bhavana Dalvi Mishra, Chi Wang, Jieyu Zhao, Jinsung Yoon, Tomas Pfister
+  <br>Preprint
 - <span class="retro-new">NEW!</span> [The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents](https://arxiv.org/abs/2604.10577)
   <br>Xuwei Ding\*, Skylar Zhai\*, **<u>Linxin Song</u>**\*, Jiate Li, Taiwei Shi, Nicholas Meade, Siva Reddy, Jian Kang, Jieyu Zhao
   <br>Preprint
-- <span class="retro-new">NEW!</span> [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
+- [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
   <br>**<u>Linxin Song</u>**, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Jian Kang, Jieyu Zhao
-  <br>Preprint
+  <br>*ECCV 2026*
   <figure class="wiki-video">
     <video controls preload="metadata" playsinline>
       <source src="assets/videos/exevrm-demo.mp4" type="video/mp4">
