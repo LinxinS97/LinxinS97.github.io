@@ -138,13 +138,14 @@ I work on multimodal language models and the digital agentic systems they power,
 
 # Internships
 - Microsoft Research
-  <br> Incoming
+  <br> 2026.06-now
+  <br> Mentor: Baolin Peng and Jianfeng Gao
 - Google
-  <br> 2026.02-now
-  <br> Mentor: Jiefeng Chen, Jinsung Yoon
+  <br> 2026.02-2026.05
+  <br> Mentor: Jiefeng Chen and Jinsung Yoon
 - Salesforce Research - Research Intern
   <br> 2025.05-2026.01
-  <br> Mentor: Yutong Dai, Zeyuan Chen, Ran Xu
+  <br> Mentor: Yutong Dai, Zeyuan Chen, and Ran Xu
 
 
 # Professional Services
