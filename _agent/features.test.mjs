@@ -288,7 +288,7 @@ test('follow-up lookup resolves references from recent conversation and searches
 
 test('second-person and Chinese name references enrich retrieval without altering the original request',async()=>{
   const e={...env,PROFILE:'# About Me\nLinxin Song (宋林鑫) collaborates with Taiwei Shi.\n\n# Agentic AI\nLinxin Song and Taiwei Shi published an agent paper.'};
-  for(const question of ['你发了多少paper','你和taiwei有多少合作','How many papers have you published?','宋林鑫做什么研究？']) {
+  for(const question of ['你发了多少paper','你和taiwei有多少合作','你和taiwei的关系是什么','What is your relationship with Taiwei?','How many papers have you published?','宋林鑫做什么研究？']) {
     const queries=questionQueries(question,[]);
     assert.equal(queries[0],question);assert.ok(queries[1].includes('Linxin Song'));
     assert.ok(searchProfileIndex(buildProfileIndex(e.PROFILE,SECTIONS),queries).matches.length);
@@ -297,6 +297,7 @@ test('second-person and Chinese name references enrich retrieval without alterin
       const messages=JSON.parse(options.body).messages;
       const policy=messages.filter(m=>m.role==='system').map(m=>m.content).join('\n');
       assert.ok(policy.includes('second-person references'));assert.ok(policy.includes('宋林鑫'));
+      assert.ok(policy.includes('publicly documented academic/professional connection'));assert.ok(policy.includes('Previous assistant refusals'));
       assert.equal(messages.find(m=>m.role==='user').content,question);
       return stage++===0?response('check_scope',{allowed:true}):response('observe_page',{});
     });
@@ -304,4 +305,29 @@ test('second-person and Chinese name references enrich retrieval without alterin
   }
   const refused=await runAgent({question:'你帮我编写一个无关程序'},e,origin,async()=>response('check_scope',{allowed:false}));
   assert.equal(refused.type,'refusal');
+});
+
+test('mixed Chinese-English names retrieve full-name coauthor evidence without spurious Latin bigrams',()=>{
+  const profile='# About Me\nLinxin Song studies AI.\n\n# Agentic AI\nLinxin Song, Taiwei Shi coauthored a paper.\n\n# Before Phd\nLinxin Song, Yuehan Qin coauthored another paper.';
+  const index=buildProfileIndex(profile,SECTIONS);
+  for(const [question,section,name] of [['你和taiwei的关系是什么','agentic-ai','taiwei'],['你和yuehan qin的关系是什么','before-phd','qin']]) {
+    const lookup=searchProfileIndex(index,questionQueries(question,[]));
+    assert.equal(lookup.matches[0].section,section);
+    assert.ok(lookup.matches[0].matched.includes(name));
+    assert.ok(lookup.matches.every(match=>!match.matched.includes('ai')));
+  }
+});
+
+test('public connection to an unlisted person is checked afresh after an earlier refusal',async()=>{
+  const e={...env,PROFILE:'# About Me\nLinxin Song (宋林鑫) researches agents.'};
+  const prior=await runAgent({question:'你和yuehan qin的关系是什么'},e,origin,async()=>response('check_scope',{allowed:false,refusal_message:'Earlier mistaken refusal.'}));
+  let stage=0;
+  const result=await runAgent({question:'你和yuehan qin的关系是什么',conversation:prior.conversation},e,origin,async(_,options)=>{
+    const messages=JSON.parse(options.body).messages;
+    const policy=messages.filter(m=>m.role==='system').map(m=>m.content).join('\n');
+    assert.ok(policy.includes('EVEN IF that person is absent'));assert.ok(policy.includes('Previous assistant refusals'));
+    assert.ok(policy.includes('unrelated standalone biography'));
+    return stage++===0?response('check_scope',{allowed:true}):response('observe_page',{});
+  });
+  assert.equal(result.action.name,'observe_page');
 });
