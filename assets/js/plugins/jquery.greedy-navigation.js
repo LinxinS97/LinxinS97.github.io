@@ -14,10 +14,13 @@ var breaks = [];
 
 function updateNav() {
 
+  // The wiki skin hides this navigation; do not measure or recurse on it.
+  if (!$nav.is(':visible')) return;
+
   var availableSpace = $btn.hasClass('hidden') ? $nav.width() : $nav.width() - $btn.width() - 30;
 
   // The visible list is overflowing the nav
-  if($vlinks.width() > availableSpace) {
+  if($vlinks.width() > availableSpace && $vlinks.children().length) {
 
     // Record the width of the list
     breaks.push($vlinks.width());
@@ -52,7 +55,7 @@ function updateNav() {
   $btn.attr("count", breaks.length);
 
   // Recur if the visible list is still overflowing the nav
-  if($vlinks.width() > availableSpace) {
+  if($vlinks.width() > availableSpace && $vlinks.children().length) {
     updateNav();
   }
 

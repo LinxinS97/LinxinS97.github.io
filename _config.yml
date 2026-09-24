@@ -10,6 +10,8 @@ title                    : "Linxin Song"
 description              : "Linxin's Personal Homepage"
 repository               : ""
 google_scholar_stats_use_cdn : true
+# Public proxy origin only; upstream credentials belong in backend Secrets.
+page_agent_endpoint        : "https://linxin-page-agent.rm-social-song1.workers.dev"
 
 # google analytics
 google_analytics_id      :  # get google_analytics_id from https://analytics.google.com/analytics/
@@ -65,6 +67,20 @@ include:
   - _pages
   - files
 exclude:
+  - _agent
+  - .env
+  - .env.local
+  - ".env.*"
+  - .dev.vars
+  - ".dev.vars*"
+  - .wrangler
+  - "*.sqlite*"
+  - "*.db"
+  - "*.db-*"
+  - "*.pem"
+  - "*.key"
+  - "secrets*.json"
+  - wrangler.toml
   - docs
   - google_scholar_crawler
   - "*.sublime-project"

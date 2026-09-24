@@ -1,0 +1,33 @@
+<section class="research-console page-agent" aria-label="Linxin's page agent" data-endpoint="{{ site.page_agent_endpoint | default: '' | escape }}">
+  <div class="page-agent-shell">
+    <div class="page-agent-top"><span class="page-agent-brand"><span aria-hidden="true">⌘</span> LINXIN <span class="page-agent-slash">/</span> PAGE AGENT</span><span class="page-agent-status" role="status">CONNECTING</span><button class="page-agent-minimize" type="button" aria-label="Minimize agent" aria-expanded="true" hidden>−</button></div>
+    <div class="page-agent-hero">
+      <div><div class="page-agent-eyebrow">A CONVERSATION WITH MY PERSONAL AGENT</div><p>Ask me <em>anything.</em></p></div>
+    </div>
+    <p class="page-agent-intro">My research, the papers behind it, and the people I work with.<br>Explore my profile and the pages it links to.</p>
+    <div class="page-agent-session" hidden>
+      <div class="page-agent-history" aria-label="Previous conversation"></div>
+      <div class="page-agent-current">
+      <div class="page-agent-question"></div>
+      <ol class="page-agent-trace" aria-label="Page actions"></ol>
+      <div class="page-agent-answer" aria-live="polite" aria-atomic="true"></div>
+      <div class="page-agent-sources" aria-label="Answer sources"></div>
+      </div>
+    </div>
+    <form class="page-agent-form">
+      <label class="visually-hidden" for="page-agent-question">Ask about Linxin Song</label>
+      <textarea id="page-agent-question" name="question" rows="2" maxlength="1200" placeholder="What would you like to know about Linxin?" required></textarea>
+      <div class="page-agent-form-actions"><button class="page-agent-stop" type="button" hidden>Stop</button><button class="page-agent-send" type="submit" disabled>Ask <span aria-hidden="true">↗</span></button></div>
+    </form>
+    <div class="page-agent-suggestions" aria-label="Suggested questions">
+      <button type="button" data-question="What is Linxin working on?">Research focus <span aria-hidden="true">↗</span></button>
+      <button type="button" data-question="Read CoAct-1 and ExeVRM and compare their methods.">Compare papers <span aria-hidden="true">↗</span></button>
+      <button type="button" data-question="Tell me about Linxin's education and advisors.">Background <span aria-hidden="true">↗</span></button>
+      <button type="button" data-question="Where has Linxin interned?">Experience <span aria-hidden="true">↗</span></button>
+      <button type="button" data-question="I would like to leave Linxin a message.">Leave me a message <span aria-hidden="true">↗</span></button>
+    </div>
+    <div class="page-agent-conversation-bar"><span class="page-agent-quota" role="status">10 questions / day</span><button class="page-agent-new-chat" type="button">New chat</button></div>
+    <div class="page-agent-footer"><button class="page-agent-return" type="button" hidden>Back to console ↑</button></div>
+    <noscript><p class="page-agent-intro">Enable JavaScript to use the page agent. All profile information is available below.</p></noscript>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+name = "linxin-page-agent"
+main = "worker.mjs"
+compatibility_date = "2026-09-01"
+preview_urls = false
+
+[build]
+command = "node build-profile.mjs"
+
+[vars]
+ALLOWED_ORIGINS = "https://linxins97.github.io,https://linxins.net"
+
+# OPENROUTER_API_KEY, OPENROUTER_BASE_URL, VISITOR_HASH_SECRET and RESEND_API_KEY must be Worker Secrets.
+# Configure MESSAGE_FROM (a verified Resend sender) and MESSAGE_TO on the backend too.
+# Never add either value to this file or to the Jekyll config.
+[[ratelimits]]
+name = "RATE_LIMITER"
+namespace_id = "1001"
+simple = { limit = 60, period = 60 }
+
+[[ratelimits]]
+name = "GLOBAL_LIMITER"
+namespace_id = "1002"
+simple = { limit = 180, period = 60 }
+
+[[durable_objects.bindings]]
+name = "VISITOR_QUOTA"
+class_name = "VisitorQuota"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["VisitorQuota"]

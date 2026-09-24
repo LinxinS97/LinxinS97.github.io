@@ -1,0 +1,18 @@
+{% capture profile_markdown %}{% include profile.md %}{% endcapture %}
+{% assign chapters = profile_markdown | split: '<!-- section -->' %}
+{% capture newline %}
+{% endcapture %}
+<div class="profile-document">
+{% for chapter in chapters %}
+  {% assign chapter_text = chapter | strip %}
+  {% if chapter_text != '' %}
+    {% assign chapter_heading = chapter_text | split: newline | first %}
+    {% assign chapter_title = chapter_heading | remove_first: '# ' | strip %}
+    {% assign chapter_id = chapter_title | slugify %}
+    <details class="profile-chapter">
+      <summary id="{{ chapter_id }}"><span class="chapter-title">{{ chapter_title | escape }}</span><span class="chapter-description">{% case chapter_title %}{% when 'About Me' %}Background &amp; contact{% when 'Research Interests' %}What I'm working on{% when 'Selected Publications' %}Papers &amp; demos{% when 'Teaching' %}Courses at USC{% when 'Internships' %}Research experience{% when 'Professional Services' %}Community &amp; reviewing{% endcase %}</span><span class="chapter-toggle" aria-hidden="true"></span></summary>
+      <div class="profile-chapter-body">{{ chapter_text | remove_first: chapter_heading | strip | markdownify }}</div>
+    </details>
+  {% endif %}
+{% endfor %}
+</div>

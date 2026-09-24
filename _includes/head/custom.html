@@ -246,65 +246,9 @@
     .wiki-video { max-width: 100%; }
   }
 </style>
+<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
+<link rel="stylesheet" href="{{ '/assets/css/page-agent.css' | relative_url }}">
 
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var content = document.querySelector('.page__content');
-    if (!content) return;
-    var headings = content.querySelectorAll('h1, h2, h3');
-    if (headings.length < 2) return;
 
-    // Assign ids
-    headings.forEach(function (h) {
-      if (!h.id) {
-        h.id = h.textContent.trim().toLowerCase()
-          .replace(/[^\w\u4e00-\u9fa5\s-]/g, '')
-          .replace(/\s+/g, '-');
-      }
-    });
-
-    // Build TOC
-    var toc = document.createElement('div');
-    toc.className = 'wiki-toc';
-    toc.innerHTML = '<div class="toc-title">Contents</div>';
-    var rootOl = document.createElement('ol');
-    var currentH1List = rootOl;
-    var currentH2List = null;
-    headings.forEach(function (h) {
-      var li = document.createElement('li');
-      var a = document.createElement('a');
-      a.setAttribute('href', '#' + h.id);
-      a.setAttribute('target', '_self');
-      a.classList.add('toc-link');
-      a.textContent = h.textContent.replace(/\s*\[edit\]\s*$/, '');
-      a.addEventListener('click', function (e) {
-        e.preventDefault();
-        var el = document.getElementById(h.id);
-        if (el) {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.replaceState(null, '', '#' + h.id);
-        }
-      });
-      li.appendChild(a);
-      if (h.tagName === 'H1' || h.tagName === 'H2') {
-        rootOl.appendChild(li);
-        currentH2List = null;
-      } else if (h.tagName === 'H3') {
-        if (!currentH2List) {
-          var last = rootOl.lastElementChild;
-          if (!last) { rootOl.appendChild(li); return; }
-          currentH2List = document.createElement('ol');
-          last.appendChild(currentH2List);
-        }
-        currentH2List.appendChild(li);
-      }
-    });
-    toc.appendChild(rootOl);
-
-    var anchor = document.getElementById('wiki-toc-anchor');
-    if (anchor) { anchor.parentNode.insertBefore(toc, anchor); }
-    else { content.insertBefore(toc, headings[0]); }
-  });
-</script>
 
 <!-- end custom head snippets -->
