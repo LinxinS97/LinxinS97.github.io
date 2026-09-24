@@ -23,7 +23,7 @@ test('search enables the bounded plugin and admits only annotated public sources
     const body = JSON.parse(options.body);
     assert.deepEqual(body.plugins, [{ id: 'web', engine: 'exa', max_results: 5 }]);
     assert.equal(body.model, 'openai/gpt-6-luna');
-    assert.equal(body.reasoning.effort, 'high');
+    assert.equal(body.reasoning.effort, 'low');
     assert.ok(!options.body.includes(env.OPENROUTER_API_KEY));
     return Response.json({ choices: [{ message: { content: 'Search notes', annotations: [annotation('javascript:alert(1)'), annotation('http://127.0.0.1/'), ...Array.from({length:7}, (_, i) => annotation('https://research.example.org/' + i))] } }] });
   });

@@ -81,7 +81,7 @@ function configured(env) {
 async function complete(env, messages, tools, name, fetcher) {
   return modelRequest(env, { model: MODEL, messages, tools, parallel_tool_calls: false,
     tool_choice: name ? { type: 'function', function: { name } } : 'required',
-    reasoning: { effort: 'high' }, max_tokens: 3200
+    reasoning: { effort: 'medium' }, max_tokens: 3200
   }, fetcher, { validate: body => cleanCompletion(body, tools) });
 }
 function cleanCompletion(body, tools) {

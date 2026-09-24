@@ -12,7 +12,7 @@ function provider(calls) {
   return async (url, options) => {
     const body = JSON.parse(options.body);
     assert.equal(body.model, 'openai/gpt-6-luna');
-    assert.equal(body.reasoning.effort, 'high');
+    assert.equal(body.reasoning.effort, 'medium');
     assert.ok(!options.body.includes(env.OPENROUTER_API_KEY));
     const [name, args] = calls[index++] || [];
     assert.ok(name, 'No unexpected model calls');
