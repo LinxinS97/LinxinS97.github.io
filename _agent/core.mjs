@@ -6,6 +6,7 @@ import { linkCatalog, linkDirectory, searchLinks, readLink } from './links.mjs';
 import { messageReady, validateMessage, sendVisitorMessage, MessageError } from './messages.mjs';
 import cleanAgentAnswer from '../assets/js/agent-text.js';
 import { searchWeb } from './web-search.mjs';
+import { citationPool, citationTool, verifiedAnswer } from './citations.mjs';
 export const MODEL = 'openai/gpt-6-luna';
 export const PAPER_READ_LIMIT = 12;
 export const READ_BATCH = 3;
@@ -274,6 +275,8 @@ export async function runAgent(input, env, origin, fetcher = fetch) {
   const messageFlow = ['collect', 'send', 'retry'].includes(state.messageIntent);
   const remainingReads = Math.max(0, PAPER_READ_LIMIT - state.paperReads);
   const remainingSearches = Math.max(0, 2 - state.searches);
+  const pool = citationPool(state, ids, catalogById, linksById);
+  const answerTool = citationTool(TOOLS.find(tool => tool.function.name === 'answer_profile'), pool);
   const availableTools = TOOLS.filter(tool => {
     const name = tool.function.name;
     if (['message_reply', 'send_message'].includes(name)) return messageFlow && (name !== 'send_message' || state.messageIntent === 'send');
@@ -283,6 +286,7 @@ export async function runAgent(input, env, origin, fetcher = fetch) {
     if (name === 'web_search') return remainingSearches > 0;
     return true;
   }).map(tool => {
+    if (tool.function.name === 'answer_profile') return answerTool;
     const field = tool.function.name === 'read_paper' ? 'paper_ids' : undefined;
     if (!field) return tool;
     const copy = structuredClone(tool);
@@ -291,16 +295,34 @@ export async function runAgent(input, env, origin, fetcher = fetch) {
   });
   const mailStatus = messageFlow ? { ready: messageReady(env), ...(env.MESSAGE_LEDGER ? (await env.MESSAGE_LEDGER('message_status')).messageQuota : { limit: 2 }) } : undefined;
   const budget = `\nCURRENT TURN BUDGET: ${remainingReads} paper reads remaining (${Math.min(READ_BATCH, remainingReads)} per action), ${remainingSearches} web searches remaining, ${Math.max(0, 8 - state.steps)} tool steps remaining. Profile/context reads through read_context do not consume the paper allowance. Ordinary webpage batches remain at most 3 sources per action. Never exceed these limits. When a budget is exhausted, use the evidence already retrieved to answer; explain incomplete coverage in the user's language and suggest a focused follow-up if needed. Never imply unread sources were read.`;
-  const messages = [{ role: 'system', content: systemPrompt(env.PROFILE, catalog, links, state.documents, mailStatus) + budget }, ...state.history, ...state.messages];
+  const messages = [{ role: 'system', content: systemPrompt(env.PROFILE, catalog, links, state.documents, mailStatus) + budget + '\nVERIFIED CITATIONS AVAILABLE NOW: ' + JSON.stringify(pool) + '\nOnly these IDs may be cited. A section appearing in the profile index is not yet read. If needed, read it with read_context first. Omit a citation array when empty by using [].', }, ...state.history, ...state.messages];
   let message = await complete(env, messages, availableTools,
     messageFlow ? null : state.steps === 0 ? 'observe_page' : state.steps === 8 ? 'answer_profile' : null, fetcher);
   let parsed = parseCall(message);
   // Recover once if a model ignores an exhausted budget. Never execute that read/search.
   if (!messageFlow && ['read_paper', 'read_context', 'web_search'].includes(parsed.name) && !availableTools.some(tool => tool.function.name === parsed.name)) {
-    const finals = TOOLS.filter(tool => ['answer_profile', 'refuse_request'].includes(tool.function.name));
+    const finals = [answerTool, TOOLS.find(tool => tool.function.name === 'refuse_request')];
     message = await complete(env, [...messages, message, { role: 'tool', tool_call_id: parsed.call.id, content: JSON.stringify({ ok: false, error: 'Retrieval budget exhausted. Answer using only the already retrieved evidence and disclose any incomplete coverage.' }) }], finals, 'answer_profile', fetcher);
     parsed = parseCall(message);
     if (!finals.some(tool => tool.function.name === parsed.name)) fail(502, 'The agent could not finish its answer. Please try a more focused question.');
+  }
+  if (parsed.name === 'answer_profile') {
+    if (!availableTools.some(tool => tool.function.name === parsed.name)) fail(502, 'An unsupported page action was blocked.');
+    let verified = verifiedAnswer(parsed.args, pool);
+    if (!verified && !state.answerRepairs && Object.values(pool).some(values => values.length)) {
+      state.answerRepairs = 1;
+      const correction = { role: 'tool', tool_call_id: parsed.call.id, content: JSON.stringify({ ok: false, error: 'Invalid citations. Rewrite the answer using only verified evidence and citation IDs below. Remove claims unsupported by those sources; do not just attach another source to the same claims. Do not describe this internal validation to the visitor.', verified_citations: pool }) };
+      try {
+        const repaired = parseCall(await complete(env, [...messages, message, correction], [answerTool], 'answer_profile', fetcher));
+        if (repaired.name === 'answer_profile') verified = verifiedAnswer(repaired.args, pool);
+      } catch (error) {
+        if (!(error instanceof AgentError)) throw error;
+      }
+    }
+    if (!verified) return finish('answer', /[\u3400-\u9fff]/.test(state.question)
+      ? '目前获取的资料不足以可靠地回答这个问题。请缩小问题范围，或指定希望核对的来源。'
+      : 'The available sources are not sufficient to answer this reliably. Please narrow the question or specify a source to check.');
+    parsed.args = verified;
   }
   const { call, name: toolName, args } = parsed;
   if (!availableTools.some(tool => tool.function.name === toolName)) fail(502, 'An unsupported page action was blocked.');
@@ -332,7 +354,6 @@ export async function runAgent(input, env, origin, fetcher = fetch) {
   if (name === 'answer_profile') {
     const paperSources = args.paper_sources || [];
     const linkSources = args.link_sources || [];
-    if (typeof args.answer !== 'string' || !args.answer.trim() || args.answer.length > 14000 || !Array.isArray(args.sources) || !Array.isArray(paperSources) || !Array.isArray(linkSources) || (!args.sources.length && !paperSources.length && !linkSources.length) || args.sources.length > 9 || !args.sources.every(id => ids.includes(id) && state.read.includes(id)) || paperSources.length + linkSources.length > 32 || !paperSources.every(id => state.documents[id] && catalogById.has(id)) || !linkSources.every(id => ((state.documents[id]?.kind === 'webpage' && linksById.has(id)) || state.documents[id]?.kind === 'websearch'))) fail(502, 'The agent could not verify its answer against the page. Please try again.');
     return finish('answer', args.answer, [...new Set(args.sources)].map(id => ({ id, title: SECTIONS[id] })), [...new Set(paperSources)].map(id => {
       const { title, url } = catalogById.get(id); return { id, title, url };
     }), [...new Set(linkSources)].map(id => {

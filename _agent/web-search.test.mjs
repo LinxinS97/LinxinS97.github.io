@@ -73,8 +73,8 @@ test('a third search is blocked, and invented search citations are rejected', as
     };
     let result=await runAgent({question:'Search Linxin research'},env,'https://profile.example.org',fetcher);
     const finish = async()=>{while(result.type==='action') result=await runAgent({state:result.state,result:observed},env,'https://profile.example.org',fetcher);};
-    if(forged) await assert.rejects(finish,/verify/);
-    else { await finish(); assert.equal(result.type,'answer'); }
+    await finish(); assert.equal(result.type,'answer');
+    if(forged) { assert.ok(!result.answer.includes('Invented')); assert.deepEqual(result.links,[]); }
     assert.equal(searches,forged?0:2);
   }
 });
@@ -95,5 +95,6 @@ test('unrelated requests stop before search and failed searches cannot become ci
     return call('answer_profile',{answer:'Invented.',sources:[],paper_sources:[],link_sources:['search:0000000000000000']});
   };
   let result=await runAgent({question:'Search Linxin research'},env,'https://profile.example.org',fetcher);
-  await assert.rejects(async()=>{while(result.type==='action')result=await runAgent({state:result.state,result:observed},env,'https://profile.example.org',fetcher);},/verify/);
+  while(result.type==='action')result=await runAgent({state:result.state,result:observed},env,'https://profile.example.org',fetcher);
+  assert.ok(!result.answer.includes('Invented')); assert.deepEqual(result.links,[]);
 });

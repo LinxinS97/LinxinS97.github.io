@@ -74,14 +74,19 @@ test('unlisted IDs, unread citations and failed reads cannot become answer sourc
     ['answer_profile', { answer: 'Invented', sources: [], paper_sources: [], link_sources: [id] }]]) {
     const model = provider([['check_scope', { allowed: true }], ['observe_page', {}], tool]);
     const initial = await runAgent({ question: 'Tell me about Mirela' }, env, 'https://profile.example.org', model);
-    await assert.rejects(runAgent({ state: initial.state, result: observed }, env, 'https://profile.example.org', model));
+    if (tool[0] === 'read_context') await assert.rejects(runAgent({ state: initial.state, result: observed }, env, 'https://profile.example.org', model));
+    else {
+      const result = await runAgent({ state: initial.state, result: observed }, env, 'https://profile.example.org', model);
+      assert.ok(!result.answer.includes('Invented')); assert.deepEqual(result.links, []);
+    }
   }
   const model = provider([['check_scope', { allowed: true }], ['observe_page', {}], ['read_context', { link_ids: [id] }],
     ['answer_profile', { answer: 'Invented', sources: [], paper_sources: [], link_sources: [id] }]]);
   const e = { ...env, SOURCE_FETCH: async () => new Response('Denied', { status: 403 }) };
   let result = await runAgent({ question: 'Tell me about Mirela' }, e, 'https://profile.example.org', model);
   result = await runAgent({ state: result.state, result: observed }, e, 'https://profile.example.org', model);
-  await assert.rejects(runAgent({ state: result.state, result: observed }, e, 'https://profile.example.org', model), /verify/);
+  const unavailable = await runAgent({ state: result.state, result: observed }, e, 'https://profile.example.org', model);
+  assert.ok(unavailable.answer.includes('not sufficient')); assert.deepEqual(unavailable.links, []);
 });
 test('webpage excerpts expire with their citing conversation step', () => {
   const history = [{ role: 'user', content: 'Mirela?' }, { role: 'assistant', content: 'Source references: ' + id }];

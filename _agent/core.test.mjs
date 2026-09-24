@@ -55,7 +55,10 @@ test('arbitrary navigation and code tools are blocked server-side', async () => 
 test('answer without focused evidence is rejected', async () => {
   const fetcher = provider([['check_scope', { allowed: true }], ['observe_page', {}], ['answer_profile', { answer: 'Invented.', sources: ['about-me'] }]]);
   const initial = await runAgent({ question: 'His advisors?' }, env, origin, fetcher);
-  await assert.rejects(runAgent({ state: initial.state, result: { ok: true, text: 'index' } }, env, origin, fetcher), /verify/);
+  const result = await runAgent({ state: initial.state, result: { ok: true, text: 'index' } }, env, origin, fetcher);
+  assert.ok(result.answer.includes('not sufficient'));
+  assert.ok(!result.answer.includes('Invented'));
+  assert.deepEqual(result.sources, []);
 });
 test('API rejects foreign origins, oversized input and rate excess before inference', async () => {
   const never = () => assert.fail('No model call expected');
