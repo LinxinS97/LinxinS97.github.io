@@ -95,6 +95,27 @@ test('last paper batch is clamped to remaining allowance instead of failing the 
   assert.equal(reads,12);assert.equal(r.papers.length,12);
 });
 
+test('twenty actions are allowed and the next response must finish using retrieved evidence',async()=>{
+  let actions=0, charges=0, steps=0;
+  const e={...env,BILLING:async type=>{if(type==='reserve')charges++;if(type==='step')steps++;}};
+  const fetcher=async(_,options)=>{
+    const body=JSON.parse(options.body);
+    if(body.tools[0].function.name==='check_scope')return call('check_scope',{allowed:true});
+    if(actions===20){
+      assert.equal(body.tool_choice.function.name,'answer_profile');
+      assert.deepEqual(body.tools.map(tool=>tool.function.name),['answer_profile','refuse_request']);
+      return call('answer_profile',{answer:'An overview grounded in the profile.',sources:['about-me']});
+    }
+    actions++;
+    return actions===1?call('observe_page',{}):call('read_context',{section:'about-me'});
+  };
+  let result=await runAgent({question:'tell me everything about linxin'},e,'https://profile.example.org',fetcher);
+  let continuations=0;
+  while(result.type==='action'&&continuations++<21)result=await runAgent({state:result.state,result:observed},e,'https://profile.example.org',fetcher);
+  assert.equal(result.type,'answer');assert.equal(result.sources[0].id,'about-me');
+  assert.equal(actions,20);assert.equal(steps,20);assert.equal(charges,1);
+});
+
 test('current-turn notes preserve early evidence with a UTF-8 byte bound; later memory still has six documents',()=>{
   const documents=Object.fromEntries(Array.from({length:20},(_,i)=>['source:'+i,{notes:'研究结果'.repeat(4000)}]));
   const bounded=turnDocuments(documents);

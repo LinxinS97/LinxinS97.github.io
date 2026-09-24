@@ -12,7 +12,7 @@ export const MODEL = 'openai/gpt-6-luna';
 export const PAPER_READ_LIMIT = 12;
 export const READ_BATCH = 3;
 export const WEB_SEARCH_LIMIT = 10;
-export const ACTION_STEP_LIMIT = 16;
+export const ACTION_STEP_LIMIT = 20;
 export const INTRODUCTION = '我是 Linxin Song 的 personal agent，我可以操作这个页面来获取你想要的信息。也可以读取主页列出的论文和链接，介绍相关人物与项目，进行多轮讨论，并帮助你给 Linxin 留言。';
 export const SECTIONS = {
   'about-me': 'Biography & contact',
