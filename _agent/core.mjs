@@ -47,8 +47,8 @@ export const TOOLS = [
   functionTool('observe_page', 'Read the actual profile section index and current browser viewport.'),
   functionTool('find_on_page', 'Search the profile for a short literal term, such as CoAct, advisor, or a person name. Returns section IDs and text matches.', { query: { type: 'string' } }),
   functionTool('read_paper', 'Read the actual full contents of one to three catalog publications and extract notes on methods, results, limitations or comparisons. Only this tool consumes the 12-paper allowance per question. Use this for paper contents; abstracts and page titles are insufficient.', { paper_ids: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 3 } }),
-  functionTool('read_context', 'Silently read either a profile section (section ID, empty link_ids) OR one to three ordinary catalog webpages (empty section, link_ids). These context reads do not consume the paper allowance. No scrolling or highlighting; citations navigate only when clicked. Use read_paper for detailed paper contents.', {
-    section: { type: 'string', enum: ['', ...ids], description: 'Section to read, or empty string when reading external context.' },
+  functionTool('read_context', 'Silently read a profile section, one to three ordinary catalog webpages, or both together. You may combine a section with related links, such as biography plus advisor homepages. Empty targets default to the biography. These context reads do not consume the paper allowance. No scrolling or highlighting; citations navigate only when clicked. Use read_paper for detailed paper contents.', {
+    section: { type: 'string', enum: ['', ...ids], description: 'Optional profile section to read; may be combined with link_ids. Empty string skips the section when links are present.' },
     link_ids: { type: 'array', items: { type: 'string' }, minItems: 0, maxItems: 3 },
     query: { type: 'string', description: 'Search terms for external context, with English equivalents for English sources; may be empty for a profile section.' }
   }),
@@ -216,6 +216,13 @@ export async function runAgent(input, env, origin, fetcher = fetch) {
       for (const document of documents) if (document.notes) state.documents[document.id] = document;
       state.documents = turnDocuments(state.documents);
       toolResult = { ok: true, links: documents.map(({ notes, ...metadata }) => ({ ...metadata, available: Boolean(notes) })) };
+      if (state.pending.args.section) {
+        const section = state.pending.args.section;
+        // Combined context is read from the authoritative server profile, not client claims.
+        const text = buildProfileIndex(env.PROFILE, SECTIONS).records.filter(record => record.section === section).map(record => record.text).join('\n').slice(0, 8000);
+        toolResult.section = { id: section, text, available: Boolean(text) };
+        if (text) state.read.push(section);
+      }
     } else if (result.ok && state.pending.name === 'focus_section') state.read.push(state.pending.args.section);
     state.messages.push({ role: 'tool', tool_call_id: state.pending.id, content: JSON.stringify(toolResult) });
     state.messages = recentTools(state.messages);
@@ -300,10 +307,13 @@ export async function runAgent(input, env, origin, fetcher = fetch) {
   if (toolName === 'read_context') {
     args.section ??= '';
     args.link_ids ??= [];
-    if (typeof args.section !== 'string' || !Array.isArray(args.link_ids) || (Boolean(args.section) === Boolean(args.link_ids.length))) fail(502, 'Choose either a profile section or listed webpage context.');
+    if (typeof args.section !== 'string' || !Array.isArray(args.link_ids)) fail(502, 'The agent requested invalid context parameters.');
+    if (args.section && !ids.includes(args.section)) fail(502, 'An out-of-scope page target was blocked.');
+    if (!args.section && !args.link_ids.length) args.section = 'about-me';
+    call.function.arguments = JSON.stringify(args);
   }
   // Keep the browser action protocol and pending old sessions compatible across deployment.
-  const name = toolName === 'read_paper' ? 'read_papers' : toolName === 'read_context' ? (args.section ? 'focus_section' : 'read_links') : toolName;
+  const name = toolName === 'read_paper' ? 'read_papers' : toolName === 'read_context' ? (args.link_ids.length ? 'read_links' : 'focus_section') : toolName;
   if (name === 'message_reply') {
     if (typeof args.reply !== 'string' || !args.reply.trim() || args.reply.length > 1200) fail(502, 'Invalid message reply.');
     return finish('answer', args.reply);

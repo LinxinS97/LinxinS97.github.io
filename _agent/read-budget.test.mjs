@@ -47,6 +47,37 @@ test('more than six ordinary pages do not spend paper quota',async()=>{
   assert.equal(r.links.length,9);
 });
 
+test('context accepts a section and links together, grounding both on the server',async()=>{
+  let stage=0;
+  const r=await finish(async(_,options)=>{
+    const body=JSON.parse(options.body);
+    if(stage++===0)return call('check_scope',{allowed:true});
+    if(stage===2)return call('observe_page',{});
+    if(stage===3)return call('read_context',{section:'about-me',link_ids:links.slice(0,2),query:'research'});
+    const result=JSON.parse(body.messages.filter(m=>m.role==='tool').at(-1).content);
+    assert.equal(result.section.id,'about-me');
+    assert.ok(result.section.text.includes('Linxin Song researches agents'));
+    assert.equal(result.links.length,2);
+    assert.ok(body.messages[0].content.includes('12 paper reads remaining'));
+    return call('answer_profile',{answer:'Profile and external context agree.',sources:['about-me'],paper_sources:[],link_sources:links.slice(0,2)});
+  });
+  assert.equal(r.type,'answer');assert.equal(r.sources.length,1);assert.equal(r.links.length,2);
+});
+
+test('empty context targets default to biography; combined invalid targets remain blocked',async()=>{
+  for(const args of [{section:'',link_ids:[],query:''},{section:null,link_ids:null},{section:'invalid-section',link_ids:[links[0]]},{section:'about-me',link_ids:['https://unlisted.example.org/']}]) {
+    let stage=0;
+    const fetcher=async()=>{
+      if(stage++===0)return call('check_scope',{allowed:true});
+      if(stage===2)return call('observe_page',{});
+      if(stage===3)return call('read_context',args);
+      return call('answer_profile',{answer:'Biography read.',sources:['about-me'],paper_sources:[],link_sources:[]});
+    };
+    if(args.section==='invalid-section'||args.link_ids?.[0]?.startsWith('https:'))await assert.rejects(finish(fetcher),/blocked|invalid linked source/);
+    else assert.equal((await finish(fetcher)).type,'answer');
+  }
+});
+
 test('last paper batch is clamped to remaining allowance instead of failing the conversation',async()=>{
   let stage=0, reads=0;
   const batches=[papers.slice(0,2),papers.slice(2,5),papers.slice(5,8),papers.slice(8,11),[papers[11],papers[12],papers[0]]];
