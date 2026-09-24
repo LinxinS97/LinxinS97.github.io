@@ -60,14 +60,21 @@ test('a third search is blocked, and invented search citations are rejected', as
   for(const forged of [false,true]) {
     let stage=0, searches=0;
     const fetcher=async(_,options)=>{
-      if(JSON.parse(options.body).plugins) {searches++;return evidence();}
+      const body = JSON.parse(options.body);
+      if(body.plugins) {searches++;return evidence();}
+      if(body.tools.every(tool => ['answer_profile', 'refuse_request'].includes(tool.function.name))) {
+        const id = body.messages[0].content.match(/search:[a-f0-9]{16}/)[0];
+        return call('answer_profile',{answer:'Search budget used; these are the retrieved findings.',sources:[],paper_sources:[],link_sources:[id]});
+      }
       if(stage++===0) return call('check_scope',{allowed:true});
       if(stage===2) return call('observe_page',{});
       if(forged) return call('answer_profile',{answer:'Invented.',sources:[],paper_sources:[],link_sources:['search:0000000000000000']});
       return call('web_search',{query:'Linxin Song research'});
     };
     let result=await runAgent({question:'Search Linxin research'},env,'https://profile.example.org',fetcher);
-    await assert.rejects(async()=>{while(result.type==='action') result=await runAgent({state:result.state,result:observed},env,'https://profile.example.org',fetcher);},forged?/verify/:/two focused/);
+    const finish = async()=>{while(result.type==='action') result=await runAgent({state:result.state,result:observed},env,'https://profile.example.org',fetcher);};
+    if(forged) await assert.rejects(finish,/verify/);
+    else { await finish(); assert.equal(result.type,'answer'); }
     assert.equal(searches,forged?0:2);
   }
 });

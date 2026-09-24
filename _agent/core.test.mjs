@@ -26,7 +26,7 @@ test('unrelated requests stop before any page action', async () => {
 });
 test('real tool loop requires observed evidence and emits only cited final output', async () => {
   const fetcher = provider([
-    ['check_scope', { allowed: true }], ['observe_page', {}], ['focus_section', { section: 'about-me' }],
+    ['check_scope', { allowed: true }], ['observe_page', {}], ['read_context', { section: 'about-me' }],
     ['answer_profile', { answer: 'His advisors are Jieyu Zhao and Yue Wang.', sources: ['about-me'] }]
   ]);
   let result = await runAgent({ question: 'His advisors?' }, env, origin, fetcher);
@@ -46,7 +46,7 @@ test('forged continuation and cross-origin replay cannot call the model', async 
   await assert.rejects(runAgent({ state: result.state, result: { ok: true, text: 'hi' } }, env, 'https://attacker.invalid', never), /invalid/);
 });
 test('arbitrary navigation and code tools are blocked server-side', async () => {
-  for (const tool of [['focus_section', { section: 'https://attacker.invalid' }], ['execute_javascript', { code: 'alert(1)' }]]) {
+  for (const tool of [['read_context', { section: 'https://attacker.invalid' }], ['execute_javascript', { code: 'alert(1)' }]]) {
     const fetcher = provider([['check_scope', { allowed: true }], ['observe_page', {}], tool]);
     const initial = await runAgent({ question: 'His papers?' }, env, origin, fetcher);
     await assert.rejects(runAgent({ state: initial.state, result: { ok: true, text: 'index' } }, env, origin, fetcher), /blocked/);

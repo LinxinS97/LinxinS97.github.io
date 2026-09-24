@@ -55,7 +55,7 @@ test('URL, address, redirect and response limits prevent unintended fetches', as
 test('linked-page answers require server retrieval; one question is charged once across tools', async () => {
   let charges = 0, reads = 0;
   const e = { ...env, BILLING: async type => { if (type === 'reserve') charges++; }, SOURCE_FETCH: async () => { reads++; return new Response(html, { headers: { 'Content-Type': 'text/html' } }); } };
-  const model = provider([['check_scope', { allowed: true }], ['observe_page', {}], ['read_links', { link_ids: [id] }],
+  const model = provider([['check_scope', { allowed: true }], ['observe_page', {}], ['read_context', { link_ids: [id] }],
     ['answer_profile', { answer: 'Mirela studies interactive robots at Aurora University.', sources: [], paper_sources: [], link_sources: [id] }]]);
   let result = await runAgent({ question: 'What does Mirela research?' }, e, 'https://profile.example.org', model);
   while (result.type === 'action') result = await runAgent({ state: result.state, result: observed }, e, 'https://profile.example.org', model);
@@ -70,13 +70,13 @@ test('linked-page answers require server retrieval; one question is charged once
   });
 });
 test('unlisted IDs, unread citations and failed reads cannot become answer sources', async () => {
-  for (const tool of [['read_links', { link_ids: ['https://unlisted.example.org/'] }],
+  for (const tool of [['read_context', { link_ids: ['https://unlisted.example.org/'] }],
     ['answer_profile', { answer: 'Invented', sources: [], paper_sources: [], link_sources: [id] }]]) {
     const model = provider([['check_scope', { allowed: true }], ['observe_page', {}], tool]);
     const initial = await runAgent({ question: 'Tell me about Mirela' }, env, 'https://profile.example.org', model);
     await assert.rejects(runAgent({ state: initial.state, result: observed }, env, 'https://profile.example.org', model));
   }
-  const model = provider([['check_scope', { allowed: true }], ['observe_page', {}], ['read_links', { link_ids: [id] }],
+  const model = provider([['check_scope', { allowed: true }], ['observe_page', {}], ['read_context', { link_ids: [id] }],
     ['answer_profile', { answer: 'Invented', sources: [], paper_sources: [], link_sources: [id] }]]);
   const e = { ...env, SOURCE_FETCH: async () => new Response('Denied', { status: 403 }) };
   let result = await runAgent({ question: 'Tell me about Mirela' }, e, 'https://profile.example.org', model);

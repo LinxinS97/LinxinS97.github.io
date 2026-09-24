@@ -1,5 +1,18 @@
 export const MEMORY_STEPS = 5;
+export const TURN_DOCUMENT_LIMIT = 32; // Current tool-step bound plus up to six retained prior sources.
 const encoder = new TextEncoder();
+
+// Keep all sources from this turn available for comparison, with a fixed text budget.
+export function turnDocuments(documents) {
+  const entries = Object.entries(documents).slice(-TURN_DOCUMENT_LIMIT);
+  const perDocumentBytes = Math.floor(96000 / Math.max(1, entries.length));
+  return Object.fromEntries(entries.map(([id, document]) => {
+    const bytes = encoder.encode(document.notes || '');
+    if (bytes.length <= perDocumentBytes) return [id, document];
+    const notes = new TextDecoder().decode(bytes.slice(0, perDocumentBytes), { stream: true });
+    return [id, { ...document, notes, truncated: true }];
+  }));
+}
 
 // One conversation step is a complete user/assistant exchange.
 export function recentHistory(history = []) {
