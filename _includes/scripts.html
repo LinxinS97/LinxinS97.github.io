@@ -1,6 +1,9 @@
 <script src="assets/js/main.min.js"></script>
 <script src="{{ '/assets/js/profile.js' | relative_url }}"></script>
-<script src="{{ '/assets/js/agent-text.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/markdown/marked-18.0.14.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/markdown/dompurify-3.4.16.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/agent-text.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+<script src="{{ '/assets/js/agent-output.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 <script src="{{ '/assets/js/research.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
 
 {% include analytics.html %}

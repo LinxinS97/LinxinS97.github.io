@@ -15,6 +15,7 @@ test('internal citation blocks and raw IDs disappear without removing ordinary b
   assert.equal(cleanAnswer('See [agentic-ai](#agentic-ai).'), 'See.');
   assert.equal(cleanAnswer('Result [search:1234567812345678] link:1234567812345678'), 'Result');
   assert.equal(cleanAnswer('Intervals [1, 2] and [post-training results] matter.'), 'Intervals [1, 2] and [post-training results] matter.');
+  assert.equal(cleanAnswer('- Parent\n  - Child\n\n```python\nif ready:\n    print("hello")\n```'), '- Parent\n  - Child\n\n```python\nif ready:\n    print("hello")\n```');
 });
 
 test('search enables the bounded plugin and admits only annotated public sources', async () => {

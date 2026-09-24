@@ -152,7 +152,7 @@
     displayHistory.forEach(function (turn) {
       var wrapper = document.createElement('div'); wrapper.className = 'page-agent-past-turn';
       var question = document.createElement('div'); question.className = 'page-agent-question'; question.textContent = turn.question;
-      var reply = document.createElement('div'); reply.className = 'page-agent-answer'; reply.textContent = cleanAgentAnswer(turn.answer);
+      var reply = document.createElement('div'); reply.className = 'page-agent-answer'; agentOutput.render(reply, turn.answer);
       var references = document.createElement('div'); references.className = 'page-agent-sources';
       renderSources(references, turn.sources, turn.papers, turn.links);
       wrapper.append(question, reply, references); historyElement.appendChild(wrapper);
@@ -302,15 +302,25 @@
           payload = { state: data.state, result: result };
         } else if (data.type === 'answer' || data.type === 'refusal') {
           if (data.deliveryPending === false) saveDelivery('');
-          answer.textContent = cleanAgentAnswer(data.answer);
-          renderSources(sources, data.sources, data.papers, data.links);
           conversation = data.conversation || '';
           displayHistory.push({ question: question, answer: data.answer, sources: data.sources || [], papers: data.papers || [], links: data.links || [] });
           displayHistory = displayHistory.slice(-20);
           saveConversation();
+          announce('WRITING ANSWER', 'working');
+          stop.textContent = 'Skip animation';
+          session.scrollTop = session.scrollHeight;
+          var followAnswer = true;
+          function trackAnswerScroll() { followAnswer = session.scrollHeight - session.scrollTop - session.clientHeight < 48; }
+          session.addEventListener('scroll', trackAnswerScroll, { passive: true });
+          try {
+            await agentOutput.type(answer, data.answer, { signal: controller.signal, reducedMotion: reducedMotion.matches,
+              onProgress: function () { if (followAnswer) session.scrollTop = session.scrollHeight; }
+            });
+          } finally { session.removeEventListener('scroll', trackAnswerScroll); }
+          renderSources(sources, data.sources, data.papers, data.links);
           input.value = '';
           input.placeholder = 'Ask a follow-up about the people, papers, or projects…';
-          session.scrollTop = session.scrollHeight;
+          if (followAnswer) session.scrollTop = session.scrollHeight;
           announce(data.deliveryPending ? 'DELIVERY NOT CONFIRMED' : data.deliveryPending === false ? 'MESSAGE STATUS UPDATED' : data.type === 'refusal' ? 'PROFILE QUESTIONS ONLY' : 'ANSWER GROUNDED', data.type === 'refusal' ? 'restricted' : 'ready');
           return;
         } else throw new Error('The agent returned an unsupported response.');
@@ -319,7 +329,7 @@
     } catch (error) {
       answer.textContent = error.name === 'AbortError' ? 'Stopped. You can ask another question.' : error.message === 'Failed to fetch' ? 'Cannot reach the page agent. Check that its backend is running, then try again.' : error.message;
       announce(error.name === 'AbortError' ? 'STOPPED' : 'CONNECTION ERROR', 'error');
-    } finally { activeController = null; clearPointer(); setBusy(false); }
+    } finally { stop.textContent = 'Stop'; activeController = null; clearPointer(); setBusy(false); }
   }
   form.addEventListener('submit', function (event) { event.preventDefault(); ask(input.value.trim()); });
   newChat.addEventListener('click', function () {

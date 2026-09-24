@@ -1,0 +1,11 @@
+Markdown rendering dependencies, vendored without modification from npm:
+
+marked 18.0.14 — https://github.com/markedjs/marked — MIT (marked-LICENSE.txt)
+Source: https://registry.npmjs.org/marked/-/marked-18.0.14.tgz
+
+DOMPurify 3.4.16 — https://github.com/cure53/DOMPurify — Apache-2.0 OR MPL-2.0 (dompurify-LICENSE.txt)
+Source: https://registry.npmjs.org/dompurify/-/dompurify-3.4.16.tgz
+
+Package SHA-512 integrity was checked against npm metadata before extraction.
+Only sanitized Markdown output is inserted; raw HTML, images, styles, scripts,
+forms, SVG and embedded content are not enabled in agent answers.
