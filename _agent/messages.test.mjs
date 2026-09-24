@@ -146,6 +146,29 @@ test('ordinary questions and missing-content intents cannot use the send tool', 
     }
   }
 }));
+
+test('model generation retry before send creates one sealed delivery and never retries mail transport', async () => fixture(async ({ env, ledger }) => {
+  for (const lostResponse of [false, true]) {
+    let sent = 0, attempts = 0;
+    const e = { ...env, ...modelEnv, MAIL_FETCH: async () => {
+      sent++;
+      if (lostResponse) throw new TypeError('Lost mail response');
+      return Response.json({ id: crypto.randomUUID() });
+    } };
+    const provider = model([
+      ['check_scope', { allowed: true, message_intent: 'send' }],
+      ['send_message', { name: '', email: '', message: 'Hello Linxin', ...receipts }]
+    ]);
+    const start = await runAgent({ question: 'Send Linxin this message: Hello Linxin' }, e, 'https://profile.example.org', async (...args) => {
+      if (++attempts === 2) return Response.json({ choices: [{ message: { content: 'Invalid tool response' } }] });
+      return provider(...args);
+    });
+    assert.equal(start.action.name, 'send_message'); assert.equal(attempts, 3);
+    const receipt = await runAgent({ state: start.state }, e, 'https://profile.example.org', () => assert.fail('No generation during mail delivery'));
+    assert.equal(receipt.deliveryPending, lostResponse); assert.equal(sent, 1);
+  }
+  assert.equal((await ledger({ type: 'message_status' })).messageQuota.remaining, 0);
+}));
 test('send tool cannot invent message contents or optional contact information', async () => fixture(async ({ env }) => {
   for (const fields of [{ message: 'Invented body', email: '' }, { message: 'Hello Linxin', email: 'invented@example.org' }]) {
     await assert.rejects(runAgent({ question: 'Please send: Hello Linxin' }, { ...env, ...modelEnv }, 'https://profile.example.org', model([

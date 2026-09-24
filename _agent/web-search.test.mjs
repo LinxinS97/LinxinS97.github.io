@@ -56,7 +56,7 @@ test('search tool retrieves on server, costs one visitor question, returns click
   assert.equal(searches,1); assert.equal(charges,1);
 });
 
-test('a third search is blocked, and invented search citations are rejected', async () => {
+test('ten searches complete; an eleventh search and invented citations are blocked', async () => {
   for(const forged of [false,true]) {
     let stage=0, searches=0;
     const fetcher=async(_,options)=>{
@@ -75,7 +75,7 @@ test('a third search is blocked, and invented search citations are rejected', as
     const finish = async()=>{while(result.type==='action') result=await runAgent({state:result.state,result:observed},env,'https://profile.example.org',fetcher);};
     await finish(); assert.equal(result.type,'answer');
     if(forged) { assert.ok(!result.answer.includes('Invented')); assert.deepEqual(result.links,[]); }
-    assert.equal(searches,forged?0:2);
+    assert.equal(searches,forged?0:10);
   }
 });
 

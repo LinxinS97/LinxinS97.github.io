@@ -1,3 +1,5 @@
+import { modelRequest, invalidModelOutput } from './model-request.mjs';
+
 export function paperCatalog(profile) {
   const papers = [];
   let section = '';
@@ -63,14 +65,11 @@ export async function readPaper(paper, question, env, modelFetch = fetch, source
     { role: 'user', content: [{ type: 'text', text: instruction }, ...(fromHtml ? [{ type: 'text', text: 'ARTICLE TEXT' + (text.length > 150000 ? ' (truncated at 150,000 characters)' : '') + ':\n' + text.slice(0, 150000) }] : [{ type: 'file', file: { filename: 'paper.pdf', file_data: paper.pdf } }])] }
   ] };
   if (!fromHtml) body.plugins = [{ id: 'file-parser', pdf: { engine: 'cloudflare-ai' } }];
-  const response = await modelFetch(env.OPENROUTER_BASE_URL.replace(/\/+$/, '') + '/chat/completions', {
-    method: 'POST', headers: { Authorization: `Bearer ${env.OPENROUTER_API_KEY}`, 'Content-Type': 'application/json' },
-    signal: AbortSignal.timeout(90000), body: JSON.stringify(body)
-  });
-  if (!response.ok) throw new Error('Paper retrieval failed.');
-  const data = await response.json();
-  const notes = data.choices?.[0]?.message?.content;
-  if (typeof notes !== 'string' || notes.trim().length < 40) throw new Error('Paper contents unavailable.');
+  const notes = await modelRequest(env, body, modelFetch, { timeoutMs: 90000, validate: data => {
+    const notes = data?.choices?.[0]?.message?.content;
+    if (typeof notes !== 'string' || notes.trim().length < 40) invalidModelOutput('Paper contents unavailable.');
+    return notes;
+  } });
   return { id: paper.id, title: paper.title, url: paper.url, section: paper.section,
     format: fromHtml ? 'HTML' : 'PDF', truncated: fromHtml && text.length > 150000, notes: notes.slice(0, 8000) };
 }

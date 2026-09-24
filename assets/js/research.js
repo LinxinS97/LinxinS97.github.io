@@ -289,7 +289,8 @@
     announce('CHECKING SCOPE', 'working');
     try {
       var payload = { question: question, conversation: conversation, requestId: crypto.randomUUID(), pendingDelivery: pendingDelivery || undefined };
-      for (var step = 0; step < 10; step++) {
+      // Up to 16 backend actions, followed by the final answer.
+      for (var step = 0; step < 17; step++) {
         var data = await post(payload, controller.signal);
         if (controller.signal.aborted) throw new DOMException('Stopped', 'AbortError');
         if (data.type === 'action') {
