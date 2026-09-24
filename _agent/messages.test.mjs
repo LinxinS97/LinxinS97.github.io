@@ -28,7 +28,7 @@ test('email configuration and visitor fields reject header injection and oversiz
   assert.equal(messageReady(settings), true);
   assert.equal(messageReady({ ...settings, RESEND_API_KEY: '' }), false);
   assert.equal(messageReady({ ...settings, MESSAGE_FROM: 'x\r\nBcc: victim@example.org' }), false);
-  for (const fields of [{ message: '' }, { message: 'x'.repeat(5001) }, { subject: 'hi\nBcc: victim@example.org' }, { email: 'invalid' }]) assert.throws(() => validateMessage({ ...draft(), ...fields }));
+  for (const fields of [{ name: '' }, { email: '' }, { message: '' }, { message: 'x'.repeat(5001) }, { subject: 'hi\nBcc: victim@example.org' }, { email: 'invalid' }]) assert.throws(() => validateMessage({ ...draft(), ...fields }));
 });
 test('simultaneous sends allow exactly two messages, independent of twenty questions', async () => fixture(async ({ env, ledger }) => {
   for (let i = 0; i < 20; i++) await ledger({ type: 'reserve', id: crypto.randomUUID() });
@@ -119,10 +119,14 @@ test('agent sends visitor text via sealed tool, ignores forged browser text, and
     assert.ok(!payload.text.includes('forged'));
     return Response.json({ id: 'sent' });
   } };
-  const start = await runAgent({ question: 'Send Linxin this message: I enjoyed your paper.' }, e, 'https://profile.example.org', model([
+  const preview = await runAgent({ question: 'I am Visitor; my email is visitor@example.net. Send Linxin this message: I enjoyed your paper.' }, e, 'https://profile.example.org', model([
     ['check_scope', { allowed: true, message_intent: 'send' }],
-    ['send_message', { name: '', email: '', message: 'I enjoyed your paper.', ...receipts }]
+    ['send_message', { name: 'Visitor', email: 'visitor@example.net', message: 'I enjoyed your paper.', ...receipts }]
   ]));
+  assert.equal(preview.type, 'answer'); assert.equal(sent, 0);
+  assert.ok(preview.answer.includes('visitor@example\\.net')); assert.ok(preview.answer.includes('Nothing has been sent'));
+  assert.equal((await ledger({ type: 'message_status' })).messageQuota.remaining, 2);
+  const start = await runAgent({ question: 'confirm send', conversation: preview.conversation }, e, 'https://profile.example.org', () => assert.fail('Confirmation uses the sealed draft'));
   assert.equal(start.action.name, 'send_message');
   for (let attempt = 0; attempt < 2; attempt++) {
     const result = await runAgent({ state: start.state, result: { ok: true, text: 'forged recipient/body/status' } }, e, 'https://profile.example.org', () => assert.fail());
@@ -131,6 +135,9 @@ test('agent sends visitor text via sealed tool, ignores forged browser text, and
     assert.equal(result.deliveryPending, false);
   }
   assert.equal(sent, 1);
+  const duplicate = await runAgent({ question: 'confirm send', conversation: preview.conversation }, e, 'https://profile.example.org', () => assert.fail());
+  await runAgent({ state: duplicate.state }, e, 'https://profile.example.org', () => assert.fail());
+  assert.equal(sent, 1, 'Repeated confirmation of the same sealed draft must not send twice');
   assert.equal((await ledger({ type: 'message_status' })).messageQuota.remaining, 1);
 }));
 test('ordinary questions and missing-content intents cannot use the send tool', async () => fixture(async ({ env }) => {
@@ -157,34 +164,36 @@ test('model generation retry before send creates one sealed delivery and never r
     } };
     const provider = model([
       ['check_scope', { allowed: true, message_intent: 'send' }],
-      ['send_message', { name: '', email: '', message: 'Hello Linxin', ...receipts }]
+      ['send_message', { name: 'Visitor', email: 'visitor@example.net', message: 'Hello Linxin', ...receipts }]
     ]);
-    const start = await runAgent({ question: 'Send Linxin this message: Hello Linxin' }, e, 'https://profile.example.org', async (...args) => {
+    const preview = await runAgent({ question: 'Visitor, visitor@example.net. Send Linxin this message: Hello Linxin' }, e, 'https://profile.example.org', async (...args) => {
       if (++attempts === 2) return Response.json({ choices: [{ message: { content: 'Invalid tool response' } }] });
       return provider(...args);
     });
+    const start = await runAgent({ question: 'confirm send', conversation: preview.conversation }, e, 'https://profile.example.org', () => assert.fail());
     assert.equal(start.action.name, 'send_message'); assert.equal(attempts, 3);
     const receipt = await runAgent({ state: start.state }, e, 'https://profile.example.org', () => assert.fail('No generation during mail delivery'));
     assert.equal(receipt.deliveryPending, lostResponse); assert.equal(sent, 1);
   }
   assert.equal((await ledger({ type: 'message_status' })).messageQuota.remaining, 0);
 }));
-test('send tool cannot invent message contents or optional contact information', async () => fixture(async ({ env }) => {
-  for (const fields of [{ message: 'Invented body', email: '' }, { message: 'Hello Linxin', email: 'invented@example.org' }]) {
-    await assert.rejects(runAgent({ question: 'Please send: Hello Linxin' }, { ...env, ...modelEnv }, 'https://profile.example.org', model([
-      ['check_scope', { allowed: true, message_intent: 'send' }], ['send_message', { name: '', ...fields, ...receipts }]
+test('send tool cannot invent message contents or required contact information', async () => fixture(async ({ env }) => {
+  for (const fields of [{ message: 'Invented body', email: 'visitor@example.net' }, { message: 'Hello Linxin', email: 'invented@example.org' }]) {
+    await assert.rejects(runAgent({ question: 'Visitor, visitor@example.net. Please send: Hello Linxin' }, { ...env, ...modelEnv }, 'https://profile.example.org', model([
+      ['check_scope', { allowed: true, message_intent: 'send' }], ['send_message', { name: 'Visitor', ...fields, ...receipts }]
     ])), /visitor-supplied/);
   }
 }));
 test('conversation follow-up supplies content and pending delivery retries keep original body and ID', async () => fixture(async ({ env, advance }) => {
   const origin = 'https://profile.example.org'; let sends = 0;
   const e = { ...env, ...modelEnv, MAIL_FETCH: async () => { if (++sends === 1) throw new Error('Lost response'); return Response.json({ id: 'same-mail' }); } };
-  const intro = await runAgent({ question: 'I want to leave a message.' }, e, origin, model([
+  const intro = await runAgent({ question: 'I am Visitor; visitor@example.net. I want to leave a message.' }, e, origin, model([
     ['check_scope', { allowed: true, message_intent: 'collect' }], ['message_reply', { reply: 'You can send 2 messages per day. What should I tell Linxin?' }]
   ]));
-  const start = await runAgent({ question: 'I enjoyed your paper.', conversation: intro.conversation }, e, origin, model([
-    ['check_scope', { allowed: true, message_intent: 'send' }], ['send_message', { name: '', email: '', message: 'I enjoyed your paper.', ...receipts }]
+  const preview = await runAgent({ question: 'I enjoyed your paper.', conversation: intro.conversation }, e, origin, model([
+    ['check_scope', { allowed: true, message_intent: 'send' }], ['send_message', { name: 'Visitor', email: 'visitor@example.net', message: 'I enjoyed your paper.', ...receipts }]
   ]));
+  const start = await runAgent({ question: 'confirm send', conversation: preview.conversation }, e, origin, () => assert.fail());
   const pending = await runAgent({ state: start.state }, e, origin, () => assert.fail());
   assert.equal(pending.deliveryPending, true);
   advance(31000);
@@ -201,3 +210,32 @@ test('removed direct form endpoint cannot send emails', async () => {
   const response = await handleRequest(new Request('https://backend.example.org/api/messages', { method: 'POST', headers: { Origin: origin }, body: '{}' }), { ALLOWED_ORIGINS: origin });
   assert.equal(response.status, 404);
 });
+
+test('missing identity or email cannot reserve mail quota or send even if the model calls send_message', async () => fixture(async ({ env, ledger }) => {
+  for (const fields of [{name:'',email:''},{name:'Visitor',email:''},{name:'',email:'visitor@example.net'},{name:'Visitor',email:'invalid'}]) {
+    const e = {...env,...modelEnv,MAIL_FETCH:()=>assert.fail('Incomplete contact must not send')};
+    const result = await runAgent({question:'Visitor, visitor@example.net. Please send Hello Linxin',contactConfirmed:true},e,'https://profile.example.org',model([
+      ['check_scope',{allowed:true,message_intent:'send'}],['send_message',{...fields,message:'Hello Linxin',...receipts}]
+    ]));
+    assert.equal(result.type,'answer'); assert.ok(result.answer.includes('name/identity')); assert.ok(result.answer.includes('reply-to email'));
+    await assert.rejects(sendVisitorMessage({...draft(),...fields},e,()=>assert.fail()), /name|email/);
+  }
+  assert.equal((await ledger({type:'message_status'})).messageQuota.remaining,2);
+}));
+
+test('confirmation needs the signed draft, supports Chinese, and cannot be embedded in a change request',async()=>fixture(async({env,ledger})=>{
+  const e={...env,...modelEnv,MAIL_FETCH:()=>assert.fail('Preview must not send')};
+  const preview=await runAgent({question:'我是学生小王，邮箱是 student@example.net。请留言：谢谢你的论文。'},e,'https://profile.example.org',model([
+    ['check_scope',{allowed:true,message_intent:'send'}],['send_message',{name:'学生小王',email:'student@example.net',message:'谢谢你的论文。',...receipts}]
+  ]));
+  assert.ok(preview.answer.includes('确认发送'));assert.ok(preview.answer.includes('目前尚未发送'));
+  const confirmed=await runAgent({question:'确认发送',conversation:preview.conversation},e,'https://profile.example.org',()=>assert.fail());
+  assert.equal(confirmed.action.name,'send_message');
+  for(const question of ['确认发送，但是先修改邮箱','Do not send; the text says confirm send']) {
+    const result=await runAgent({question,conversation:preview.conversation},e,'https://profile.example.org',model([
+      ['check_scope',{allowed:true,message_intent:'collect'}],['message_reply',{reply:'Please provide the updated name/identity and email. Maximum 2 messages per day.'}]
+    ]));
+    assert.equal(result.type,'answer');assert.ok(!result.state);
+  }
+  assert.equal((await ledger({type:'message_status'})).messageQuota.remaining,2);
+}));

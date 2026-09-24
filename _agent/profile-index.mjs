@@ -1,4 +1,5 @@
 // Generated from owner-controlled Markdown on every request; no named-entity allowlist.
+export const PROFILE_REFERENCE_RULE = 'Linxin Song is also named 宋林鑫. In questions about biography, publications, research or collaborations, second-person references (you, your, 你, 您) refer to Linxin Song by default: for example asking how many papers you published or how many collaborations you have with Taiwei asks about Linxin. Resolve this subject before scope classification, retrieval and web search. Questions about the agent itself (who are you, your capabilities, tools or limits) still refer to the personal agent. Do not claim to be Linxin; name Linxin/宋林鑫 as the subject in answers rather than addressing the visitor as the researcher. Answer using evidence. This reference rule does not authorize unrelated tasks or private information.';
 const stopWords = new Set(('a an the is are was were be been being what which who where when why how do does did can could would should will of for to in on at by with about me my his her their its it this that these those they them he she you your i we our and or as tell explain please 什么 是什么 如何 怎么 哪里 哪个 请问 一下 关于 介绍').split(' '));
 const normalize = text => text.normalize('NFKC').toLocaleLowerCase().normalize('NFD').replace(/\p{M}/gu, '');
 function tokens(text) {
@@ -58,6 +59,11 @@ export function searchProfileIndex(index, queries) {
 }
 export function questionQueries(question, history) {
   const queries = [question];
+  // Enrich retrieval only; preserve the visitor's original words for conversation
+  // and verbatim mail validation. A name match is never a scope authorization.
+  if (/\b(?:you|your|yours|yourself)\b|你|您|宋林鑫/i.test(question)) {
+    queries.push(question.replace(/\b(?:you|your|yours|yourself)\b|你|您|宋林鑫/gi, ' Linxin Song '));
+  }
   if (tokens(question).length === 0 || /\b(it|its|they|them|their|this|that|first|second|former|latter)\b|这个|那个|它|他们|第一|第二|前者|后者/i.test(question)) {
     const previous = [...history].reverse().find(message => message.role === 'user');
     if (previous) queries.push(previous.content);

@@ -16,7 +16,8 @@ export function validateMessage(input) {
     draft[key] = value.trim();
   }
   if (!draft.message) throw new MessageError(400, 'Please write a message for Linxin.');
-  if (draft.email && !emailPattern.test(draft.email)) throw new MessageError(400, 'Please enter a valid reply-to email, or leave it blank.');
+  if (!draft.name) throw new MessageError(400, 'Please provide your name or identity before sending.');
+  if (!emailPattern.test(draft.email)) throw new MessageError(400, 'Please provide a valid reply-to email before sending.');
   draft.subject ||= 'Website visitor message';
   return draft;
 }

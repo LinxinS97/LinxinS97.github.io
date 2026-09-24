@@ -285,3 +285,23 @@ test('follow-up lookup resolves references from recent conversation and searches
   assert.ok(lookup.matches.length <= 5);
   assert.ok(lookup.matches.every(match => match.text.length <= 1400));
 });
+
+test('second-person and Chinese name references enrich retrieval without altering the original request',async()=>{
+  const e={...env,PROFILE:'# About Me\nLinxin Song (宋林鑫) collaborates with Taiwei Shi.\n\n# Agentic AI\nLinxin Song and Taiwei Shi published an agent paper.'};
+  for(const question of ['你发了多少paper','你和taiwei有多少合作','How many papers have you published?','宋林鑫做什么研究？']) {
+    const queries=questionQueries(question,[]);
+    assert.equal(queries[0],question);assert.ok(queries[1].includes('Linxin Song'));
+    assert.ok(searchProfileIndex(buildProfileIndex(e.PROFILE,SECTIONS),queries).matches.length);
+    let stage=0;
+    const result=await runAgent({question},e,origin,async(_,options)=>{
+      const messages=JSON.parse(options.body).messages;
+      const policy=messages.filter(m=>m.role==='system').map(m=>m.content).join('\n');
+      assert.ok(policy.includes('second-person references'));assert.ok(policy.includes('宋林鑫'));
+      assert.equal(messages.find(m=>m.role==='user').content,question);
+      return stage++===0?response('check_scope',{allowed:true}):response('observe_page',{});
+    });
+    assert.equal(result.action.name,'observe_page');
+  }
+  const refused=await runAgent({question:'你帮我编写一个无关程序'},e,origin,async()=>response('check_scope',{allowed:false}));
+  assert.equal(refused.type,'refusal');
+});
