@@ -6,6 +6,9 @@ const ID = /^[A-Za-z0-9_-]{6,32}$/;
 const text = (value, limit = 300) => typeof value === 'string' ? value.slice(0, limit) : '';
 const number = value => Number.isSafeInteger(value) && value >= 0 ? value : null;
 const normalize = value => value.normalize('NFKC').trim().replace(/\s+/g, ' ').toLowerCase();
+class ScholarProviderError extends Error {
+  constructor(code) { super('Scholar provider unavailable.'); this.code = code; }
+}
 export const scholarURL = id => 'https://scholar.google.com/citations?user=' + encodeURIComponent(id);
 export function scholarID(value) {
   try {
@@ -27,7 +30,7 @@ export function scholarOperation(input) {
   throw new Error('Invalid Scholar lookup.');
 }
 async function jsonResponse(response) {
-  if (!response.ok) { await response.body?.cancel(); throw new Error('Scholar provider unavailable.'); }
+  if (!response.ok) { await response.body?.cancel(); throw new ScholarProviderError('http_' + response.status); }
   const reader = response.body.getReader(), chunks = [];
   let size = 0;
   try {
@@ -43,7 +46,7 @@ async function jsonResponse(response) {
   let offset = 0;
   for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
   const data = JSON.parse(new TextDecoder().decode(bytes));
-  if (data.error || data.search_metadata?.status !== 'Success') throw new Error('Scholar lookup failed.');
+  if (data.error || data.search_metadata?.status !== 'Success') throw new ScholarProviderError('invalid_provider_result');
   return data;
 }
 function authorData(data, op) {
@@ -115,7 +118,10 @@ export function createScholarService(storage, env, fetcher = fetch, clock = Date
         } catch { /* Use indexed discovery only when the listed homepage fails. */ }
       }
     }
-    if (!env.SERPAPI_API_KEY) return fallback();
+    if (!env.SERPAPI_API_KEY) {
+      console.warn('ScholarDiagnostic', 'missing_secret');
+      return fallback();
+    }
     // A global persistent request ceiling bounds paid misses across all visitors.
     const admitted = await storage.transaction(async tx => {
       const day = new Date(now).toISOString().slice(0, 10);
@@ -140,11 +146,15 @@ export function createScholarService(storage, env, fetcher = fetch, clock = Date
         const quote = value => '"' + value.replace(/["\\]/g, ' ') + '"';
         url.searchParams.set('q', 'site:scholar.google.com/citations intitle:' + quote(op.name) + (op.context ? ' ' + op.context.replace(/[^\p{L}\p{N}\s-]/gu, ' ') : ''));
       }
-      const data = await jsonResponse(await fetcher(url.href, { redirect: 'error', signal: AbortSignal.timeout(25000), headers: { Accept: 'application/json' } }));
+      // Workers supports manual/follow redirects. Reject 3xx in jsonResponse;
+      // never follow a provider redirect carrying the API key in its URL.
+      const data = await jsonResponse(await fetcher(url.href, { redirect: 'manual', signal: AbortSignal.timeout(25000), headers: { Accept: 'application/json' } }));
       const result = op.type === 'author' ? authorData(data, op) : candidatesData(data, op);
       // Expensive calls are not blindly retried. Failures receive a short cooldown.
       return await save(result);
-    } catch {
+    } catch (error) {
+      // Never log provider URLs, bodies, keys, queries or full error messages.
+      console.warn('ScholarDiagnostic', error instanceof ScholarProviderError ? error.code : ['TimeoutError', 'AbortError', 'SyntaxError', 'TypeError'].includes(error?.name) ? error.name : 'retrieval_failed');
       await writeCache(op.key, { ...cached, retryAfter: now + 300000 });
       return fallback();
     }
@@ -161,7 +171,10 @@ export class ScholarCache {
   constructor(ctx, env) { this.service = createScholarService(ctx.storage, env); }
   async fetch(request) {
     try { return Response.json(await this.service.execute(await request.json())); }
-    catch { return Response.json({ ok: false, error: 'Scholar lookup unavailable.' }); }
+    catch (error) {
+      console.warn('ScholarDiagnostic', 'storage_or_operation_failed', error instanceof TypeError ? 'TypeError' : 'Error');
+      return Response.json({ ok: false, error: 'Scholar lookup unavailable.' });
+    }
   }
 }
 async function sourceID(url) {

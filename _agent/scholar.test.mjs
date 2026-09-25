@@ -29,8 +29,9 @@ async function database(fn) {
 test('author ID cache persists restart, merges concurrent misses, expires in seven days and shares data across queries', async () => {
   await database(async (storage, restart) => {
     let now = Date.now(), calls = 0;
-    const fetcher = async url => {
+    const fetcher = async (url, options) => {
       calls++;
+      assert.equal(options.redirect, 'manual'); // Cloudflare rejects redirect: 'error'.
       const parsed = new URL(url);
       assert.equal(parsed.hostname, 'serpapi.com');
       assert.equal(parsed.searchParams.get('engine'), 'google_scholar_author');
@@ -150,6 +151,19 @@ test('empty discovery is cached; malformed responses and missing keys never beco
     const missing = createScholarService(storage, {}, async () => { throw new Error('Must not fetch'); });
     assert.equal((await missing.execute({ type: 'author', author_id: otherID })).ok, false);
     await assert.rejects(() => missing.execute({ type: 'author', author_id: id, start: 101 }));
+  });
+});
+
+test('provider redirects are rejected without forwarding the API key to another host', async () => {
+  await database(async storage => {
+    let calls = 0;
+    const service = createScholarService(storage, { SERPAPI_API_KEY: 'test-secret' }, async (url, options) => {
+      calls++;
+      assert.equal(new URL(url).hostname, 'serpapi.com'); assert.equal(options.redirect, 'manual');
+      return new Response(null, { status: 302, headers: { Location: 'https://elsewhere.example.org/' } });
+    });
+    const result = await service.execute({ type: 'author', author_id: id });
+    assert.equal(result.ok, false); assert.equal(calls, 1); assert.deepEqual(await scholarDocuments(result), []);
   });
 });
 

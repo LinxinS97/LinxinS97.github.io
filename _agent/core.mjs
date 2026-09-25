@@ -228,7 +228,10 @@ export async function runAgent(input, env, origin, fetcher = fetch) {
         toolResult = { ok: result.ok, cache: result.cache, stale: result.stale, fetchedAt: result.fetchedAt, error: result.error,
           candidates: result.candidates, hasMore: result.hasMore, start: result.start,
           links: documents.map(({ notes, ...metadata }) => metadata) };
-      } catch { toolResult = { ok: false, text: 'Google Scholar lookup unavailable. Do not invent author identity or citation counts.' }; }
+      } catch (error) {
+        console.warn('ScholarDiagnostic', 'agent_adapter_failed');
+        toolResult = { ok: false, text: 'Google Scholar lookup unavailable. Do not invent author identity or citation counts.' };
+      }
     } else if (state.pending.name === 'web_search') {
       try {
         const documents = await searchWeb(state.pending.args.query, state.question, env, fetcher, {
