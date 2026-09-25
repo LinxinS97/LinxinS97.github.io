@@ -13,7 +13,7 @@ const signatures = [
   ['AWS access key', /\b(?:AKIA|ASIA)[A-Z0-9]{16}\b/],
   ['Slack token', /xox[baprs]-[A-Za-z0-9-]{20,}/]
 ];
-const exact = ['OPENROUTER_API_KEY', 'OPENROUTER_BASE_URL', 'RESEND_API_KEY', 'VISITOR_HASH_SECRET']
+const exact = ['OPENROUTER_API_KEY', 'OPENROUTER_BASE_URL', 'RESEND_API_KEY', 'VISITOR_HASH_SECRET', 'SERPAPI_API_KEY']
   .filter(name => (process.env[name] || '').length >= 12).map(name => [name, Buffer.from(process.env[name])]);
 function scan(label, bytes) {
   for (const [name, secret] of exact) if (bytes.includes(secret)) failures.push({ file: label, rule: 'configured ' + name });

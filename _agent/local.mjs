@@ -6,6 +6,7 @@ import { ledgerOperation } from './quota.mjs';
 import { homedir } from 'node:os';
 import { join } from 'node:path';
 import { localSourceFetch } from './local-source-fetch.mjs';
+import { createScholarService } from './scholar.mjs';
 
 function limiter(maximum) {
   const entries = new Map();
@@ -20,6 +21,7 @@ function limiter(maximum) {
 }
 const storage = sqliteStorage(process.env.AGENT_QUOTA_DB || join(homedir(), '.config', 'linxin-page-agent', 'quota.sqlite'));
 const env = { ...process.env, RATE_LIMITER: limiter(60), GLOBAL_LIMITER: limiter(180), LEDGER: { execute: operation => ledgerOperation(storage, operation) } };
+env.SCHOLAR = createScholarService(storage, { ...env, SOURCE_FETCH: localSourceFetch });
 if (!env.OPENROUTER_API_KEY || !env.OPENROUTER_BASE_URL) throw new Error('Provide OPENROUTER_API_KEY and OPENROUTER_BASE_URL through an external env file.');
 const server = http.createServer(async (req, res) => {
   try {

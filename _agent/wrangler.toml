@@ -8,8 +8,9 @@ command = "node build-profile.mjs"
 
 [vars]
 ALLOWED_ORIGINS = "https://linxins97.github.io,https://linxins.net"
+SERPAPI_DAILY_LIMIT = "100"
 
-# OPENROUTER_API_KEY, OPENROUTER_BASE_URL, VISITOR_HASH_SECRET and RESEND_API_KEY must be Worker Secrets.
+# OPENROUTER_API_KEY, OPENROUTER_BASE_URL, VISITOR_HASH_SECRET, RESEND_API_KEY and SERPAPI_API_KEY must be Worker Secrets.
 # Configure MESSAGE_FROM (a verified Resend sender) and MESSAGE_TO on the backend too.
 # Never add either value to this file or to the Jekyll config.
 [[ratelimits]]
@@ -29,3 +30,11 @@ class_name = "VisitorQuota"
 [[migrations]]
 tag = "v1"
 new_sqlite_classes = ["VisitorQuota"]
+
+[[durable_objects.bindings]]
+name = "SCHOLAR_CACHE"
+class_name = "ScholarCache"
+
+[[migrations]]
+tag = "v2"
+new_sqlite_classes = ["ScholarCache"]

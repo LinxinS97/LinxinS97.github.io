@@ -95,7 +95,11 @@ async function fetchPage(link, fetcher) {
     const raw = await boundedText(response);
     const text = /html/i.test(type) ? pageText(raw) : raw.trim();
     if (text.length < 80 || /^(?:Just a moment|Access Denied|Attention Required!)/i.test(text) || /enable javascript and cookies to continue/i.test(text)) throw new Error('Page requires browser access.');
-    const page = { text: text.slice(0, 160000), truncated: text.length > 160000, resolved_url: url.href };
+    const scholarProfiles = /html/i.test(type) ? linkCatalog('', raw).filter(link => {
+      const target = new URL(link.url);
+      return target.protocol === 'https:' && target.hostname === 'scholar.google.com' && target.pathname === '/citations' && /^[A-Za-z0-9_-]{6,32}$/.test(target.searchParams.get('user') || '');
+    }).slice(0, 5).map(({ title, url }) => ({ title, url })) : [];
+    const page = { text: text.slice(0, 160000), truncated: text.length > 160000, resolved_url: url.href, scholarProfiles };
     cache.delete(link.url);
     cache.set(link.url, { page, expires: Date.now() + 15 * 60 * 1000 });
     while (cache.size > 32) cache.delete(cache.keys().next().value);
@@ -110,5 +114,6 @@ export async function readLink(link, question, fetcher = fetch) {
   const excerpts = [...new Set([page.text.slice(0, 2200), ...hits.map(hit => hit.text)])];
   const notes = excerpts.join('\n\n[…]\n\n').slice(0, 8000);
   return { id: link.id, kind: 'webpage', title: link.title, url: link.url, resolved_url: page.resolved_url,
-    format: 'HTML/text excerpts', truncated: page.truncated || page.text.length > notes.length, notes };
+    format: 'HTML/text excerpts', truncated: page.truncated || page.text.length > notes.length,
+    scholarProfiles: page.scholarProfiles, notes: notes + (page.scholarProfiles.length ? '\nScholar profile links found on this page (check whose profile each is): ' + JSON.stringify(page.scholarProfiles) : '') };
 }
