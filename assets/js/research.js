@@ -141,7 +141,7 @@
       var url;
       try { url = new URL(source.url); url.hash = ''; } catch (_) { return; }
       if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password) return;
-      if (!listedLinks.has(url.href) && !/^search:[a-f0-9]{16}$/.test(source.id || '')) return;
+      if (!listedLinks.has(url.href) && !/^(?:search|url):[a-f0-9]{1,16}$/.test(source.id || '')) return;
       var link = document.createElement('a');
       link.href = url.href; link.target = '_blank'; link.rel = 'noopener noreferrer';
       link.textContent = '↗ ' + source.title; container.appendChild(link);
@@ -202,6 +202,14 @@
     if (signal.aborted) throw new DOMException('Stopped', 'AbortError');
     indexSections();
     var args = action.args || {};
+    if (action.name === 'observe_page' && Array.isArray(args.parallel)) {
+      if (args.parallel.length < 2 || args.parallel.length > 4 || args.parallel.some(function (item) {
+        return !['observe_page', 'find_on_page', 'focus_section', 'read_papers', 'read_links', 'web_search'].includes(item.name) || item.args && item.args.parallel;
+      })) throw new Error('Invalid parallel action blocked.');
+      addTrace('PARALLEL · ' + args.parallel.length + ' operations');
+      await Promise.all(args.parallel.map(function (item) { return executeAction(item, signal); }));
+      return { ok: true, text: 'Parallel retrieval progress displayed.' };
+    }
     if (action.name === 'send_message') {
       announce('SENDING MESSAGE', 'working');
       addTrace('SEND · Forwarding your message to Linxin · maximum 2 per day');

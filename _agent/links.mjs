@@ -13,7 +13,7 @@ export function publicURL(value) {
   url.hash = '';
   return url;
 }
-function sourceID(url) {
+export function sourceID(url) {
   // Stable across source reordering; IDs are looked up in the server-owned catalog.
   let hash = 14695981039346656037n;
   for (const byte of new TextEncoder().encode(url)) hash = BigInt.asUintN(64, (hash ^ BigInt(byte)) * 1099511628211n);
