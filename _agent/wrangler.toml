@@ -6,6 +6,9 @@ preview_urls = false
 [build]
 command = "node build-profile.mjs"
 
+[triggers]
+crons = ["*/5 * * * *"]
+
 [vars]
 ALLOWED_ORIGINS = "https://linxins97.github.io,https://linxins.net"
 SERPAPI_DAILY_LIMIT = "100"
@@ -38,3 +41,15 @@ class_name = "ScholarCache"
 [[migrations]]
 tag = "v2"
 new_sqlite_classes = ["ScholarCache"]
+
+[[durable_objects.bindings]]
+name = "PROFILE_SNAPSHOT"
+class_name = "ProfileSnapshot"
+
+[[durable_objects.bindings]]
+name = "AGENT_CONTEXT"
+class_name = "AgentContext"
+
+[[migrations]]
+tag = "v3"
+new_sqlite_classes = ["ProfileSnapshot", "AgentContext"]

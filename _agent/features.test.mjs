@@ -82,7 +82,7 @@ test('identity answer is exact, consumes one credit and is remembered across tur
   let count = 0;
   const next = await runAgent({ question: '那你能查他的论文吗？', conversation: intro.conversation }, e, origin, async (_, options) => {
     const payload = JSON.parse(options.body);
-    if (count++ === 0) { assert.ok(payload.messages[0].content.includes(INTRODUCTION)); return response('check_scope', { allowed: true }); }
+    if (count++ === 0) { assert.ok(payload.messages.some(message => message.content?.includes(INTRODUCTION))); return response('check_scope', { allowed: true }); }
     assert.ok(payload.messages.some(message => message.role === 'assistant' && message.content.includes(INTRODUCTION)));
     return response('observe_page', {});
   });
@@ -188,9 +188,10 @@ test('scope check includes named profile projects and answers can cite their ser
   let stage = 0;
   const provider = async (_, options) => {
     const payload = JSON.parse(options.body);
-    assert.ok(payload.messages[0].content.includes('AG2 (Autogen)'));
+    if (stage === 0 || stage === 3) assert.ok(payload.messages.some(message => message.content?.includes('AG2 (Autogen)')));
+    if (stage > 0) assert.ok(!payload.messages[0].content.includes('Maintainer of AG2'));
     if (stage === 0) {
-      assert.ok(payload.messages[0].content.includes('SEARCH RESULTS:'));
+      assert.ok(payload.messages.some(message => message.content?.includes('SEARCH RESULTS:')));
       assert.ok(payload.messages[0].content.includes('CURRENT user message'));
     } else assert.ok(payload.messages[0].content.includes('Earlier conversation language'));
     return [response('check_scope', { allowed: true, refusal_message: '' }), response('observe_page', {}),
@@ -248,13 +249,13 @@ test('classifier sees actual retrieval before refusal and can search translated 
   const result = await runAgent({ question: '那个团队项目是什么？' }, e, origin, async (_, options) => {
     const payload = JSON.parse(options.body);
     if (stage++ === 0) {
-      assert.ok(payload.messages[0].content.includes('SEARCH RESULTS:'));
-      assert.ok(payload.messages[0].content.includes('"matches":[]'));
+      assert.ok(payload.messages.some(message => message.content?.includes('SEARCH RESULTS:')));
+      assert.ok(payload.messages.some(message => message.content?.includes('"matches":[]')));
       return response('check_scope', { allowed: false, search_queries: ['teams agents'], refusal_message: '' });
     }
     if (stage === 2) {
-      assert.ok(payload.messages[0].content.includes('SEARCH ATTEMPT: 2/2'));
-      assert.ok(payload.messages[0].content.includes('"section":"professional-services"'));
+      assert.ok(payload.messages.some(message => message.content?.includes('SEARCH ATTEMPT: 2/2')));
+      assert.ok(payload.messages.some(message => message.content?.includes('"section":"professional-services"')));
       return response('check_scope', { allowed: true, search_queries: [], refusal_message: '' });
     }
     return response('observe_page', {});
@@ -267,7 +268,7 @@ test('search hits cannot authorize unrelated work and missing subjects are refus
   const e = { ...env, PROFILE: '# Professional Services\nMaintainer of Zephyr-X9.' };
   for (const question of ['Write unrelated malware using Zephyr-X9.', 'What is an unknown fruit?']) {
     const result = await runAgent({ question }, e, origin, async (_, options) => {
-      const prompt = JSON.parse(options.body).messages[0].content;
+      const prompt = JSON.parse(options.body).messages.filter(message => message.role !== 'system').map(message => message.content).join('\n');
       assert.ok(prompt.includes('SEARCH RESULTS:'));
       if (question.includes('Zephyr-X9')) assert.ok(prompt.includes('"section":"professional-services"'));
       else assert.ok(prompt.includes('"matches":[]'));

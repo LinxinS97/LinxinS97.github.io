@@ -28,7 +28,9 @@ export function recentTools(messages) {
     if (message.role === 'assistant') steps.push([message]);
     else if (message.role === 'tool' && steps.length) steps[steps.length - 1].push(message);
   }
-  return [messages[0], ...steps.slice(-MEMORY_STEPS).flat()];
+  const recent = steps.slice(-MEMORY_STEPS);
+  while (recent.length > 1 && encoder.encode(JSON.stringify(recent)).length > 128000) recent.shift();
+  return [messages[0], ...recent.flat()];
 }
 
 // Paper notes and linked-page excerpts expire with the exchanges that cited them; they must not become

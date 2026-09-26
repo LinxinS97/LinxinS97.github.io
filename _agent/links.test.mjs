@@ -65,7 +65,9 @@ test('linked-page answers require server retrieval; one question is charged once
   await runAgent({ question: 'What else does she work on?', conversation: result.conversation }, e, 'https://profile.example.org', async (_, options) => {
     const body = JSON.parse(options.body);
     if (!seen) { seen = true; return provider([['check_scope', { allowed: true }]])(); }
-    assert.ok(body.messages[0].content.includes('Aurora University'));
+    assert.ok(!body.messages[0].content.includes('Aurora University'));
+    assert.ok(body.messages[0].content.includes('SAVED SOURCE INDEX'));
+    assert.ok(body.tools.some(tool => tool.function.name === 'read_saved_source'));
     return provider([['observe_page', {}]])();
   });
 });

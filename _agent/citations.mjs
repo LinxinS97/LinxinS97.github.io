@@ -2,6 +2,7 @@ export function citationPool(state, sectionIDs, papers, links) {
   const pool = { sources: [...new Set(state.read)].filter(id => sectionIDs.includes(id)), paper_sources: [], link_sources: [] };
   for (const [id, document] of Object.entries(state.documents)) {
     if (typeof document.notes !== 'string' || !document.notes.trim()) continue;
+    if (state.sourceReads && !state.sourceReads.includes(id)) continue;
     if (document.kind === 'websearch' || (document.kind === 'webpage' && links.has(id))) pool.link_sources.push(id);
     else if (papers.has(id)) pool.paper_sources.push(id);
   }

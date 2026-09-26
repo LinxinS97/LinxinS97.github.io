@@ -1,4 +1,5 @@
 {% capture profile_markdown %}{% include profile.md %}{% endcapture %}
+<script id="agent-profile-snapshot" type="application/json">{"schema":1,"updatedAt":{{ site.time | date_to_xmlschema | jsonify }},"profile":{{ profile_markdown | jsonify | replace: '<', '\u003c' | replace: '>', '\u003e' | replace: '&', '\u0026' }}}</script>
 {% assign chapters = profile_markdown | split: '<!-- section -->' %}
 {% capture newline %}
 {% endcapture %}

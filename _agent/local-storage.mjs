@@ -16,6 +16,7 @@ export function sqliteStorage(path) {
         try {
           const result = await callback({ get: async key => { const row = get.get(key); return row && JSON.parse(row.value); }, put: async (key, value) => { put.run(key, JSON.stringify(value)); } });
           db.prepare("DELETE FROM kv WHERE key LIKE 'quota:%' AND key < ?").run('quota:' + new Date(Date.now() - 2 * 86400000).toISOString().slice(0, 10));
+          db.prepare("DELETE FROM kv WHERE key LIKE 'context:%' AND key < ?").run('context:' + new Date().toISOString().slice(0, 10));
           db.exec('COMMIT'); return result;
         } catch (error) { db.exec('ROLLBACK'); throw error; }
       });
