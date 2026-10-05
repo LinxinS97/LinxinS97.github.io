@@ -65,6 +65,49 @@
     } catch (_) {}
   });
   var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  var resizeHandle = root.querySelector('.page-agent-resize');
+  var inputDrag = null;
+  function resizeInput(height) {
+    var maximum = Math.max(34, Math.min(240, innerHeight * .4));
+    var nextHeight = Math.round(Math.max(34, Math.min(maximum, height)));
+    input.style.height = nextHeight + 'px';
+    resizeHandle.setAttribute('aria-valuemax', String(Math.floor(maximum)));
+    resizeHandle.setAttribute('aria-valuenow', String(nextHeight));
+  }
+  resizeHandle.addEventListener('pointerdown', function (event) {
+    if (event.button !== 0) return;
+    event.preventDefault();
+    inputDrag = { id: event.pointerId, y: event.clientY, height: input.getBoundingClientRect().height };
+    resizeHandle.setPointerCapture(event.pointerId);
+    resizeHandle.classList.add('is-dragging');
+  });
+  resizeHandle.addEventListener('pointermove', function (event) {
+    if (inputDrag && inputDrag.id === event.pointerId) resizeInput(inputDrag.height + inputDrag.y - event.clientY);
+  });
+  function endInputDrag() { inputDrag = null; resizeHandle.classList.remove('is-dragging'); }
+  resizeHandle.addEventListener('pointerup', endInputDrag);
+  resizeHandle.addEventListener('pointercancel', endInputDrag);
+  resizeHandle.addEventListener('lostpointercapture', endInputDrag);
+  resizeHandle.addEventListener('keydown', function (event) {
+    var height = input.getBoundingClientRect().height;
+    if (event.key === 'ArrowUp') height += 16;
+    else if (event.key === 'ArrowDown') height -= 16;
+    else if (event.key === 'Home') height = 34;
+    else if (event.key === 'End') height = 240;
+    else return;
+    event.preventDefault(); resizeInput(height);
+  });
+  function reserveComposerSpace() {
+    var transcriptHeight = 0;
+    if (!session.hidden) {
+      var style = getComputedStyle(session);
+      transcriptHeight = session.getBoundingClientRect().height + parseFloat(style.marginTop) + parseFloat(style.marginBottom);
+    }
+    document.body.style.setProperty('--agent-composer-height', Math.ceil(root.getBoundingClientRect().height - transcriptHeight) + 'px');
+  }
+  new ResizeObserver(reserveComposerSpace).observe(root);
+  window.addEventListener('resize', function () { resizeInput(input.getBoundingClientRect().height); });
+  resizeInput(input.getBoundingClientRect().height);
   var workAnimations = new WeakMap();
   function setWorkOpen(details, open, animate) {
     var startHeight = details.getBoundingClientRect().height;

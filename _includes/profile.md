@@ -108,7 +108,7 @@ I work on multimodal language models and the digital agentic systems they power,
 <!-- section -->
 # Internships
 - Microsoft Research
-  <br> 2026.06-now
+  <br> 2026.06 - 2026.08
   <br> Mentor: Baolin Peng and Jianfeng Gao
 - Google
   <br> 2026.02-2026.05

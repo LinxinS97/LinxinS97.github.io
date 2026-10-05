@@ -1,7 +1,7 @@
 /* Profile agent controls and answer formatting. */
-.page-agent { overflow-anchor: none; --agent-body-font: 400 13px/1.8 Arial, sans-serif; }
+.page-agent { overflow-anchor: none; --agent-body-font: 400 13px/1.8 var(--research-sans); }
 .page-agent { --agent-cyan: #316fa6; --agent-muted: #546f8b; background: #e3effb; color: #203c59; border: 1px solid #bfd5e9; overflow: visible; min-height: 430px; }
-.page-agent-shell { background: #e3effb; position: relative; padding: 0 20px 15px; font-family: Arial, sans-serif; }
+.page-agent-shell { background: #e3effb; position: relative; padding: 0 20px 15px; font-family: var(--research-sans); }
 .page-agent-top { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; border-bottom: 1px solid #c5d9eb; padding: 13px 0; font: 9px/1.6 var(--research-mono); letter-spacing: 1px; }
 .page-agent-brand { color: #365c7e; }
 .page-agent-slash { color: #6c8ba7; padding: 0 5px; }
@@ -9,12 +9,12 @@
 .page-agent-status::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; margin-right: 6px; background: currentColor; }
 .page-agent[data-state="working"] .page-agent-status::before { animation: agent-status-pulse 1.5s ease-in-out infinite; }
 .page-agent[data-state="error"] .page-agent-status, .page-agent[data-state="restricted"] .page-agent-status { color: #965015; }
-.page__content .page-agent-intro { font: 12px/1.7 Arial, sans-serif; color: #516f8b; margin: 9px 0 16px; max-width: 390px; }
-.page-agent button { border-radius: 2px; cursor: pointer; font-family: var(--research-mono); transition: background .15s; }
+.page__content .page-agent-intro { font: 12px/1.7 var(--research-sans); color: #516f8b; margin: 9px 0 16px; max-width: 390px; }
+.page-agent button { border-radius: 2px; cursor: pointer; font-family: var(--research-sans); transition: background .15s; }
 .page-agent button:disabled { cursor: not-allowed; opacity: .5; }
 .page-agent-form { margin: 0; padding: 10px 12px; border: 1px solid #acc8e0; background: #f9fcff; border-radius: 3px; }
 .page-agent-form:focus-within { border-color: #4588c0; box-shadow: 0 0 0 1px #4588c02b; }
-.page-agent-form textarea { width: 100%; resize: vertical; min-height: 47px; max-height: 140px; padding: 2px 0; border: none; outline: none; border-radius: 0; color: #203c59; background: transparent; font: 12px/1.6 Arial, sans-serif; box-shadow: none; margin: 0; }
+.page-agent-form textarea { width: 100%; resize: vertical; min-height: 47px; max-height: 140px; padding: 2px 0; border: none; outline: none; border-radius: 0; color: #203c59; background: transparent; font: 12px/1.6 var(--research-sans); box-shadow: none; margin: 0; }
 .page-agent-form textarea::placeholder { color: #5b7790; }
 .page-agent-form textarea:focus { outline: none; box-shadow: none; }
 .page-agent-form-actions { display: flex; gap: 9px; align-items: center; justify-content: flex-end; margin-top: 8px; }
@@ -33,7 +33,7 @@
 .page__content .page-agent-answer p { margin: 0 0 .85em; }
 .page__content .page-agent-answer h1, .page__content .page-agent-answer h2, .page__content .page-agent-answer h3,
 .page__content .page-agent-answer h4, .page__content .page-agent-answer h5, .page__content .page-agent-answer h6 {
-  margin: 1.2em 0 .45em; padding: 0; border: 0; font: 600 1.08em/1.5 Arial, sans-serif; color: #234f78;
+  margin: 1.2em 0 .45em; padding: 0; border: 0; font: 600 1.08em/1.5 var(--research-sans); color: #234f78;
 }
 .page__content .page-agent-answer h1 { font-size: 1.25em; }
 .page__content .page-agent-answer h2 { font-size: 1.15em; }
@@ -53,7 +53,7 @@
 .page__content .page-agent-answer > :first-child { margin-top: 0; }
 .page__content .page-agent-answer > :last-child { margin-bottom: 0; }
 .page-agent-answer.is-typing::after { content: ''; display: inline-block; width: 5px; height: 1em; margin-left: 3px; vertical-align: text-bottom; background: #629ac8; }
-.page-agent-thinking { padding: 0; margin: 4px 0 14px; border: 0; background: transparent; border-radius: 0; color: #6e7c88; font: 13px/1.8 Arial, sans-serif; }
+.page-agent-thinking { padding: 0; margin: 4px 0 14px; border: 0; background: transparent; border-radius: 0; color: #6e7c88; font: 13px/1.8 var(--research-sans); }
 .page-agent-thinking-label { display: flex; align-items: center; gap: 8px; padding: 5px 0 10px; border-bottom: 1px solid #ccdbe8; font: var(--agent-body-font); cursor: pointer; list-style: none; }
 .page-agent-work-label { font: inherit; }
 .page-agent-thinking-label::-webkit-details-marker { display: none; }
@@ -61,7 +61,7 @@
 .page-agent-thinking[open]:not([data-expanded="false"]) > .page-agent-thinking-label::after { transform: rotate(135deg); }
 .page-agent-thinking-label:focus-visible { outline: 2px solid #599ad0; outline-offset: 3px; }
 .page-agent-thinking.is-complete .thinking-dots { display: none; }
-.page__content .page-agent-thinking-detail { margin: 3px 0 0; font: 13px/1.7 Arial, sans-serif; color: #546f89; overflow-wrap: anywhere; }
+.page__content .page-agent-thinking-detail { margin: 3px 0 0; font: 13px/1.7 var(--research-sans); color: #546f89; overflow-wrap: anywhere; }
 .thinking-dots { display: inline-flex; gap: 4px; }
 .thinking-dots i { width: 4px; height: 4px; border-radius: 50%; background: currentColor; animation: agent-thinking 1.2s ease-in-out infinite; }
 .thinking-dots i:nth-child(2) { animation-delay: .16s; }
@@ -89,19 +89,25 @@
 
 
 /* A persistent bottom composer; the transcript opens above the input. */
-body:has(.page-agent-bottom) { padding-bottom: calc(150px + env(safe-area-inset-bottom)); }
+body:has(.page-agent-bottom) { padding-bottom: calc(var(--agent-composer-height, 136px) + 12px); }
 .page-agent-bottom { position: fixed; z-index: 2000; inset: auto 0 0; margin: 0; min-height: 0; border: 0; border-top: 1px solid #bfd5e9; border-radius: 0; box-shadow: 0 -8px 32px #345f8f12; background: #edf5fc; }
 .page-agent-bottom .page-agent-shell { max-width: 1048px; margin: 0 auto; padding: 0 24px calc(9px + env(safe-area-inset-bottom)); background: transparent; max-height: 80dvh; display: flex; flex-direction: column; }
 .page-agent-bottom .page-agent-top { padding: 8px 0; border: 0; flex-wrap: nowrap; }
 .page-agent-bottom .page-agent-status { margin-left: auto; text-align: right; }
 .page-agent-bottom .page-agent-form { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 6px; flex-shrink: 0; }
-.page-agent-bottom .page-agent-form textarea { flex: 1; width: 0; min-height: 34px; height: 34px; max-height: 100px; font: 13px/1.8 Arial, sans-serif; resize: vertical; box-sizing: border-box; }
+.page-agent-bottom .page-agent-form textarea { flex: 1; width: 0; min-height: 34px; height: 34px; max-height: min(240px, 40dvh); font: 13px/1.8 var(--research-sans); resize: none; box-sizing: border-box; }
 .page-agent-bottom .page-agent-form-actions { margin: 0; flex-shrink: 0; }
 .page-agent-bottom .page-agent-send { padding: 7px 15px; font-size: 12px; }
 .page-agent-bottom .page-agent-session { min-height: 0; max-height: min(400px, 45dvh); overscroll-behavior: contain; margin: 0 0 12px; padding: 14px 4px; border-bottom: 1px solid #bfd5e8; }
 .page-agent-bottom .page-agent-conversation-bar { padding: 5px 0 0; }
 .page-agent-quota { font-size: 13px; }
-.page-agent-bottom .page-agent-new-chat { padding: 1px 0; border: 0; background: transparent; }
+.page-agent-bottom .page-agent-new-chat { padding: 4px 11px; border: 1px solid #b2cde3; border-radius: 6px; background: #f8fbff; box-shadow: 0 1px 2px #305c7e0c; line-height: 1.5; }
+.page-agent-bottom .page-agent-new-chat:hover:not(:disabled) { background: #deedfa; border-color: #7da8cc; }
+.page-agent-bottom .page-agent-new-chat:active:not(:disabled) { background: #d1e4f5; transform: translateY(1px); }
+.page-agent-resize { height: 14px; flex-shrink: 0; display: grid; place-items: center; cursor: ns-resize; touch-action: none; user-select: none; border-radius: 4px; }
+.page-agent-resize::before { content: ''; width: 38px; height: 3px; border-radius: 3px; background: #afc9df; transition: background .15s, width .15s; }
+.page-agent-resize:hover::before, .page-agent-resize:focus-visible::before, .page-agent-resize.is-dragging::before { background: #5086b2; width: 48px; }
+.page-agent-resize:focus-visible { outline: 2px solid #599ad0; outline-offset: 0; }
 .page-agent-sources button { padding: 7px 9px; border: 1px solid #b9d0e6; background: #f1f7fd; color: #315d83; font-size: 9px; line-height: 1.5; text-align: left; }
 .page-agent-sources button:hover { background: #d4e7f8; }
 @media (max-width: 720px) {

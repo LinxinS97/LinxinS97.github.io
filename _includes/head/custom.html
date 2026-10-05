@@ -34,7 +34,7 @@
   /* ===== Wiki-style skin ===== */
   body {
     background: #f6f6f6 !important;
-    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif !important;
+    font-family: var(--research-sans) !important;
   }
   /* Hide top navigation bar (wiki look) */
   .masthead { display: none !important; }
@@ -64,7 +64,7 @@
   }
   .initial-content { background: transparent; }
   .page__content {
-    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
+    font-family: var(--research-sans);
     font-size: 0.95em;
     line-height: 1.6;
     color: #202122;
@@ -74,7 +74,7 @@
   /* Wiki headings */
   .page__content h1,
   .page__content h2 {
-    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
+    font-family: var(--research-sans);
     font-weight: normal;
     border-bottom: 1px solid #a2a9b1;
     padding-bottom: 0.17em;
@@ -85,7 +85,7 @@
   .page__content h1 { font-size: 1.8em; }
   .page__content h2 { font-size: 1.5em; }
   .page__content h3 {
-    font-family: "Linux Libertine", "Georgia", "Times New Roman", serif;
+    font-family: var(--research-sans);
     font-weight: bold;
     font-size: 1.2em;
     margin-top: 1em;
@@ -109,7 +109,7 @@
 
   /* "From Linxinpedia" subtitle */
   .wiki-title {
-    font-family: "Linux Libertine", "Georgia", serif;
+    font-family: var(--research-sans);
     font-size: 2.1em;
     border-bottom: 1px solid #a2a9b1;
     padding-bottom: 0.17em;
@@ -246,7 +246,10 @@
     .wiki-video { max-width: 100%; }
   }
 </style>
-<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/research.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <link rel="stylesheet" href="{{ '/assets/css/page-agent.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 
 
