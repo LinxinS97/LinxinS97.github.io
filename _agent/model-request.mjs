@@ -1,3 +1,4 @@
+import { readModelStream } from './model-stream.mjs';
 // Retry model generation only, never an agent turn, quota reservation or email send.
 export class ModelRequestError extends Error {
   constructor(status, message, retryable = false) {
@@ -11,19 +12,20 @@ const transient = status => [408, 429, 500, 502, 503, 504, 520, 522, 524].includ
 
 export async function modelRequest(env, body, fetcher, {
   validate = value => value, timeoutMs = 60000, attempts = 3,
-  sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), onAttempt = () => {}
+  sleep = ms => new Promise(resolve => setTimeout(resolve, ms)), onAttempt = () => {}, onDelta, signal
 } = {}) {
   // A single shared attempt budget covers HTTP, JSON and action-format failures.
   const limit = Math.min(3, Math.max(1, attempts));
   for (let attempt = 0; attempt < limit; attempt++) {
     try {
+      signal?.throwIfAborted();
       onAttempt(attempt);
       let response;
       try {
         response = await fetcher(env.OPENROUTER_BASE_URL.replace(/\/+$/, '') + '/chat/completions', {
-          method: 'POST', signal: AbortSignal.timeout(timeoutMs),
+          method: 'POST', signal: signal ? AbortSignal.any([signal, AbortSignal.timeout(timeoutMs)]) : AbortSignal.timeout(timeoutMs),
           headers: { Authorization: `Bearer ${env.OPENROUTER_API_KEY}`, 'Content-Type': 'application/json' },
-          body: JSON.stringify(body)
+          body: JSON.stringify(onDelta ? { ...body, stream: true } : body)
         });
       } catch (error) {
         if (!(error instanceof TypeError) && !['TimeoutError', 'AbortError'].includes(error?.name)) throw error;
@@ -44,13 +46,19 @@ export async function modelRequest(env, body, fetcher, {
         throw error;
       }
       let data;
-      try { data = await response.json(); }
+      try {
+        data = onDelta && response.headers.get('Content-Type')?.includes('text/event-stream')
+          ? await readModelStream(response, onDelta) : await response.json();
+      }
       catch (error) {
+        signal?.throwIfAborted();
+        if (onDelta) invalidModelOutput('The model returned an incomplete response. Please try again.');
         if (!(error instanceof SyntaxError) && !(error instanceof TypeError) && !['TimeoutError', 'AbortError'].includes(error?.name)) throw error;
         invalidModelOutput('The model returned an incomplete response. Please try again.');
       }
       return validate(data);
     } catch (error) {
+      signal?.throwIfAborted();
       if (!(error instanceof ModelRequestError) || !error.retryable || attempt + 1 === limit) throw error;
       // Long provider cooldowns belong in a later visitor request, not an open HTTP call.
       if (error.delay > 5000) throw error;

@@ -40,18 +40,25 @@
     // reaches the renderer, so links, tables and code blocks keep stable markup.
     if (options.reducedMotion || options.signal && options.signal.aborted || document.hidden) return Promise.resolve();
     var walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT);
-    var segmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter(undefined, { granularity: 'grapheme' }) : null;
-    var entries = [], node, total = 0;
+    var segmenter = typeof Intl.Segmenter === 'function' ? new Intl.Segmenter(undefined, { granularity: 'word' }) : null;
+    var entries = [], reveals = [], node, total = 0;
     while ((node = walker.nextNode())) {
-      var letters = segmenter ? Array.from(segmenter.segment(node.data), function (part) { return part.segment; }) : Array.from(node.data);
-      entries.push({ node: node, text: node.data, letters: letters, start: total }); total += letters.length;
+      var entry = { node: node, text: node.data };
+      entries.push(entry);
+      var parts = segmenter ? Array.from(segmenter.segment(node.data)) : Array.from(node.data.matchAll(/[\p{L}\p{N}\p{M}_]+|[^\p{L}\p{N}\p{M}_]+/gu), function (match) {
+        return { segment: match[0], index: match.index, isWordLike: /[\p{L}\p{N}]/u.test(match[0]) };
+      });
+      parts.forEach(function (part) {
+        if (part.isWordLike) total++;
+        // Spaces and punctuation appear with their word, without extra delays.
+        reveals.push({ entry: entry, end: part.index + part.segment.length, step: Math.max(1, total) });
+      });
     }
     if (!total) return Promise.resolve();
     var elements = Array.from(container.querySelectorAll('*'));
     elements.forEach(function (element) { element.hidden = true; });
     entries.forEach(function (entry) { entry.node.data = ''; });
     container.classList.add('is-typing'); container.setAttribute('aria-busy', 'true');
-    var duration = Math.max(100, Math.min(1600, total / 900 * 1000));
     return new Promise(function (resolve) {
       var frame = 0, start = performance.now(), index = 0, done = false;
       function finish() {
@@ -67,13 +74,12 @@
       }
       function visibility() { if (document.hidden) finish(); }
       function tick(now) {
-        var count = Math.min(total, Math.ceil(total * (now - start) / duration));
-        while (index < entries.length && count > entries[index].start) {
-          var entry = entries[index];
-          var visible = Math.min(entry.letters.length, count - entry.start);
-          entry.node.data = entry.letters.slice(0, visible).join('');
+        var count = Math.min(total, Math.floor((now - start) * 30 / 1000));
+        while (index < reveals.length && reveals[index].step <= count) {
+          var reveal = reveals[index];
+          var entry = reveal.entry;
+          entry.node.data = entry.text.slice(0, reveal.end);
           for (var parent = entry.node.parentElement; parent && parent !== container; parent = parent.parentElement) parent.hidden = false;
-          if (visible < entry.letters.length) break;
           index++;
         }
         if (count >= total) { finish(); return; }

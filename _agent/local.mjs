@@ -1,4 +1,6 @@
 import http from 'node:http';
+import { Readable } from 'node:stream';
+import { pipeline } from 'node:stream/promises';
 import { readFile } from 'node:fs/promises';
 import { handleRequest } from './core.mjs';
 import { sqliteStorage } from './local-storage.mjs';
@@ -26,6 +28,8 @@ env.SCHOLAR = createScholarService(storage, { ...env, SOURCE_FETCH: localSourceF
 env.CONTEXT_STORE = createContextStore(storage);
 if (!env.OPENROUTER_API_KEY || !env.OPENROUTER_BASE_URL) throw new Error('Provide OPENROUTER_API_KEY and OPENROUTER_BASE_URL through an external env file.');
 const server = http.createServer(async (req, res) => {
+  const controller = new AbortController();
+  res.on('close', () => { if (!res.writableFinished) controller.abort(); });
   try {
     const chunks = [];
     let size = 0;
@@ -37,13 +41,15 @@ const server = http.createServer(async (req, res) => {
     const headers = new Headers(req.headers);
     headers.set('cf-connecting-ip', req.socket.remoteAddress); // Use socket identity, never forwarded/client IP headers.
     const body = Buffer.concat(chunks);
-    const request = new Request('http://127.0.0.1:4100' + req.url, { method: req.method, headers,
+    const request = new Request('http://127.0.0.1:4100' + req.url, { method: req.method, headers, signal: controller.signal,
       ...(body.length ? { body } : {}) });
     const profile = await readFile(new URL('../_includes/profile.md', import.meta.url), 'utf8');
     const page = await readFile(new URL('../_site/index.html', import.meta.url), 'utf8');
     const response = await handleRequest(request, { ...env, PROFILE: profile, PAGE_HTML: page, SOURCE_FETCH: localSourceFetch });
     res.writeHead(response.status, Object.fromEntries(response.headers));
-    res.end(await response.text());
-  } catch { res.writeHead(500); res.end('{"error":"Local agent unavailable."}'); }
+    res.flushHeaders();
+    if (response.body) await pipeline(Readable.fromWeb(response.body), res);
+    else res.end();
+  } catch { if (!res.headersSent && !res.destroyed) { res.writeHead(500); res.end('{"error":"Local agent unavailable."}'); } else res.destroy(); }
 });
 server.listen(4100, '127.0.0.1', () => console.log('Page agent listening on http://127.0.0.1:4100 (secrets loaded server-side).'));

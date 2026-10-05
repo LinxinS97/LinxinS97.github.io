@@ -3,7 +3,6 @@
 
 **Linxin Song (宋林鑫)** is a third-year Computer Science Ph.D. student at the [University of Southern California](https://www.usc.edu/), co-advised by Prof. [Jieyu Zhao](https://jyzhao.net/index.html) and Prof. [Yue Wang](https://yuewang.xyz/). Before that, he was a M.Eng student at the Graduate School of Creative Science and Engineering, [Waseda University (早稲田大学)](https://www.waseda.jp/top/en/) in Tokyo, supervised by Prof. [Masayuki Goto](http://www.it.mgmt.waseda.ac.jp/). He also collaborates closely with [Jieyu Zhang](https://jieyuz2.github.io/), whose work centers on interactive and data-centric AI/ML.
 
-- Nationality: Chinese
 - Fields: NLP, Agentic AI, Synthetic Data, Post Training
 - Websites: [Google Scholar](https://scholar.google.com/citations?user=IjqXzSwAAAAJ), [X](https://x.com/linxins2), [GitHub](https://github.com/LinxinS97)
 - Contact: rm[dot]social[dot]song1[at]gmail[dot]com
