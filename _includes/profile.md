@@ -18,20 +18,17 @@ I work on multimodal language models and the digital agentic systems they power,
 # Selected Publications
 (\* denotes equal contribution)
 
+### Robotics
+- <span class="retro-new">NEW!</span> [Reflex: Visually Grounded Reactive Humanoid Control](https://toberj.github.io/humanoid-box-catch-web/v2/)
+  <br>Taoyang Jia\*, Weikai Huang\*, **<u>Linxin Song</u>**\*, Jared Darlington, Jieyu Zhao, Yue Wang, Jiafei Duan, Zhongzheng Ren, Ranjay Krishna
+
 ### Post Training
 - [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
   <br>**<u>Linxin Song</u>**, Jieyu Zhang, Huanxin Sheng, Taiwei Shi, Gupta Rahul, Yang Liu, Ranjay Krishna, Jian Kang, Jieyu Zhao
   <br>*ECCV 2026*
-  <figure class="wiki-video">
-    <video controls preload="metadata" playsinline>
-      <source src="assets/videos/exevrm-demo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="wv-caption">ExeVRM demo &mdash; video-based reward modeling for computer-use agents.</figcaption>
-  </figure>
 - [Experiential Reinforcement Learning](https://arxiv.org/abs/2602.13949)
   <br>Taiwei Shi, Sihao Chen, Bowen Jiang, **<u>Linxin Song</u>**, Longqi Yang, Jieyu Zhao
-  <br>Preprint
+  <br>*Preprint*
 - [The Hallucination Tax of Reinforcement Finetuning](http://arxiv.org/abs/2505.13988)
   <br>**<u>Linxin Song</u>**\*, Taiwei Shi\*, Jieyu Zhao
   <br>*EMNLP 2025 (findings)*
@@ -57,47 +54,19 @@ I work on multimodal language models and the digital agentic systems they power,
   <br>*AIA @COLM 2025*.
 
 
-### Language Model Evaluation
+### Language Model and Agent Evaluation
 - <span class="retro-new">NEW!</span> [Converted, Not Equivalent: Benchmarking Codebase Conversion via Observational Equivalence](https://arxiv.org/abs/2605.29054)
   <br>**<u>Linxin Song</u>**, Jiefeng Chen, Yue Huang, Bhavana Dalvi Mishra, Chi Wang, Jieyu Zhao, Jinsung Yoon, Tomas Pfister
-  <br>Preprint
+  <br>*Preprint*
 - <span class="retro-new">NEW!</span> [The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents](https://arxiv.org/abs/2604.10577)
   <br>Xuwei Ding\*, Skylar Zhai\*, **<u>Linxin Song</u>**\*, Jiate Li, Taiwei Shi, Nicholas Meade, Siva Reddy, Jian Kang, Jieyu Zhao
-  <br>Preprint
+  <br>*Preprint*
 - [Discovering Knowledge Deficiencies of Language Models on Massive Knowledge Base](https://arxiv.org/abs/2503.23361)
   <br>**<u>Linxin Song</u>**, Xuwei Ding, Jieyu Zhang, Taiwei Shi, Ryotaro Shimizu, Rahul Gupta, Yang Liu, Jian Kang, Jieyu Zhao
-  <br>*COLM 2025* | [Webpage](https://maksimstw.github.io/papers/sea)
-  <br><audio controls style="height: 30px;"><source src="assets/music/Stochastic Error Ascent.mp3" type="audio/mp3"></audio>
+  <br>*COLM 2025*
 - [Explaining Length Bias in LLM-Based Preference Evaluations](https://arxiv.org/abs/2407.01085#)
   <br>Zhengyu Hu, **<u>Linxin Song</u>**, Jieyu Zhang, Zheyuan Xiao, Jingang Wang, Zhenyu Chen, Hui Xiong
   <br>*EMNLP 2025 (findings)*
-
-### Before PhD
-- [Attributed Synthetic Data Generation for Zero-shot Image Classification](https://arxiv.org/abs/2504.04510)
-  <br>Shijian Wang, **<u>Linxin Song</u>**, Ryotaro Shimizu, Masayuki Goto, Hanqian Wu
-  <br>*ICME 2025 <span style="color:red">(Oral)</span>*
-- [Offline Training of Language Model Agents with Functions as Learnable Weights](https://arxiv.org/pdf/2402.11359.pdf)
-  <br>Shaokun Zhang\*, Jieyu Zhang\*, Jiale Liu, **<u>Linxin Song</u>**, Chi Wang, Ranjay Krishna, Qingyun Wu
-  <br>*ICML 2024*.
-  <br>Covered by: <span style="color:red">[The Forbes Article](https://www.forbes.com/sites/joannechen/2024/05/24/the-promise-of-multi-agent-ai/)</span>
-- [ProVision: Programmatically Scaling Vision-centric Instruction Data for Multimodal Language Models](https://arxiv.org/pdf/2412.07012)
-  <br>Jieyu Zhang, Le Xue, **<u>Linxin Song</u>**, Jun Wang, Weikai Huang, Manli Shu, An Yan, Zixian Ma, Juan Carlos Niebles, silvio savarese, Caiming Xiong, Zeyuan Chen, Ranjay Krishna, Ran Xu
-  <br>Covered by: <span style="color:red">[VentureBeat](https://venturebeat.com/data-infrastructure/breaking-the-data-bottleneck-salesforces-provision-speeds-multimodal-ai-training-with-image-scene-graphs/)</span> | <span style="color:red">[MarkTechPost](https://www.marktechpost.com/2025/01/11/provision-a-scalable-programmatic-approach-to-vision-centric-instruction-data-for-multimodal-language-models/)</span>
-- [Better Explain Transformers by Illuminating Important Information](https://arxiv.org/abs/2401.09972)
-  <br>**<u>Linxin Song</u>**, Yan Cui, Ao Luo, Freddy Lecue, Irene Li
-  <br>*EACL 2024 (findings)*.
-- [Investigating the Scaling Effect of Instruction Templates for Training Multimodal Language Model](https://arxiv.org/abs/2412.08307)
-  <br>Shijian Wang\*, **<u>Linxin Song</u>**\*, Jieyu Zhang, Ryotaro Shimizu, Ao Luo, Li Yao, Cunjian Chen, Julian McAuley, Haiqian Wu
-- [NLPBench: Evaluating Large Language Models on Solving NLP Problems](https://arxiv.org/abs/2309.15630)
-  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Lechao Cheng, Pengyuan Zhou, Tianyi Zhou, Irene Li
-  <br>*ITIF @ NeurIPS 2023*.
-- [Leveraging Instance Features for Label Aggregation in Programmatic Weak Supervision](https://proceedings.mlr.press/v206/zhang23a.html)
-  <br>Jieyu Zhang\*, **<u>Linxin Song</u>**\*, Alexander Ratner
-  <br>*AISTATS 2023*.
-- [Adaptive Ranking-based Sample Selection for Weakly Supervised Class-imbalanced Text Classification](https://aclanthology.org/2022.findings-emnlp.119/)
-  <br>**<u>Linxin Song</u>**, Jieyu Zhang, Tianxiang Yang, Masayuki Goto
-  <br>*EMNLP 2022 (findings)*.
-
 
 <!-- section -->
 # Teaching

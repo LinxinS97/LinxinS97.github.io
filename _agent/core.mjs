@@ -22,10 +22,10 @@ export const INTRODUCTION = '我是 Linxin Song 的 personal agent，我可以�
 export const SECTIONS = {
   'about-me': 'Biography & contact',
   'research-interests': 'Research interests',
+  'robotics': 'Robotics publications',
   'post-training': 'Post-training publications',
   'agentic-ai': 'Agentic AI publications',
-  'language-model-evaluation': 'Language model evaluation',
-  'before-phd': 'Earlier publications',
+  'language-model-and-agent-evaluation': 'Language Model and Agent Evaluation',
   teaching: 'Teaching',
   internships: 'Internships',
   'professional-services': 'Professional services'

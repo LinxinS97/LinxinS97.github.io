@@ -177,8 +177,8 @@
   // Index known public sections only; never serialize chat, forms, storage or scripts.
   var sectionNames = {
     'about-me': 'Biography & contact', 'research-interests': 'Research interests',
-    'post-training': 'Post-training publications', 'agentic-ai': 'Agentic AI publications',
-    'language-model-evaluation': 'Language model evaluation', 'before-phd': 'Earlier publications',
+    robotics: 'Robotics publications', 'post-training': 'Post-training publications', 'agentic-ai': 'Agentic AI publications',
+    'language-model-and-agent-evaluation': 'Language Model and Agent Evaluation',
     teaching: 'Teaching', internships: 'Internships', 'professional-services': 'Professional services'
   };
   function indexSections() {
@@ -525,7 +525,11 @@
   }).then(function (data) {
     updateQuota(data.quota); ready = data.ready === true;
     if (!activeController) { announce(quotaState && quotaState.remaining <= 0 ? 'DAILY LIMIT REACHED' : ready ? 'READY TO EXPLORE' : 'NOT CONNECTED', ready ? 'ready' : 'error'); setBusy(false); }
-  }).catch(function () { announce('OFFLINE', 'error'); input.placeholder = 'Start the local page-agent backend, then refresh this page.'; });
+  }).catch(function () {
+    quotaElement.textContent = '— / 20 questions left today';
+    quotaElement.title = 'Cannot check remaining questions while the backend is offline.';
+    announce('OFFLINE', 'error'); input.placeholder = 'Start the local page-agent backend, then refresh this page.';
+  });
   }
   fetchHealth();
 })();

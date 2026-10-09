@@ -309,9 +309,9 @@ test('second-person and Chinese name references enrich retrieval without alterin
 });
 
 test('mixed Chinese-English names retrieve full-name coauthor evidence without spurious Latin bigrams',()=>{
-  const profile='# About Me\nLinxin Song studies AI.\n\n# Agentic AI\nLinxin Song, Taiwei Shi coauthored a paper.\n\n# Before Phd\nLinxin Song, Yuehan Qin coauthored another paper.';
+  const profile='# About Me\nLinxin Song studies AI.\n\n# Agentic AI\nLinxin Song, Taiwei Shi coauthored a paper.\n\n# Robotics\nLinxin Song, Yuehan Qin coauthored another paper.';
   const index=buildProfileIndex(profile,SECTIONS);
-  for(const [question,section,name] of [['你和taiwei的关系是什么','agentic-ai','taiwei'],['你和yuehan qin的关系是什么','before-phd','qin']]) {
+  for(const [question,section,name] of [['你和taiwei的关系是什么','agentic-ai','taiwei'],['你和yuehan qin的关系是什么','robotics','qin']]) {
     const lookup=searchProfileIndex(index,questionQueries(question,[]));
     assert.equal(lookup.matches[0].section,section);
     assert.ok(lookup.matches[0].matched.includes(name));

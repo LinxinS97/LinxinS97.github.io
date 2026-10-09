@@ -1,7 +1,7 @@
 (function (root) {
   'use strict';
   function cleanAgentAnswer(value) {
-    var token = '(?:about-me|research-interests|post-training|agentic-ai|language-model-evaluation|before-phd|teaching|internships|professional-services|(?:link|search|url):[a-f0-9]{8,64}|arxiv:[0-9.]+(?:v[0-9]+)?|(?:acl|mlr):[\\w.-]+)';
+    var token = '(?:about-me|research-interests|robotics|post-training|agentic-ai|language-model-evaluation|language-model-and-agent-evaluation|before-phd|teaching|internships|professional-services|(?:link|search|url):[a-f0-9]{8,64}|arxiv:[0-9.]+(?:v[0-9]+)?|(?:acl|mlr):[\\w.-]+)';
     var citations = new RegExp('\\[(?:\\s*' + token + '\\s*[,;]?)+\\](?:\\(#[^)]*\\))?', 'gi');
     return String(value || '').replace(citations, '').replace(/\b(?:link|search|url):[a-f0-9]{8,64}\b/gi, '')
       .replace(/[ \t]+([.,;!?，。；！？])/g, '$1').trim();
