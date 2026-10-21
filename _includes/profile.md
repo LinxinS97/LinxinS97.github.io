@@ -7,8 +7,6 @@
 - Websites: [Google Scholar](https://scholar.google.com/citations?user=IjqXzSwAAAAJ), [X](https://x.com/linxins2), [GitHub](https://github.com/LinxinS97)
 - Contact: rm[dot]social[dot]song1[at]gmail[dot]com
 
-Recent publication: [ExeVRM — Video-Based Reward Modeling for Computer-Use Agent](https://arxiv.org/abs/2603.10178)
-
 <!-- section -->
 # Research Interests
 
@@ -55,8 +53,8 @@ I work on multimodal language models and the digital agentic systems they power,
 
 
 ### Language Model and Agent Evaluation
-- <span class="retro-new">NEW!</span> [Converted, Not Equivalent: Benchmarking Codebase Conversion via Observational Equivalence](https://arxiv.org/abs/2605.29054)
-  <br>**<u>Linxin Song</u>**, Jiefeng Chen, Yue Huang, Bhavana Dalvi Mishra, Chi Wang, Jieyu Zhao, Jinsung Yoon, Tomas Pfister
+- <span class="retro-new">NEW!</span> [Language Model and Agent Evaluation](https://arxiv.org/abs/2605.29054)
+  <br>Tao Feng\*, Jiefeng Chen\*, **<u>Linxin Song</u>**, Yufan Zhuang, Yue Huang, Bhavana Dalvi Mishra, Chi Wang, Xiangru Tang, Jieyu Zhao, Ge Liu, Tomas Pfister, Jinsung Yoon
   <br>*Preprint*
 - <span class="retro-new">NEW!</span> [The Blind Spot of Agent Safety: How Benign User Instructions Expose Critical Vulnerabilities in Computer-Use Agents](https://arxiv.org/abs/2604.10577)
   <br>Xuwei Ding\*, Skylar Zhai\*, **<u>Linxin Song</u>**\*, Jiate Li, Taiwei Shi, Nicholas Meade, Siva Reddy, Jian Kang, Jieyu Zhao
