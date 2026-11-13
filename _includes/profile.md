@@ -19,6 +19,8 @@ I work on multimodal language models and the digital agentic systems they power,
 ### Robotics
 - <span class="retro-new">NEW!</span> [Reflex: Visually Grounded Reactive Humanoid Control](https://toberj.github.io/humanoid-box-catch-web/v2/)
   <br>Taoyang Jia\*, Weikai Huang\*, **<u>Linxin Song</u>**\*, Jared Darlington, Jieyu Zhao, Yue Wang, Jiafei Duan, Zhongzheng Ren, Ranjay Krishna
+  <br><em>Roboletics @CoRL 2026 — <span style="color: #c62828;">🏆 Best Paper Award</span></em>
+  <br><em>SimBench2Real @CoRL 2026 — <span style="color: #c62828;">Oral</span></em>
 
 ### Post Training
 - [Video-Based Reward Modeling for Computer-Use Agent](http://arxiv.org/abs/2603.10178)
