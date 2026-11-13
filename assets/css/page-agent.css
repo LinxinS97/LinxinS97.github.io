@@ -91,7 +91,7 @@
 /* A persistent bottom composer; the transcript opens above the input. */
 body:has(.page-agent-bottom) { padding-bottom: calc(var(--agent-composer-height, 136px) + 12px); }
 .page-agent-bottom { position: fixed; z-index: 2000; inset: auto 0 0; margin: 0; min-height: 0; border: 0; border-top: 1px solid #bfd5e9; border-radius: 0; box-shadow: 0 -8px 32px #345f8f12; background: #edf5fc; }
-.page-agent-bottom .page-agent-shell { max-width: 1048px; margin: 0 auto; padding: 0 24px calc(9px + env(safe-area-inset-bottom)); background: transparent; max-height: 80dvh; display: flex; flex-direction: column; }
+.page-agent-bottom .page-agent-shell { max-width: 1184px; margin: 0 auto; padding: 0 24px calc(9px + env(safe-area-inset-bottom)); background: transparent; max-height: 80dvh; display: flex; flex-direction: column; }
 .page-agent-bottom .page-agent-top { padding: 8px 0; border: 0; flex-wrap: nowrap; }
 .page-agent-bottom .page-agent-status { margin-left: auto; text-align: right; }
 .page-agent-bottom .page-agent-form { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-radius: 6px; flex-shrink: 0; }

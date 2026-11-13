@@ -1,7 +1,7 @@
 /* A conversation-first profile with the typography of a research notebook. */
 :root { --research-sans: "Google Sans", "Noto Sans", Arial, sans-serif; --research-ink: #346f9f; --research-rule: #cbddec; --research-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace; }
 body { background: #f4f8fc !important; }
-#main { background: transparent; max-width: 1120px !important; padding: 24px 36px 12px; margin: 0 auto !important; }
+#main { background: transparent; max-width: 1240px !important; padding: 24px 28px 12px; margin: 0 auto !important; }
 .research-mastline { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid #d3e1ee; font: 10px/1.6 var(--research-mono); letter-spacing: 1px; }
 .page__content .research-mastline a, .page__content .research-mastline a:visited { color: #405f7d; }
 .profile-wordmark { font-weight: bold; }
@@ -28,7 +28,7 @@ body { background: #f4f8fc !important; }
 .profile-chapter > .chapter-heading { display: flex; align-items: center; gap: 16px; padding: 21px 6px; color: #2d6d9f; }
 .page__content .chapter-title { font: 21px/1.3 var(--research-sans); margin: 0; padding: 0; border: 0; color: inherit; }
 .chapter-description { margin-left: auto; font: 11px/1.5 var(--research-sans); color: #627b91; }
-.profile-chapter-body { padding: 0 28px 28px; max-width: 920px; }
+.profile-chapter-body { padding: 0 24px 28px; max-width: 1040px; }
 .profile-chapter-body audio { max-width: 100%; }
 .profile-chapter > .chapter-heading { scroll-margin-top: 28px; }
 .profile-chapter-body h3 { scroll-margin-top: 28px; }
