@@ -6,8 +6,8 @@ body { background: #f4f8fc !important; }
 .page__content .research-mastline a, .page__content .research-mastline a:visited { color: #405f7d; }
 .profile-wordmark { font-weight: bold; }
 .profile-wordmark span { color: #627b93; font-weight: normal; margin-left: 9px; }
-.profile-identity { display: flex; align-items: center; gap: 17px; padding: 28px 0; }
-.profile-identity img { width: 64px; height: 64px; object-fit: cover; object-position: center 28%; border-radius: 50%; border: 1px solid #d3e1ee; flex: 0 0 64px; }
+.profile-identity { display: flex; align-items: center; gap: 26px; padding: 28px 0; }
+.profile-identity img { width: 152px; height: 152px; object-fit: cover; object-position: center 28%; border-radius: 50%; border: 1px solid #d3e1ee; flex: 0 0 152px; }
 .page__content .profile-identity .wiki-title { font-size: 28px; margin: 0 0 4px; padding: 0; border: 0; line-height: 1.2; letter-spacing: -.5px; }
 .page__content .profile-identity p { margin: 0; color: #566f87; font: 12px/1.7 var(--research-sans); }
 .profile-identity p span { margin: 0 6px; color: #8ca4ba; }
@@ -39,12 +39,12 @@ body { background: #f4f8fc !important; }
   #main { padding: 18px 18px 12px; }
   .research-mastline { font-size: 8px; letter-spacing: .5px; padding-bottom: 16px; }
   .profile-wordmark span { display: none; }
-  .profile-identity { flex-wrap: wrap; gap: 12px; padding: 22px 0; }
-  .profile-identity img { width: 48px; height: 48px; flex-basis: 48px; }
+  .profile-identity { flex-wrap: wrap; gap: 16px; padding: 22px 0; }
+  .profile-identity img { width: 96px; height: 96px; flex-basis: 96px; }
   .profile-identity > div:not(.profile-links) { flex: 1; }
   .page__content .profile-identity .wiki-title { font-size: 24px; }
   .page__content .profile-identity p { font-size: 10px; }
-  .profile-links { width: calc(100% - 60px); margin-left: 60px; font-size: 10px; gap: 20px; }
+  .profile-links { width: calc(100% - 112px); margin-left: 112px; font-size: 10px; gap: 20px; }
   .research-console { margin-bottom: 30px; }
   .profile-library-heading { display: block; padding-bottom: 15px; }
   .page__content .profile-library-heading p { font-size: 17px; margin-top: 5px; }
